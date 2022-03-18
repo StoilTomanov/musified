@@ -1,17 +1,21 @@
 header#header {
-    background-color: rgba(30, 149, 247, 0.836);
+    background-color: rgba(74, 81, 87, 0.534);
+    text-align: right;
 }
 
 header#header h1 {
     margin: 0;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 255, 234);
+    position: relative;
+    top: 15px;
+    text-align: center;
 }
 
 nav#nav ul {
     height: 100%;
     position: fixed;
-    top: 46px;
-    background-color: rgba(114, 176, 218, 0.377);
+    top: 46.4px;
+    background-color: rgba(17, 51, 73, 0.747);
     overflow-x: hidden;
     padding-top: 60px;
 }
@@ -35,4 +39,16 @@ nav#nav ul li {
     margin: 0;
     list-style: none;
     display: block;
+    margin: 30px;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    font-size: 110%;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: rgb(0, 255, 234);
+    transition: 0.2s;
 }

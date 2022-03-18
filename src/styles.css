@@ -3,4 +3,6 @@
 body {
     display: grid;
     margin: 0;
+    background: url('./assets/background1.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
