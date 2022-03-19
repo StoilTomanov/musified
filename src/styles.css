@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+    font-family: externalFont;
+    src: url(./assets/fonts/ArchitectsDaughter-Regular.ttf);
+}
+
+html {
+    font-family: externalFont;
+    font-size: 115%;
+}
+
 body {
     display: grid;
     margin: 0;
