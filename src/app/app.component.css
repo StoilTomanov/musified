@@ -1,3 +1,5 @@
+/* Main Layout - App Component */
+
 header#header {
     background-color: rgba(35, 64, 90, 0.637);
     text-align: right;
@@ -92,4 +94,66 @@ a::before {
 
 a:hover::before {
     transform: scaleX(1);
+}
+
+
+/* Intro page - hello component */
+
+section#hello h1 {
+    color: rgb(0, 255, 234);
+    font-size: 600%;
+    margin-left: 35%;
+    margin-top: 5%;
+}
+
+section#hello div {
+    border: 5px solid rgba(255, 255, 255, 0);
+    width: 50%;
+    margin-left: 28%;
+    margin-top: -10%;
+}
+
+section#hello p {
+    color: rgb(255, 255, 255);
+    word-wrap: break-word;
+}
+
+@media screen and (max-width: 660px) {
+    section#hello h1 {
+        color: rgb(0, 255, 234);
+        font-size: 300%;
+        margin-left: 45%;
+        margin-top: 5%;
+    }
+    section#hello div {
+        border: 5px solid rgba(255, 255, 255, 0);
+        width: 50%;
+        margin-left: 45%;
+        margin-top: -10%;
+    }
+}
+
+div#learnBtn button {
+    color: rgb(0, 255, 234);
+    font-size: 100%;
+    border: 1px solid rgb(0, 255, 234);
+    border-radius: 5px;
+    background-color: rgba(240, 248, 255, 0);
+    margin-left: 35%;
+    margin-top: 30%;
+    transition: 0.2s;
+}
+
+div#learnBtn button:hover {
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 5px rgb(255, 255, 255);
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: 105%;
+}
+
+div#learnBtn button:active {
+    font-size: 100%;
+    transition: 0.2s;
 }
