@@ -43,6 +43,13 @@ nav#control-nav ul li a {
     color: rgb(255, 255, 255);
 }
 
+@media screen and (max-width: 660px) {
+    nav#control-nav ul li a {
+        margin-left: 20px;
+        font-size: 90%;
+    }
+}
+
 nav#control-nav ul li a:hover {
     text-decoration: none;
     color: rgb(0, 255, 234);
@@ -126,14 +133,18 @@ section#hello p {
     section#hello h1 {
         color: rgb(0, 255, 234);
         font-size: 300%;
-        margin-left: 45%;
+        margin-left: 48%;
         margin-top: 5%;
     }
     section#hello div {
         border: 5px solid rgba(255, 255, 255, 0);
         width: 50%;
-        margin-left: 45%;
+        margin-left: 48%;
         margin-top: -10%;
+    }
+    div#learnBtn button {
+        margin-right: 50%;
+        margin-top: 30%;
     }
 }
 
@@ -171,8 +182,9 @@ div.forms {
     border: 1px solid rgba(255, 255, 255, 0.575);
     box-shadow: 0px 0px 45px 20px rgba(235, 235, 235, 0.616);
     border-radius: 5px;
-    width: 50%;
-    margin-left: 28%;
+    width: 60%;
+    padding: 2%;
+    margin-left: 26%;
     margin-top: 10%;
     font-size: 120%;
 }
@@ -196,9 +208,10 @@ div.forms input {
     display: block;
     border: 1px solid rgb(0, 255, 234);
     border-radius: 3px;
+    text-align: center;
     font-size: 55%;
     position: relative;
-    margin-left: 35%;
+    margin-left: 37%;
     margin-bottom: 20px;
 }
 
@@ -253,6 +266,71 @@ button.submit-btn:hover {
 
 @media screen and (min-width:1536px) {
     div.forms input {
-        margin-left: 40%;
+        margin-left: 42%;
     }
+    button.submit-btn {
+        margin-left: 47%;
+    }
+}
+
+
+/* Profile page */
+
+section#profile div.panel {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: rgba(88, 85, 85, 0.5);
+    word-wrap: break-word;
+    border: 1px solid rgba(255, 255, 255, 0.438);
+    box-shadow: 0px 0px 45px 20px rgba(235, 235, 235, 0.616);
+    border-radius: 5px;
+    padding: 2%;
+    width: 47.5%;
+    margin-left: 33%;
+    margin-top: 10%;
+    font-size: 120%;
+}
+
+div#profiloe-card img {
+    width: 30%;
+}
+
+div.profile-form {
+    background-color: rgba(78, 134, 136, 0.432);
+    word-wrap: break-word;
+    border: 1px solid rgba(255, 255, 255, 0.575);
+    box-shadow: 0px 0px 45px 20px rgba(235, 235, 235, 0.616);
+    border-radius: 5px;
+    width: 95%;
+    padding: 2%;
+    /* margin-left: 26%; */
+    margin-top: 10%;
+    font-size: 120%;
+}
+
+div.profile-form span {
+    color: rgb(255, 255, 255);
+}
+
+div.profile-form input {
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    border: 1px solid rgb(0, 255, 234);
+    border-radius: 3px;
+    text-align: center;
+    font-size: 55%;
+    position: relative;
+    margin-left: 35%;
+    margin-bottom: 20px;
+}
+
+div.profile-form button {
+    display: block;
+}
+
+div.profile-form label {
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    margin-bottom: 2px;
 }
