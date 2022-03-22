@@ -92,13 +92,59 @@
             </section>
             <section id="profile">
                 <div class="panel">
-                    <div id="profiloe-card">
+                    <div id="profile-card">
                         <div id="image">
                             <img src="../assets/user-logo.png" alt="profile-logo">
-                            <hr>
                         </div>
+                        <table>
+                            <thead>
+                                <tr class="table-row">
+                                    <th class="table-header"><a href="javascript:void(0)">Overview</a></th>
+                                    <th class="table-header"><a href="javascript:void(0)">Courses</a></th>
+                                    <th class="table-header"><a href="javascript:void(0)">Profile details</a></th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <hr>
                         <div id="profile-data">
-                            <div class="profile-form">
+                            <div class="profile-card">
+                                <p>Joined: 02.03.2022</p>
+                                <p>Passed courses: 3</p>
+                                <p>Level: Intermediate</p>
+                            </div>
+                            <div class="profile-card">
+                                <!-- Level bar must be dynamic -->
+                                <div id="courses">
+                                    <table>
+                                        <tr>
+                                            <th><a href="javascript:void(0)">&#9658;</a>Improvisation</th>
+                                            <td>
+                                                <progress class="level" value="65" max="100"></progress>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><a href="javascript:void(0)">&#9658;</a>Pentatonic scales</th>
+                                            <td>
+                                                <progress class="level" value="45" max="100"></progress>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><a href="javascript:void(0)">&#9658;</a>Chord progression</th>
+                                            <td>
+                                                <progress class="level" value="85" max="100"></progress>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Overal progress:</th>
+                                            <td>
+                                                <progress class="level" value="75" max="100"></progress>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+                            </div>
+                            <div class="profile-card">
                                 <form action="" method="">
                                     <label for="username">Username<input id="username" type="text"></label>
                                     <label for="email">Email<input id="email" type="text"></label>
@@ -107,7 +153,6 @@
                                 </form>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
