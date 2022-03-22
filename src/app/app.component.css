@@ -285,10 +285,10 @@ section#profile div.panel {
     box-shadow: 0px 0px 45px 20px rgba(235, 235, 235, 0.616);
     border-radius: 5px;
     padding: 2%;
-    width: 47.5%;
-    margin-left: 33%;
-    margin-top: 10%;
+    width: 60%;
     font-size: 120%;
+    margin-left: 26%;
+    margin-top: 10%;
 }
 
 div#profiloe-card img {
@@ -315,14 +315,26 @@ div.profile-form span {
 div.profile-form input {
     background-color: rgba(255, 255, 255, 0);
     color: rgb(255, 255, 255);
-    display: inline-block;
+    display: block;
     border: 1px solid rgb(0, 255, 234);
     border-radius: 3px;
     text-align: center;
     font-size: 55%;
     position: relative;
-    margin-left: 35%;
-    margin-bottom: 20px;
+    height: 20px;
+    width: 100%;
+}
+
+div.profile-form input#username {
+    margin-left: 51%;
+}
+
+div.profile-form input#email {
+    margin-left: 60.7%;
+}
+
+div.profile-form input#password {
+    margin-left: 50.6%;
 }
 
 div.profile-form button {
@@ -331,6 +343,7 @@ div.profile-form button {
 
 div.profile-form label {
     color: rgb(255, 255, 255);
-    display: inline-block;
+    display: flex;
+    position: relative;
     margin-bottom: 2px;
 }
