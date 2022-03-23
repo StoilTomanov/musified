@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { HelloComponent } from './core/hello/hello.component';
+import { CoursesComponent } from './core/profile/courses/courses.component';
+import { OverviewComponent } from './core/profile/overview/overview.component';
+import { ProfileDetailsComponent } from './core/profile/profile-details/profile-details.component';
 import { ProfileComponent } from './core/profile/profile.component';
 
 const routes: Routes = [
@@ -24,8 +27,27 @@ const routes: Routes = [
   {
     path: 'profile',
     pathMatch: 'full',
-    component: ProfileComponent
+    redirectTo: 'profile/overview'
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    children: [
+      {
+        path: 'overview',
+        component: OverviewComponent
+      },
+      {
+        path: 'courses',
+        component: CoursesComponent
+      },
+      {
+        path: 'profile-details',
+        component: ProfileDetailsComponent
+      },
+    ]
   }
+
 ];
 
 @NgModule({
