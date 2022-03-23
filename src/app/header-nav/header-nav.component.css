@@ -1,0 +1,80 @@
+/* Main Layout - App Component */
+
+header#header {
+    background-color: rgba(35, 64, 90, 0.637);
+    text-align: right;
+    margin: 0;
+    height: 100px;
+}
+
+header#header h1 {
+    margin: 0;
+    color: rgb(0, 255, 234);
+    position: relative;
+    top: 0px;
+    font-size: 200%;
+    text-align: center;
+}
+
+img#logoImg {
+    position: relative;
+    width: 60px;
+    top: 15px;
+}
+
+nav#nav ul {
+    height: 100%;
+    position: fixed;
+    top: 79px;
+    width: 160px;
+    background-color: rgba(18, 61, 90, 0.877);
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+nav#control-nav ul {
+    position: relative;
+    bottom: 28px;
+}
+
+nav#control-nav ul li a {
+    text-decoration: none;
+    margin-left: 25px;
+    color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 660px) {
+    nav#control-nav ul li a {
+        margin-left: 20px;
+        font-size: 90%;
+    }
+}
+
+nav#control-nav ul li a:hover {
+    text-decoration: none;
+    color: rgb(0, 255, 234);
+}
+
+nav#control-nav ul li {
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+}
+
+nav#nav ul li a {
+    text-decoration: none;
+}
+
+div#items {
+    margin-left: -19px;
+}
+
+nav#nav ul li {
+    margin: 0;
+    list-style: none;
+    display: block;
+    position: relative;
+    bottom: 60px;
+    right: 30px;
+    margin: 30px;
+}

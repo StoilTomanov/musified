@@ -1,171 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
+<div id="main-container">
+    <!-- Header and navigation views -->
+    <app-header-nav>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-</head>
+    </app-header-nav>
+    <main>
 
-<body>
-    <div id="main-container">
-        <!-- Header -->
-        <section id="header-section">
-            <header id="header">
-                <h1><img id="logoImg" src="../assets/logo.png" alt="logo">usified</h1>
-                <nav id="control-nav">
-                    <ul>
-                        <li><a href="javascript:void(0)">Login</a></li>
-                        <li><a href="javascript:void(0)">Register</a></li>
-                        <li><a href="javascript:void(0)">Hello, Mike</a></li>
-                        <li><a href="javascript:void(0)">Logout</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <nav id="nav">
-                <ul>
-                    <div id="items">
-                        <li><a href="javascript:void(0)">Home</a></li>
-                        <li><a href="javascript:void(0)">Mission</a></li>
-                        <li><a href="javascript:void(0)">Contacts</a></li>
-                        <li><a href="javascript:void(0)">Explore</a></li>
-                        <li><a href="javascript:void(0)">My Lessons</a></li>
-                        <li><a href="javascript:void(0)">Profile</a></li>
+        <!-- Hello view -->
+        <app-hello>
+
+        </app-hello>
+
+        <section id="loginPage">
+            <div class="forms">
+                <form action="" method="">
+                    <h2>Login</h2>
+                    <hr>
+                    <label for="username">Username</label>
+                    <input id="username" type="text" placeholder="Just Mike">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" placeholder="********">
+                    <div class="consent-box">
+                        <label class="consent-label"><input id="checkbox" type="checkbox"> I have read and agrred with Musified <a id="terms" href="javascript:void(0)"> Terms and conditions</a></label>
                     </div>
-                </ul>
-            </nav>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+            </div>
         </section>
-        <main>
-            Hello page
-            <section id="hello">
-                <h1>HELLO</h1>
-                <div>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, blanditiis quis a quo nesciunt amet deleniti, labore dolore modi numquam ea aspernatur, odio saepe in voluptatum eaque aut dolores magnam! Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Accusantium, blanditiis quis a quo nesciunt amet deleniti, labore dolore modi numquam ea aspernatur, odio saepe in voluptatum eaque aut dolores magnam!
-                    </p>
-                </div>
-                <div id="learnBtn">
-                    <button>
-                    Learn more
-                  </button>
-                </div>
-            </section>
 
-            <section id="loginPage">
-                <div class="forms">
-                    <form action="" method="">
-                        <h2>Login</h2>
-                        <hr>
-                        <label for="username">Username</label>
-                        <input id="username" type="text" placeholder="Just Mike">
-                        <label for="password">Password</label>
-                        <input id="password" type="password" placeholder="********">
-                        <div class="consent-box">
-                            <label class="consent-label"><input id="checkbox" type="checkbox"> I have read and agrred with Musified <a id="terms" href="javascript:void(0)"> Terms and conditions</a></label>
+        <section id="registerPage">
+            <div class="forms">
+                <form action="" method="">
+                    <h2>Register</h2>
+                    <hr>
+                    <label for="username">Username</label>
+                    <input id="username" type="text" placeholder="Just Mike">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" placeholder="mike.justmike@gmail.com">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" placeholder="********">
+                    <label for="repeatPassword">Repeat password</label>
+                    <input id="repeatPassword" type="password" placeholder="********">
+                    <div class="consent-box">
+                        <label class="consent-label"><input id="checkbox" type="checkbox"> I have read and agrred with Musified<a id="terms" href="javascript:void(0)"> Terms and conditions</a></label>
+                    </div>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+            </div>
+        </section>
+        <section id="profile">
+            <div class="panel">
+                <div id="profile-card">
+                    <div id="image">
+                        <img src="../assets/user-logo.png" alt="profile-logo">
+                    </div>
+                    <table>
+                        <thead>
+                            <tr class="table-row">
+                                <th class="table-header"><a href="javascript:void(0)">Overview</a></th>
+                                <th class="table-header"><a href="javascript:void(0)">Courses</a></th>
+                                <th class="table-header"><a href="javascript:void(0)">Profile details</a></th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <hr>
+                    <div id="profile-data">
+                        <div class="profile-card">
+                            <p>Joined: 02.03.2022</p>
+                            <p>Passed courses: 3</p>
+                            <p>Level: Intermediate</p>
                         </div>
-                        <button type="submit" class="submit-btn">Login</button>
-                    </form>
-                </div>
-            </section>
+                        <div class="profile-card">
+                            <!-- Level bar must be dynamic -->
+                            <div id="courses">
+                                <table>
+                                    <tr>
+                                        <th><a href="javascript:void(0)">&#9658;</a>Improvisation</th>
+                                        <td>
+                                            <progress class="level" value="65" max="100"></progress>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><a href="javascript:void(0)">&#9658;</a>Pentatonic scales</th>
+                                        <td>
+                                            <progress class="level" value="45" max="100"></progress>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><a href="javascript:void(0)">&#9658;</a>Chord progression</th>
+                                        <td>
+                                            <progress class="level" value="85" max="100"></progress>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Overal progress:</th>
+                                        <td>
+                                            <progress class="level" value="75" max="100"></progress>
+                                        </td>
+                                    </tr>
+                                </table>
 
-            <section id="registerPage">
-                <div class="forms">
-                    <form action="" method="">
-                        <h2>Register</h2>
-                        <hr>
-                        <label for="username">Username</label>
-                        <input id="username" type="text" placeholder="Just Mike">
-                        <label for="email">Email</label>
-                        <input id="email" type="text" placeholder="mike.justmike@gmail.com">
-                        <label for="password">Password</label>
-                        <input id="password" type="password" placeholder="********">
-                        <label for="repeatPassword">Repeat password</label>
-                        <input id="repeatPassword" type="password" placeholder="********">
-                        <div class="consent-box">
-                            <label class="consent-label"><input id="checkbox" type="checkbox"> I have read and agrred with Musified<a id="terms" href="javascript:void(0)"> Terms and conditions</a></label>
+                            </div>
                         </div>
-                        <button type="submit" class="submit-btn">Login</button>
-                    </form>
-                </div>
-            </section>
-            <section id="profile">
-                <div class="panel">
-                    <div id="profile-card">
-                        <div id="image">
-                            <img src="../assets/user-logo.png" alt="profile-logo">
-                        </div>
-                        <table>
-                            <thead>
-                                <tr class="table-row">
-                                    <th class="table-header"><a href="javascript:void(0)">Overview</a></th>
-                                    <th class="table-header"><a href="javascript:void(0)">Courses</a></th>
-                                    <th class="table-header"><a href="javascript:void(0)">Profile details</a></th>
-                                </tr>
-                            </thead>
-                        </table>
-                        <hr>
-                        <div id="profile-data">
-                            <div class="profile-card">
-                                <p>Joined: 02.03.2022</p>
-                                <p>Passed courses: 3</p>
-                                <p>Level: Intermediate</p>
-                            </div>
-                            <div class="profile-card">
-                                <!-- Level bar must be dynamic -->
-                                <div id="courses">
-                                    <table>
-                                        <tr>
-                                            <th><a href="javascript:void(0)">&#9658;</a>Improvisation</th>
-                                            <td>
-                                                <progress class="level" value="65" max="100"></progress>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><a href="javascript:void(0)">&#9658;</a>Pentatonic scales</th>
-                                            <td>
-                                                <progress class="level" value="45" max="100"></progress>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><a href="javascript:void(0)">&#9658;</a>Chord progression</th>
-                                            <td>
-                                                <progress class="level" value="85" max="100"></progress>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>Overal progress:</th>
-                                            <td>
-                                                <progress class="level" value="75" max="100"></progress>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                </div>
-                            </div>
-                            <div class="profile-card">
-                                <form action="" method="">
-                                    <label for="username">Username<input id="username" type="text"></label>
-                                    <label for="email">Email<input id="email" type="text"></label>
-                                    <label for="password">Password<input id="password" type="password"></label>
-                                    <button type="submit" class="submit-btn">Update</button>
-                                </form>
-                            </div>
+                        <div class="profile-card">
+                            <form action="" method="">
+                                <label for="username">Username<input id="username" type="text"></label>
+                                <label for="email">Email<input id="email" type="text"></label>
+                                <label for="password">Password<input id="password" type="password"></label>
+                                <button type="submit" class="submit-btn">Update</button>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </section>
-
-        </main>
-
-        <!-- Footer -->
-        <section id="footer-section">
-            <footer id="footer">
-
-            </footer>
+            </div>
         </section>
-    </div>
-</body>
 
-</html>
+    </main>
+
+    <!-- Footer -->
+    <section id="footer-section">
+        <footer id="footer">
+
+        </footer>
+    </section>
+</div>
