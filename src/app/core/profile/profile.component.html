@@ -7,14 +7,15 @@
             <table>
                 <thead>
                     <tr class="table-row">
-                        <th class="table-header"><a href="javascript:void(0)">Overview</a></th>
-                        <th class="table-header"><a href="javascript:void(0)">Courses</a></th>
-                        <th class="table-header"><a href="javascript:void(0)">Profile details</a></th>
+                        <th class="table-header"><a routerLink="javascript:void(0)">Overview</a></th>
+                        <th class="table-header"><a routerLink="javascript:void(0)">Courses</a></th>
+                        <th class="table-header"><a routerLink="javascript:void(0)">Profile details</a></th>
                     </tr>
                 </thead>
             </table>
             <hr>
             <div id="profile-data">
+                <router-outlet></router-outlet>
                 <div class="profile-card">
                     <p>Joined: 02.03.2022</p>
                     <p>Passed courses: 3</p>

@@ -9,10 +9,11 @@ section#profile div.panel {
     box-shadow: 0px 0px 45px 20px rgba(235, 235, 235, 0.616);
     border-radius: 5px;
     padding: 2%;
-    width: 60%;
+    width: 72%;
     font-size: 120%;
-    margin-left: 26%;
-    margin-top: 10%;
+    margin-left: 20%;
+    margin-top: 4%;
+    margin-bottom: 4%;
 }
 
 div#profile-card img {
@@ -53,11 +54,11 @@ div.profile-card input#username {
 }
 
 div.profile-card input#email {
-    margin-left: 58.1%;
+    margin-left: 56.9%;
 }
 
 div.profile-card input#password {
-    margin-left: 50.6%;
+    margin-left: 50.8%;
 }
 
 div.profile-card button {
@@ -74,14 +75,35 @@ div.profile-card label {
 
 table tr th.table-header {
     display: inline;
-    margin-left: 95px;
+    margin-left: 139px;
 }
 
 div#courses table tr th {
-    width: 70%;
+    width: 74%;
     text-align: left;
 }
 
 div#courses table tr th a {
     margin-right: 10px;
+}
+
+button.submit-btn {
+    color: rgb(0, 255, 234);
+    font-size: 70%;
+    border: 1px solid rgb(0, 255, 234);
+    border-radius: 5px;
+    background-color: rgba(240, 248, 255, 0);
+    margin-left: 45%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    transition: 0.2s;
+}
+
+button.submit-btn:hover {
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 5px rgb(255, 255, 255);
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: 72%;
 }
