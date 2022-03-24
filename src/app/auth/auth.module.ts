@@ -4,6 +4,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
+import { AppModule } from '../app.module';
+import { HeaderNavComponent } from '../header-nav/header-nav.component';
 
 
 
@@ -11,11 +14,12 @@ import { RouterModule } from '@angular/router';
   declarations: [
     LoginComponent,
     RegisterComponent,
-    LogoutComponent
+    LogoutComponent,
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    SharedModule,
   ]
 })
 export class AuthModule { }

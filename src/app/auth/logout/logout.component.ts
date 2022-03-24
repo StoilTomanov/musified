@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./logout.component.css']
 })
 export class LogoutComponent implements OnInit {
-
+  isLogged: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  logout(): void {
+    this.isLogged = false;
+  }
+  
 }

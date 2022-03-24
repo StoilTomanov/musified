@@ -91,7 +91,13 @@ div#items {
     margin-left: -19px;
 }
 
-div#auth-items {
+div#auth-items-user {
+    position: relative;
+    top: 330px;
+    margin-left: -19px;
+}
+
+div#auth-items-guest {
     position: relative;
     top: 270px;
     margin-left: -19px;

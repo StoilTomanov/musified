@@ -22,11 +22,12 @@
                 <li><a routerLink="/mylessons">My Lessons</a></li>
                 <li><a routerLink="/profile">Profile</a></li>
             </div>
-            <div id="auth-items" *ngIf="isLogged">
-                <li><a routerLink="javascript:void(0)">Logout</a></li>
+            <div id="auth-items-user" *ngIf="isLogged">
+                <li><a routerLink="/login" (click)="logout()">Logout</a></li>
             </div>
-            <div id="auth-items" *ngIf="!isLogged">
-                <li><a routerLink="/login">Login</a></li>
+            <div id="auth-items-guest" *ngIf="!isLogged">
+                <li><a routerLink="/" (click)="login()">Pseudo login</a></li>
+                <!-- <li><a routerLink="/login">Login</a></li> -->
                 <li><a routerLink="/register">Register</a></li>
             </div>
         </ul>
