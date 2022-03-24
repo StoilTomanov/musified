@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { ContactsComponent } from './shared/contacts/contacts.component';
 import { HelloComponent } from './shared/hello/hello.component';
 import { MissionComponent } from './shared/mission/mission.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
@@ -54,6 +55,10 @@ const routes: Routes = [
         component: ProfileDetailsComponent
       },
     ]
+  },
+  {
+    path: 'contacts',
+    component: ContactsComponent
   },
   {
     path: '**',

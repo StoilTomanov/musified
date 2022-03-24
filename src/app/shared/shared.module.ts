@@ -7,6 +7,7 @@ import { ProfileDetailsComponent } from './profile/profile-details/profile-detai
 import { ProfileComponent } from './profile/profile.component';
 import { MissionComponent } from './mission/mission.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 
 
@@ -17,7 +18,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     OverviewComponent,
     ProfileDetailsComponent,
     MissionComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ContactsComponent
   ],
   imports: [
     CommonModule,

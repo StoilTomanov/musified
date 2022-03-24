@@ -1,0 +1,69 @@
+section#contacts h1 {
+    color: rgb(0, 255, 234);
+    font-size: 200%;
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+section#contacts div {
+    border: 5px solid rgba(255, 255, 255, 0);
+    width: 50%;
+    margin-left: 32%;
+}
+
+section#contacts p {
+    color: rgb(255, 255, 255);
+    word-wrap: break-word;
+    margin-bottom: 10%;
+}
+
+div.forms {
+    background-color: rgba(78, 134, 136, 0.432);
+    word-wrap: break-word;
+    border: 1px solid rgba(255, 255, 255, 0.575);
+    box-shadow: 0px 0px 45px 20px rgba(235, 235, 235, 0.616);
+    border-radius: 5px;
+    width: 60%;
+    padding: 2%;
+    margin-left: 26%;
+    margin-top: 10%;
+    font-size: 120%;
+}
+
+div.forms h2 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+div.forms label {
+    color: rgb(255, 255, 255);
+    display: block;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+div.forms button {
+    display: block;
+}
+
+button.submit-btn {
+    color: rgb(0, 255, 234);
+    font-size: 70%;
+    border: 1px solid rgb(0, 255, 234);
+    border-radius: 5px;
+    background-color: rgba(240, 248, 255, 0);
+    margin-left: 45%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    transition: 0.2s;
+}
+
+button.submit-btn:hover {
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 5px rgb(255, 255, 255);
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: 72%;
+}
