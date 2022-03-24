@@ -1,0 +1,27 @@
+section#not-found h2 {
+    color: rgb(0, 255, 234);
+    font-size: 280%;
+    margin-left: 37%;
+    margin-top: 5%;
+}
+
+section#not-found div {
+    border: 5px solid rgba(255, 255, 255, 0);
+    width: 50%;
+    margin-left: 32%;
+    margin-top: 0%;
+}
+
+section#not-found p {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    word-wrap: break-word;
+    font-size: 130%;
+}
+
+div#go-back {
+    position: relative;
+    top: 100px;
+    text-align: center;
+    font-size: 120%;
+}
