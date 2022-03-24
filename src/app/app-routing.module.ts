@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { HelloComponent } from './shared/hello/hello.component';
+import { MissionComponent } from './shared/mission/mission.component';
 import { CoursesComponent } from './shared/profile/courses/courses.component';
 import { OverviewComponent } from './shared/profile/overview/overview.component';
 import { ProfileDetailsComponent } from './shared/profile/profile-details/profile-details.component';
@@ -24,6 +25,11 @@ const routes: Routes = [
     path: 'register',
     pathMatch: 'full',
     component: RegisterComponent
+  },
+  {
+    path: 'mission',
+    pathMatch: 'full',
+    component: MissionComponent
   },
   {
     path: 'profile',

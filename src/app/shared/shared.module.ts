@@ -5,6 +5,7 @@ import { CoursesComponent } from './profile/courses/courses.component';
 import { OverviewComponent } from './profile/overview/overview.component';
 import { ProfileDetailsComponent } from './profile/profile-details/profile-details.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MissionComponent } from './mission/mission.component';
 
 
 
@@ -13,7 +14,8 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent,
     CoursesComponent,
     OverviewComponent,
-    ProfileDetailsComponent
+    ProfileDetailsComponent,
+    MissionComponent
   ],
   imports: [
     CommonModule,
