@@ -11,9 +11,29 @@ header#header h1 {
     margin: 0;
     color: rgb(0, 255, 234);
     position: relative;
-    top: 0px;
-    font-size: 200%;
+    top: -90px;
+    font-size: 220%;
     text-align: center;
+    width: 80%;
+    left: 16%;
+}
+
+div#profile-badge {
+    width: 195px;
+    height: 96px;
+    display: flex;
+}
+
+div#profile-badge img {
+    width: 70px;
+    display: block;
+    position: relative;
+    left: 60px
+}
+
+div#profile-badge a {
+    position: relative;
+    left: 50px
 }
 
 img#logoImg {
@@ -72,11 +92,12 @@ div#items {
 }
 
 div#auth-items {
+    position: relative;
+    top: 270px;
     margin-left: -19px;
 }
 
 nav#nav ul li {
-    margin: 0;
     list-style: none;
     display: block;
     position: relative;

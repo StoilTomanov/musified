@@ -3,14 +3,14 @@
 section#hello h1 {
     color: rgb(0, 255, 234);
     font-size: 600%;
-    margin-left: 37%;
+    margin-left: 40%;
     margin-top: 5%;
 }
 
 section#hello div {
     border: 5px solid rgba(255, 255, 255, 0);
     width: 50%;
-    margin-left: 28%;
+    margin-left: 32%;
     margin-top: -10%;
 }
 

@@ -1,9 +1,13 @@
 <!-- Header and navigation -->
 <section id="header-section">
     <header id="header">
-        <!-- <div id="profile-badge">
-            <li><a routerLink="/profile">Hello, Mike</a></li>
-        </div> -->
+        <div id="profile-badge">
+            <div *ngIf="isLogged">
+                <li><img src="../../assets/user-logo.png" alt="user-logo">
+                    <a routerLink="/profile">Hello, Mike</a>
+                </li>
+            </div>
+        </div>
         <h1>
             <a routerLink="/" id="logo"><img id="logoImg" src="../assets/logo.png" alt="logo">usified</a>
         </h1>
@@ -19,7 +23,6 @@
                 <li><a routerLink="/profile">Profile</a></li>
             </div>
             <div id="auth-items" *ngIf="isLogged">
-                <li><a routerLink="/profile">Hello, Mike</a></li>
                 <li><a routerLink="javascript:void(0)">Logout</a></li>
             </div>
             <div id="auth-items" *ngIf="!isLogged">

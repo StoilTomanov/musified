@@ -5,8 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header-nav.component.html',
   styleUrls: ['./header-nav.component.css']
 })
-export class HeaderNavComponent implements OnInit {
-  isLogged: boolean = false;
+export class HeaderNavComponent implements OnInit{
+  isLogged: boolean = true;
 
   constructor() { }
 
