@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { HelloComponent } from './core/hello/hello.component';
-import { CoursesComponent } from './core/profile/courses/courses.component';
-import { OverviewComponent } from './core/profile/overview/overview.component';
-import { ProfileDetailsComponent } from './core/profile/profile-details/profile-details.component';
-import { ProfileComponent } from './core/profile/profile.component';
+import { HelloComponent } from './shared/hello/hello.component';
+import { CoursesComponent } from './shared/profile/courses/courses.component';
+import { OverviewComponent } from './shared/profile/overview/overview.component';
+import { ProfileDetailsComponent } from './shared/profile/profile-details/profile-details.component';
+import { ProfileComponent } from './shared/profile/profile.component';
+
 
 const routes: Routes = [
   {
