@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-nav.component.css']
 })
 export class HeaderNavComponent implements OnInit {
+  isLogged: boolean = false;
 
   constructor() { }
 

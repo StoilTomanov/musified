@@ -1,17 +1,12 @@
 <!-- Header and navigation -->
 <section id="header-section">
     <header id="header">
+        <!-- <div id="profile-badge">
+            <li><a routerLink="/profile">Hello, Mike</a></li>
+        </div> -->
         <h1>
             <a routerLink="/" id="logo"><img id="logoImg" src="../assets/logo.png" alt="logo">usified</a>
         </h1>
-        <nav id="control-nav">
-            <ul>
-                <li><a routerLink="/login">Login</a></li>
-                <li><a routerLink="/register">Register</a></li>
-                <li><a routerLink="/profile">Hello, Mike</a></li>
-                <li><a routerLink="javascript:void(0)">Logout</a></li>
-            </ul>
-        </nav>
     </header>
     <nav id="nav">
         <ul>
@@ -22,6 +17,14 @@
                 <li><a routerLink="/explore">Explore</a></li>
                 <li><a routerLink="/mylessons">My Lessons</a></li>
                 <li><a routerLink="/profile">Profile</a></li>
+            </div>
+            <div id="auth-items" *ngIf="isLogged">
+                <li><a routerLink="/profile">Hello, Mike</a></li>
+                <li><a routerLink="javascript:void(0)">Logout</a></li>
+            </div>
+            <div id="auth-items" *ngIf="!isLogged">
+                <li><a routerLink="/login">Login</a></li>
+                <li><a routerLink="/register">Register</a></li>
             </div>
         </ul>
     </nav>
