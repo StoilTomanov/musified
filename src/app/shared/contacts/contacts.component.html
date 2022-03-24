@@ -2,7 +2,7 @@
     <div>
         <h1>Contact us</h1>
     </div>
-    <div>
+    <div id="contact-info">
         <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit ex similique error molestiae saepe et architecto sint consectetur! Molestiae dolorum maiores doloremque at reiciendis aperiam repudiandae consequatur. Quasi, impedit molestias.
         </p>
@@ -10,19 +10,18 @@
     <div id="contact-form">
         <div class="forms">
             <form action="" method="">
-                <h2>Login</h2>
-                <hr>
                 <label for="topic">
                     Select a topic that your question is related to:
                 </label>
                 <select name="topic" id="topic">
                     <option value="lessons">Lessons related</option>
                     <option value="details">Profile details related</option>
-                    <option value=""></option>
-                    <option value=""></option>
                     <option value="issue">Technical issue</option>
                     <option value="other">Other</option>
                 </select>
+                <div class='textarea'>
+                    <textarea name="contact-area" id="contact-area" placeholder="Type your message..."></textarea>
+                </div>
                 <button type="submit" class="submit-btn">Send</button>
             </form>
         </div>

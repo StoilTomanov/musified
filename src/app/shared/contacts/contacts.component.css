@@ -1,12 +1,10 @@
 section#contacts h1 {
     color: rgb(0, 255, 234);
     font-size: 200%;
-    margin-left: 30%;
-    margin-top: 5%;
+    margin-left: 48%;
 }
 
-section#contacts div {
-    border: 5px solid rgba(255, 255, 255, 0);
+section#contacts div#contact-info {
     width: 50%;
     margin-left: 32%;
 }
@@ -14,11 +12,11 @@ section#contacts div {
 section#contacts p {
     color: rgb(255, 255, 255);
     word-wrap: break-word;
-    margin-bottom: 10%;
+    margin-bottom: 8%;
 }
 
-div.forms {
-    background-color: rgba(78, 134, 136, 0.432);
+div#contact-form div.forms {
+    background-color: rgba(68, 68, 68, 0.849);
     word-wrap: break-word;
     border: 1px solid rgba(255, 255, 255, 0.575);
     box-shadow: 0px 0px 45px 20px rgba(235, 235, 235, 0.616);
@@ -26,16 +24,18 @@ div.forms {
     width: 60%;
     padding: 2%;
     margin-left: 26%;
-    margin-top: 10%;
+    margin-bottom: 5%;
+    font-size: 110%;
+}
+
+div#contact-form div.forms h2 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 0;
     font-size: 120%;
 }
 
-div.forms h2 {
-    color: rgb(255, 255, 255);
-    text-align: center;
-}
-
-div.forms label {
+div#contact-form div.forms label {
     color: rgb(255, 255, 255);
     display: block;
     text-align: center;
@@ -43,8 +43,9 @@ div.forms label {
     margin-bottom: 2px;
 }
 
-div.forms button {
+div#contact-form div.forms button {
     display: block;
+    font-size: 90%;
 }
 
 button.submit-btn {
@@ -54,8 +55,8 @@ button.submit-btn {
     border-radius: 5px;
     background-color: rgba(240, 248, 255, 0);
     margin-left: 45%;
-    margin-bottom: 5%;
-    margin-top: 5%;
+    /* margin-bottom: 5%; */
+    margin-top: 3%;
     transition: 0.2s;
 }
 
@@ -66,4 +67,28 @@ button.submit-btn:hover {
     transition: 0.2s;
     cursor: pointer;
     font-size: 72%;
+}
+
+div#contact-form select {
+    color: white;
+    font-size: 60%;
+    padding: 10px;
+    border: 0px solid rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    background-color: rgba(2, 211, 193, 0.377);
+    width: 100%;
+    text-align: center;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+div#contact-form textarea {
+    resize: none;
+    margin-top: 35px;
+    padding: 5px;
+    width: 98%;
+    height: 150px;
+    background-color: rgba(243, 243, 243, 0.973);
+    border: 2px inset rgba(82, 243, 248, 0.459);
+    border-radius: 5px;
 }
