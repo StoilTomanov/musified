@@ -1,0 +1,93 @@
+section#explore h1 {
+    color: rgb(0, 255, 234);
+    font-size: 200%;
+    margin-left: 39%;
+}
+
+div#explore-container {
+    display: block;
+    margin-left: 17%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    position: relative;
+    top: -30px;
+    width: 81.5%;
+    height: 610px;
+    color: white;
+    /* border: 2px solid red; */
+}
+
+div.course-card {
+    margin: 20px;
+    margin-left: 55px;
+    display: inline-block;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    box-shadow: 0px 0px 15px 8px rgb(214, 214, 214);
+}
+
+div.course-img {
+    margin: 0;
+    padding: 0;
+}
+
+div.course-img img {
+    width: 260px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+div.course-description {
+    margin-top: -9px;
+    margin-bottom: -3px;
+    background-color: rgba(122, 122, 122, 0.795);
+}
+
+div.course-description p {
+    margin: 1px;
+    font-size: 80%;
+}
+
+div.details-btn {
+    margin-bottom: -3px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+div.details-btn button {
+    font-size: 85%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(9, 218, 200);
+    width: 100%;
+    margin: 0;
+    border: 0px;
+    position: relative;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    transition: 0.2s;
+}
+
+div.details-btn button:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    color: rgb(2, 92, 99);
+    background-color: rgb(179, 253, 247);
+}
+
+div.details-btn button:active {
+    transition: 0.1s;
+    cursor: pointer;
+    font-size: 84%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(2, 142, 177, 0.76);
+}
+
+div#paginator {
+    position: relative;
+    /* border: 1px solid red; */
+    width: 350px;
+    text-align: right;
+    left: 60%;
+}
