@@ -82,6 +82,10 @@ div#contact-form select {
     margin-top: 10px;
 }
 
+div#contact-form select:hover {
+    cursor: pointer;
+}
+
 div#contact-form textarea {
     resize: none;
     margin-top: 35px;

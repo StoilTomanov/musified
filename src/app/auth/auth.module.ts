@@ -5,8 +5,6 @@ import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-import { AppModule } from '../app.module';
-import { HeaderNavComponent } from '../header-nav/header-nav.component';
 
 
 
@@ -17,8 +15,8 @@ import { HeaderNavComponent } from '../header-nav/header-nav.component';
     LogoutComponent,
   ],
   imports: [
-    CommonModule,
     RouterModule,
+    CommonModule,
     SharedModule,
   ]
 })
