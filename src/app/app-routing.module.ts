@@ -4,7 +4,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ContactsComponent } from './shared/contacts/contacts.component';
 import { ExploreComponent } from './shared/explore/explore.component';
-import { HelloComponent } from './shared/hello/hello.component';
+import { HomeComponent } from './shared/home/home.component';
 import { MissionComponent } from './shared/mission/mission.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { CoursesComponent } from './shared/profile/courses/courses.component';
@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: HelloComponent
+    component: HomeComponent
   },
   {
     path: 'login',
