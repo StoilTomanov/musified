@@ -1,0 +1,19 @@
+section#dashboard h1 {
+    color: rgb(0, 255, 234);
+    font-size: 200%;
+    margin-left: 48%;
+}
+
+div.item-container {
+    display: block;
+    border: 2px solid red;
+    width: 70%;
+    height: 200px;
+    position: relative;
+    left: 18%;
+}
+
+div.video-preview img {
+    width: 200px;
+    display: inline;
+}
