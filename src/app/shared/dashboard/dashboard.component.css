@@ -1,5 +1,32 @@
-section#dashboard h1 {
-    color: rgb(0, 255, 234);
-    font-size: 200%;
-    margin-left: 48%;
+@media screen and (max-height: 880px) {
+    section#dashboard h1 {
+        color: rgb(0, 255, 234);
+        font-size: 180%;
+        margin-left: 50%;
+    }
+    div#upper-dash {
+        color: rgb(255, 255, 255);
+        display: flex;
+        height: 100px;
+    }
+    div#dashboard-container {
+        margin-left: 15%;
+        width: 83%;
+        height: 440px;
+        border: 2px solid red;
+    }
+    div#last-login {
+        width: 50%;
+        border: 2px solid red;
+    }
+    div#recent-activity {
+        width: 50%;
+        border: 2px solid red;
+    }
+    div#lower-dash {
+        color: rgb(255, 255, 255);
+        display: block;
+        border: 2px solid red;
+        height: 77%;
+    }
 }
