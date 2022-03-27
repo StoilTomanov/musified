@@ -111,3 +111,16 @@ nav#nav ul li {
     right: 30px;
     margin: 30px;
 }
+
+@media screen and (max-height: 880px) {
+    div#auth-items-user {
+        position: relative;
+        top: 230px;
+        margin-left: -19px;
+    }
+    div#auth-items-guest {
+        position: relative;
+        top: 220px;
+        margin-left: -19px;
+    }
+}

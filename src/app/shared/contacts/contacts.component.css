@@ -10,6 +10,7 @@ section#contacts div#contact-info {
 }
 
 section#contacts p {
+    text-align: center;
     color: rgb(255, 255, 255);
     word-wrap: break-word;
     margin-bottom: 8%;
@@ -95,4 +96,45 @@ div#contact-form textarea {
     background-color: rgba(243, 243, 243, 0.973);
     border: 2px inset rgba(82, 243, 248, 0.459);
     border-radius: 5px;
+}
+
+@media screen and (max-height: 880px) {
+    section#contacts h1 {
+        font-size: 190%;
+        margin-top: 10px;
+        margin-left: 50%;
+    }
+    div#contact-form div.forms {
+        background-color: rgba(68, 68, 68, 0.849);
+        width: 69%;
+        padding: 2%;
+        margin-left: 20%;
+        margin-top: -1%;
+        font-size: 110%;
+    }
+    section#contacts p {
+        margin-top: -3%;
+        margin-left: -5%;
+        margin-right: -8%;
+    }
+    div#contact-form textarea {
+        margin-top: 20px;
+        padding: 5px;
+        width: 98%;
+        height: 100px;
+        background-color: rgba(243, 243, 243, 0.973);
+        border: 2px inset rgba(82, 243, 248, 0.459);
+        border-radius: 5px;
+    }
+    button.submit-btn {
+        color: rgb(0, 255, 234);
+        font-size: 70%;
+        border: 1px solid rgb(0, 255, 234);
+        border-radius: 5px;
+        background-color: rgba(240, 248, 255, 0);
+        margin-left: 45%;
+        margin-top: 15px;
+        margin-bottom: -10px;
+        transition: 0.2s;
+    }
 }

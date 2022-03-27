@@ -10,6 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ExploreComponent } from './explore/explore.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MyLessonsComponent } from './my-lessons/my-lessons.component';
 
 
 
@@ -23,7 +24,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NotFoundComponent,
     ContactsComponent,
     ExploreComponent,
-    DashboardComponent
+    DashboardComponent,
+    MyLessonsComponent
   ],
   imports: [
     CommonModule,

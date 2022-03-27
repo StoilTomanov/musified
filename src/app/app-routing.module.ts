@@ -7,6 +7,7 @@ import { DashboardComponent } from './shared/dashboard/dashboard.component';
 import { ExploreComponent } from './shared/explore/explore.component';
 import { HomeComponent } from './shared/home/home.component';
 import { MissionComponent } from './shared/mission/mission.component';
+import { MyLessonsComponent } from './shared/my-lessons/my-lessons.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { CoursesComponent } from './shared/profile/courses/courses.component';
 import { OverviewComponent } from './shared/profile/overview/overview.component';
@@ -39,6 +40,11 @@ const routes: Routes = [
     path: 'dashboard',
     pathMatch: 'full',
     component: DashboardComponent
+  },
+  {
+    path: 'mylessons',
+    pathMatch: 'full',
+    component: MyLessonsComponent
   },
   {
     path: 'explore',

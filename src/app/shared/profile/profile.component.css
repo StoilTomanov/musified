@@ -107,3 +107,32 @@ button.submit-btn:hover {
     cursor: pointer;
     font-size: 72%;
 }
+
+@media screen and (max-height: 880px) {
+    div.profile-card {
+        width: 95%;
+        margin-top: 3%;
+        font-size: 85%;
+    }
+    div#profile-card img {
+        width: 10%;
+    }
+    section#profile div.panel {
+        width: 70%;
+    }
+    table tr th.table-header {
+        display: inline;
+        margin-left: 179px;
+    }
+    div.profile-card input#email {
+        margin-left: 55.7%;
+    }
+    button.submit-btn {
+        margin-bottom: 2%;
+        margin-top: 2%;
+    }
+    div.profile-card p {
+        margin-top: 10px;
+        ;
+    }
+}

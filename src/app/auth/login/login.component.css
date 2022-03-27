@@ -122,3 +122,9 @@ button.submit-btn:hover {
         margin-left: 47%;
     }
 }
+
+@media screen and (max-height: 880px) {
+    div.forms {
+        margin-top: 3%;
+    }
+}

@@ -24,6 +24,7 @@ section#home div {
 section#home p {
     color: rgb(255, 255, 255);
     word-wrap: break-word;
+    text-align: center;
 }
 
 @media screen and (max-width: 660px) {
@@ -68,4 +69,10 @@ div#learnBtn button:hover {
 div#learnBtn button:active {
     font-size: 100%;
     transition: 0.2s;
+}
+
+@media screen and (max-height: 880px) {
+    section#home h1 {
+        margin-left: 47%;
+    }
 }
