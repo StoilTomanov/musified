@@ -5,15 +5,95 @@ section#dashboard h1 {
 }
 
 div.item-container {
-    display: block;
-    border: 2px solid red;
-    width: 70%;
-    height: 200px;
+    background-color: rgba(87, 87, 87, 0.61);
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    box-shadow: 0px 0px 25px 10px rgba(255, 255, 255, 0.822);
+    width: 79%;
+    height: 133px;
     position: relative;
+    margin-bottom: 55px;
     left: 18%;
 }
 
 div.video-preview img {
     width: 200px;
     display: inline;
+    border-bottom-left-radius: 9px;
+    border-top-left-radius: 9px;
+}
+
+div.video-decription {
+    /* border: 2px solid red; */
+    display: inline-block;
+}
+
+div.video-decription p {
+    color: rgb(255, 254, 254);
+    margin: 13px;
+}
+
+
+/* buttons */
+
+div.video-actions {
+    /* border: 2px solid red; */
+    position: relative;
+    left: 180px;
+    width: 300px;
+}
+
+div.video-actions button:nth-child(1) {
+    display: block;
+    font-size: 85%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(16, 172, 76);
+    width: 100%;
+    border: 0px;
+    text-align: left;
+    width: 30%;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.2s;
+}
+
+div.video-actions button:nth-child(2) {
+    display: block;
+    font-size: 85%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(46, 136, 196);
+    width: 100%;
+    text-align: left;
+    width: 30%;
+    border: 0px;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.2s;
+}
+
+div.video-actions button:nth-child(3) {
+    display: block;
+    font-size: 85%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(223, 63, 63);
+    text-align: left;
+    width: 30%;
+    border: 0px;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+div.video-actions button {
+    margin: 15px;
+    left: 170px;
+}
+
+div.video-actions button:hover {
+    transition: 0.3s;
+    box-shadow: 1px 1px 20px 5px rgb(182, 182, 182);
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: rgb(216, 216, 216);
 }
