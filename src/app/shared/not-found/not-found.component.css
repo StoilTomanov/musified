@@ -25,3 +25,11 @@ div#go-back {
     text-align: center;
     font-size: 120%;
 }
+
+@media screen and (max-height: 880px) {
+    section#not-found h2 {
+        font-size: 280%;
+        margin-left: 40%;
+        margin-top: 5%;
+    }
+}
