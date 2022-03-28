@@ -70,6 +70,12 @@ button.submit-btn:hover {
     font-size: 72%;
 }
 
+button.submit-btn:active {
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 0px 0px 20px 5px rgb(178, 250, 255);
+    transition: 0.2s;
+}
+
 div#contact-form select {
     color: white;
     font-size: 60%;
@@ -120,7 +126,7 @@ div#contact-form textarea {
     div#contact-form textarea {
         margin-top: 20px;
         padding: 5px;
-        width: 98%;
+        width: 98.5%;
         height: 100px;
         background-color: rgba(243, 243, 243, 0.973);
         border: 2px inset rgba(82, 243, 248, 0.459);
@@ -132,7 +138,7 @@ div#contact-form textarea {
         border: 1px solid rgb(0, 255, 234);
         border-radius: 5px;
         background-color: rgba(240, 248, 255, 0);
-        margin-left: 45%;
+        margin-left: 46%;
         margin-top: 15px;
         margin-bottom: -10px;
         transition: 0.2s;
