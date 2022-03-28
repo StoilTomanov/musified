@@ -5,12 +5,12 @@ section#dashboard h1 {
 }
 
 div.item-container {
-    background-color: rgba(87, 87, 87, 0.61);
+    background-color: rgba(68, 68, 68, 0.849);
     display: flex;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0);
     box-shadow: 0px 0px 25px 10px rgba(255, 255, 255, 0.822);
-    width: 79%;
+    width: 76%;
     height: 133px;
     position: relative;
     margin-bottom: 55px;
@@ -32,6 +32,7 @@ div.video-decription {
 div.video-decription p {
     color: rgb(255, 254, 254);
     margin: 13px;
+    margin-left: 5px;
 }
 
 
@@ -49,12 +50,12 @@ div.video-actions button:nth-child(1) {
     font-size: 85%;
     color: rgb(255, 255, 255);
     background-color: rgb(16, 172, 76);
-    width: 100%;
     border: 0px;
     text-align: center;
     width: 30%;
     border-radius: 5px;
     position: relative;
+    left: 393px;
     transition: 0.2s;
 }
 
@@ -69,6 +70,7 @@ div.video-actions button:nth-child(2) {
     border: 0px;
     border-radius: 5px;
     position: relative;
+    left: 393px;
     transition: 0.2s;
 }
 
@@ -82,6 +84,7 @@ div.video-actions button:nth-child(3) {
     border: 0px;
     border-radius: 5px;
     position: relative;
+    left: 393px;
     transition: 0.3s;
 }
 
@@ -113,7 +116,7 @@ div.video-actions button:active {
     }
     div.item-container {
         margin-bottom: 30px;
-        left: 17%;
+        left: 19%;
         height: 113px;
     }
     div.video-actions button {
@@ -121,7 +124,8 @@ div.video-actions button:active {
         left: 430px;
     }
     div.video-decription p {
-        margin: 6px;
+        margin: -1px;
+        margin-left: 5px;
     }
     div.video-preview img {
         width: 170px;
