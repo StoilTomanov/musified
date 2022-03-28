@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ContactsComponent } from './shared/contacts/contacts.component';
-import { DashboardComponent } from './shared/dashboard/dashboard.component';
 import { ExploreComponent } from './shared/explore/explore.component';
 import { HomeComponent } from './shared/home/home.component';
 import { MissionComponent } from './shared/mission/mission.component';
@@ -35,11 +34,6 @@ const routes: Routes = [
     path: 'mission',
     pathMatch: 'full',
     component: MissionComponent
-  },
-  {
-    path: 'dashboard',
-    pathMatch: 'full',
-    component: DashboardComponent
   },
   {
     path: 'mylessons',

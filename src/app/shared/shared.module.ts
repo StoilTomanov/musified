@@ -9,7 +9,6 @@ import { MissionComponent } from './mission/mission.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ExploreComponent } from './explore/explore.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { MyLessonsComponent } from './my-lessons/my-lessons.component';
 
 
@@ -24,7 +23,6 @@ import { MyLessonsComponent } from './my-lessons/my-lessons.component';
     NotFoundComponent,
     ContactsComponent,
     ExploreComponent,
-    DashboardComponent,
     MyLessonsComponent
   ],
   imports: [

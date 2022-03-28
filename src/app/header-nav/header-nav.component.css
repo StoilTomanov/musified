@@ -115,7 +115,7 @@ nav#nav ul li {
 @media screen and (max-height: 880px) {
     div#auth-items-user {
         position: relative;
-        top: 230px;
+        top: 290px;
         margin-left: -19px;
     }
     div#auth-items-guest {

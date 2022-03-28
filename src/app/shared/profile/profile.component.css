@@ -87,6 +87,11 @@ div#courses table tr th a {
     margin-right: 10px;
 }
 
+thead tr.table-row th a:active {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 20px rgba(124, 222, 247, 0.829);
+}
+
 button.submit-btn {
     color: rgb(0, 255, 234);
     font-size: 70%;
