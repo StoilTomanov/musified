@@ -19,14 +19,14 @@
                 Password is required and it must be at least 6 characters long
             </div>
             <label for="repeatPassword">Repeat password</label>
-            <input required minlength="6" name="repeatPassword" id="repeatPassword" type="password" placeholder="********" ngModel #repeatPassword="ngModel">
-            <div class="error-msg" *ngIf="repeatPassword.invalid && repeatPassword.touched">
-                Please confirm your password
+            <input required minlength="6" name="repeatPassword" id="repeatPassword" type="password" placeholder="********" ngModel #repeatPassword="ngModel" (blur)="passwordMatchCheck()">
+            <div class="error-msg" *ngIf="!hasMatch">
+                Passwords must match
             </div>
             <div class="consent-box">
                 <label class="consent-label"><input id="checkbox" type="checkbox"> I have read and agrred with Musified<a id="terms" href="javascript:void(0)"> Terms and conditions</a></label>
             </div>
-            <button type="submit" class="submit-btn" [disabled]="registerForm.invalid && registerForm.touched">Register</button>
+            <button type="submit" class="submit-btn" [disabled]="registerForm.invalid && registerForm.touched || !hasMatch">Register</button>
             <div class="account-status">
                 <p>Already have an account? Login <a routerLink="/login">here</a></p>
             </div>
