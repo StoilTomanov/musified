@@ -13,7 +13,7 @@
             <div class="error-msg" *ngIf="password.invalid && password.touched">
                 Password is required and it must be at least 6 characters long
             </div>
-            <button type="submit" class="submit-btn">Login</button>
+            <button type="submit" class="submit-btn" [disabled]="loginForm.invalid && loginForm.touched">Login</button>
             <div class="account-status">
                 <p>Don't have an account? <span>Create one <a routerLink="/register">here</a></span></p>
             </div>

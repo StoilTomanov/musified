@@ -84,6 +84,13 @@ div.forms button {
     display: block;
 }
 
+div.forms button[disabled=""] {
+    background-color: rgb(205, 205, 205);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 0px 0px;
+    font-size: 70%;
+}
+
 div.forms span {
     color: rgb(255, 255, 255);
 }
@@ -141,5 +148,11 @@ button.submit-btn:hover {
 @media screen and (max-height: 880px) {
     div.forms {
         margin-top: 3%;
+    }
+    div.forms button[disabled=""] {
+        background-color: rgb(205, 205, 205);
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 0px 0px;
+        font-size: 75%;
     }
 }
