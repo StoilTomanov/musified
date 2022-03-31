@@ -65,6 +65,21 @@ div.forms input {
     margin-bottom: 20px;
 }
 
+div.error-msg {
+    text-align: center;
+    font-size: 80%;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 4px rgba(255, 0, 0, 0.687);
+}
+
+div.forms input.ng-valid.ng-touched {
+    box-shadow: 0 0 10px 5px rgba(56, 255, 93, 0.842);
+}
+
+div.forms input.ng-invalid.ng-touched {
+    box-shadow: 0 0 10px 5px rgba(255, 56, 56, 0.893);
+}
+
 div.forms button {
     display: block;
 }

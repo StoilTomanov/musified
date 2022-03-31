@@ -1,16 +1,28 @@
 <section id="registerPage">
     <div class="forms" id="registerForm">
-        <form action="" method="">
+        <form (ngSubmit)="onRegisterSubmit()" #registerForm="ngForm">
             <h2>Register</h2>
             <hr>
             <label for="username">Username</label>
-            <input id="username" type="text" placeholder="Just Mike">
+            <input required minlength="3" name="username" id="username" type="text" placeholder="Just Mike" ngModel #username="ngModel">
+            <div class="error-msg" *ngIf="username.invalid && username.touched">
+                Username is required and it must be at least 3 characters long
+            </div>
             <label for="email">Email</label>
-            <input id="email" type="text" placeholder="mike.justmike@gmail.com">
+            <input required name="email" id="email" type="text" placeholder="mike.justmike@gmail.com" ngModel #email="ngModel">
+            <div class="error-msg" *ngIf="email.invalid && email.touched">
+                Email is required and it must be a valid one
+            </div>
             <label for="password">Password</label>
-            <input id="password" type="password" placeholder="********">
+            <input required minlength="6" name="password" id="password" type="password" placeholder="********" ngModel #password="ngModel">
+            <div class="error-msg" *ngIf="password.invalid && password.touched">
+                Password is required and it must be at least 6 characters long
+            </div>
             <label for="repeatPassword">Repeat password</label>
-            <input id="repeatPassword" type="password" placeholder="********">
+            <input required minlength="6" name="repeatPassword" id="repeatPassword" type="password" placeholder="********" ngModel #repeatPassword="ngModel">
+            <div class="error-msg" *ngIf="repeatPassword.invalid && repeatPassword.touched">
+                Please confirm your password
+            </div>
             <div class="consent-box">
                 <label class="consent-label"><input id="checkbox" type="checkbox"> I have read and agrred with Musified<a id="terms" href="javascript:void(0)"> Terms and conditions</a></label>
             </div>
