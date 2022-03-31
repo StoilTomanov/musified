@@ -15,13 +15,8 @@ export class RegisterComponent implements OnInit {
 
   onRegisterSubmit(): void {
     const formData = this.form.value;
-    if(formData.password != formData.repeatPassword){
-      console.log('mismatch');
-      this.hasMatch = false;
-    }else{
-      this.hasMatch = true;
-    }
     // TODO: send data to the rest service and log in the application
+    // TODO: implement repass check
     console.log(formData);
     
   }
