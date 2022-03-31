@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
     // TODO: send data to the rest service and log in the application
     // TODO: implement repass check
     console.log(formData);
-    
+    this.form.reset();
   }
 
   ngOnInit(): void {

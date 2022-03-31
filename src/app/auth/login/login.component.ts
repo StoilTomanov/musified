@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     // TODO: implement repass check
 
     console.log(formData);
-    
+    this.form.reset();
   }
 
   ngOnInit(): void {
