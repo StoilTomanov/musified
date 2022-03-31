@@ -19,10 +19,10 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     SharedModule,
   ],
-  exports:[
+  exports: [
     LoginComponent,
     RegisterComponent,
-    LogoutComponent
-  ]
+    LogoutComponent,
+  ],
 })
 export class AuthModule { }
