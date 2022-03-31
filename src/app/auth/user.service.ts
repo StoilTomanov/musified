@@ -11,6 +11,7 @@ export class UserService {
   ) { }
 
   public getAllItems(): Observable<ILesson[]> {
+    // TODO: implement login and registration
     return this.httpClient.get<ILesson[]>('http://localhost:4000/api/records')
   }
 

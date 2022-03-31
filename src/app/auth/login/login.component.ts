@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
   onLoginSubmit(): void {
     const formData = this.form.value
     // TODO: send data to the rest service and log in the application
-    // TODO: implement repass check
 
     console.log(formData);
     this.form.reset();

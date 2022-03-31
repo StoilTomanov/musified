@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   onRegisterSubmit(): void {
     const formData = this.form.value;
     // TODO: send data to the rest service and log in the application
-    // TODO: implement repass check
+    // TODO: implement repass check - DONE
     console.log(formData);
     this.form.reset();;
 
