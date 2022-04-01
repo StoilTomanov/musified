@@ -113,7 +113,7 @@ button.submit-btn:hover {
     font-size: 72%;
 }
 
-@media screen and (max-height: 880px) {
+@media screen and (max-height: 862px) {
     div.profile-card {
         width: 95%;
         margin-top: 3%;

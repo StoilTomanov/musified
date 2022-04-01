@@ -31,7 +31,7 @@ div.video-decription {
 
 div.video-decription p {
     color: rgb(255, 254, 254);
-    margin: 13px;
+    margin: 3px;
     margin-left: 5px;
 }
 
@@ -55,7 +55,7 @@ div.video-actions button:nth-child(1) {
     width: 30%;
     border-radius: 5px;
     position: relative;
-    left: 393px;
+    left: 153px;
     transition: 0.2s;
 }
 
@@ -70,7 +70,7 @@ div.video-actions button:nth-child(2) {
     border: 0px;
     border-radius: 5px;
     position: relative;
-    left: 393px;
+    left: 153px;
     transition: 0.2s;
 }
 
@@ -84,7 +84,7 @@ div.video-actions button:nth-child(3) {
     border: 0px;
     border-radius: 5px;
     position: relative;
-    left: 393px;
+    left: 153px;
     transition: 0.3s;
 }
 
@@ -109,7 +109,7 @@ div.video-actions button:active {
     background-color: rgba(142, 255, 179, 0.842);
 }
 
-@media screen and (max-height: 880px) {
+@media screen and (max-height: 862px) {
     section#dashboard h1 {
         font-size: 180%;
         margin-top: 20px;
@@ -129,5 +129,14 @@ div.video-actions button:active {
     }
     div.video-preview img {
         width: 170px;
+    }
+    div.video-actions button:nth-child(1) {
+        left: 392px;
+    }
+    div.video-actions button:nth-child(2) {
+        left: 392px;
+    }
+    div.video-actions button:nth-child(3) {
+        left: 392px;
     }
 }

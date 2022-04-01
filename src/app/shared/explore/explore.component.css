@@ -17,8 +17,10 @@ div#explore-container {
 }
 
 div.course-card {
-    margin: 20px;
-    margin-left: 55px;
+    height: 320px;
+    margin: 10px;
+    margin-top: 10%;
+    margin-left: 48px;
     display: inline-block;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
@@ -33,7 +35,7 @@ div.course-img {
 }
 
 div.course-img img {
-    width: 260px;
+    width: 280px;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }
@@ -46,6 +48,9 @@ div.course-description {
 
 div.course-description p {
     margin: 1px;
+    /* margin-top: 15px; */
+    /* margin-bottom: 15px; */
+    height: 35.8px;
     font-size: 80%;
 }
 
@@ -84,14 +89,15 @@ div.details-btn button:active {
 }
 
 div#paginator {
-    position: relative;
+    position: fixed;
     /* border: 1px solid red; */
     width: 350px;
     text-align: right;
-    left: 60%;
+    bottom: 25px;
+    left: 65%;
 }
 
-@media screen and (max-height: 880px) {
+@media screen and (max-height: 862px) {
     section#explore h1 {
         font-size: 180%;
         margin-left: 44%;
@@ -121,10 +127,10 @@ div#paginator {
         height: 37.4%;
     }
     div.course-description p {
-        margin-bottom: 15px;
+        margin-bottom: 8px;
     }
     div#paginator {
         margin-top: 25px;
-        left: 65%;
+        left: 70%;
     }
 }

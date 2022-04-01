@@ -93,7 +93,7 @@ div#items {
 
 div#auth-items-user {
     position: relative;
-    top: 390px;
+    top: 450px;
     margin-left: -19px;
 }
 
@@ -118,7 +118,7 @@ nav#nav ul li a:active {
     text-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
-@media screen and (max-height: 880px) {
+@media screen and (max-height: 862px) {
     div#auth-items-user {
         position: relative;
         top: 290px;

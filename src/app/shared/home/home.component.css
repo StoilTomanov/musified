@@ -52,7 +52,7 @@ div#learnBtn button {
     border: 1px solid rgb(0, 255, 234);
     border-radius: 5px;
     background-color: rgba(240, 248, 255, 0);
-    margin-left: 35%;
+    margin-left: 37%;
     margin-top: 30%;
     transition: 0.2s;
 }
@@ -71,8 +71,11 @@ div#learnBtn button:active {
     transition: 0.2s;
 }
 
-@media screen and (max-height: 880px) {
+@media screen and (max-height: 862px) {
     section#home h1 {
         margin-left: 47%;
+    }
+    div#learnBtn button {
+        margin-left: 38%;
     }
 }
