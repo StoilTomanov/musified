@@ -10,6 +10,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ExploreComponent } from './explore/explore.component';
 import { MyLessonsComponent } from './my-lessons/my-lessons.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LessonsService } from './lessons.service';
 
 
 
@@ -27,7 +29,14 @@ import { MyLessonsComponent } from './my-lessons/my-lessons.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
+  ],
+  providers: [
+    {
+      provide: LessonsService,
+      useClass: LessonsService
+    }
   ]
 })
 export class SharedModule { }
