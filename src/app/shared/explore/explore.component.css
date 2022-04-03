@@ -119,10 +119,10 @@ div#paginator {
     div.details-btn button {
         position: relative;
     }
-    div.course-img img {
+    /* div.course-img img {
         width: 290px;
         height: 210px;
-    }
+    } */
     div.course-description {
         height: 37.4%;
     }
