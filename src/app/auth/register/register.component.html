@@ -26,7 +26,7 @@
             <div class="consent-box">
                 <label class="consent-label"><input id="checkbox" type="checkbox"> I have read and agrred with Musified<a id="terms" href="javascript:void(0)"> Terms and conditions</a></label>
             </div>
-            <button type="submit" class="submit-btn" [disabled]="registerForm.invalid && registerForm.touched || !hasMatch">Register</button>
+            <button type="submit" class="submit-btn" [disabled]="registerForm.invalid && registerForm.touched || !hasMatch || registerForm.untouched">Register</button>
             <div class="account-status">
                 <p>Already have an account? Login <a routerLink="/login">here</a></p>
             </div>
