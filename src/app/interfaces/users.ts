@@ -3,4 +3,5 @@ export interface IUser {
     email: string,
     username: string,
     accessToken: string
+    // TODO: add user role - admin / not-admin
 }

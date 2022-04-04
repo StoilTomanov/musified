@@ -13,7 +13,7 @@ export class RegisterComponent {
   @ViewChild('registerForm') form!: NgForm
 
   hasMatch: boolean = true;
-  userData!: IUser;
+  private userData!: IUser;
 
   constructor(private userService: UserService) { }
 
