@@ -4,7 +4,7 @@
         <div id="profile-badge">
             <div *ngIf="isLogged">
                 <li><img src="../../assets/user-logo.png" alt="user-logo">
-                    <a routerLink="/profile">Hello, Mike</a>
+                    <a routerLink="/profile">Hello, {{username}}</a>
                 </li>
             </div>
         </div>
@@ -27,11 +27,10 @@
                 <li><a routerLink="/contacts">Contacts</a></li>
             </div>
             <div id="auth-items-user" *ngIf="isLogged">
-                <li><a routerLink="/login" (click)="logout()">Logout</a></li>
+                <li><a routerLink="/" (click)="logout()">Logout</a></li>
             </div>
             <div id="auth-items-guest" *ngIf="!isLogged">
-                <li><a routerLink="/" (click)="login()">Pseudo login</a></li>
-                <!-- <li><a routerLink="/login">Login</a></li> -->
+                <li><a routerLink="/login">Login</a></li>
                 <li><a routerLink="/register">Register</a></li>
             </div>
         </ul>

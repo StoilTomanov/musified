@@ -19,8 +19,6 @@ export class ExploreComponent implements OnInit {
     this.lessons = undefined;
     this.lessonService.getAllItems()
       .subscribe(data => this.lessons = data);
-    console.log(this.lessons);
-
   }
 
 }

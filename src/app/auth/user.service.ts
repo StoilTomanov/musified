@@ -21,6 +21,26 @@ export class UserService {
       password,
     })
   };
+
+  login$(
+    username: string, password: string
+  ): Observable<IUser> {
+    // TODO: consider doing additional check for empty fields
+    return this.http.post<IUser>('http://localhost:4000/users/login', {
+      username,
+      password,
+    })
+  };
+
+  logout$(
+  ): Observable<IUser> {
+    // TODO: consider doing additional check for empty fields
+    return this.http.get<IUser>('http://localhost:4000/users/logout',{
+      headers:{
+        'X-Authorization': sessionStorage['accessToken']
+      }
+    })
+  };
 }
 
 

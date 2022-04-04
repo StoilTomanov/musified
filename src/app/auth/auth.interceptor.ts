@@ -9,19 +9,25 @@ import {
 import { Observable, tap } from 'rxjs';
 import { IUser } from '../interfaces';
 import { Router } from '@angular/router';
+import { AuthHandlerService } from '../auth-handler.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private storage: AuthHandlerService
+    ) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(tap(event => {
       if (event instanceof HttpResponse) {
         if (event.url?.endsWith('/login') || event.url?.endsWith('/register')) {
           const newUser: IUser = event.body;
-          console.log(newUser);
+          this.storage.setStorage(newUser);
           this.router.navigate(['explore']);
+        } else if(event.url?.endsWith('/logout')){
+          this.storage.removeStorage();
         }
       }
     }))
