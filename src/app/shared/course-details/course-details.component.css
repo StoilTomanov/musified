@@ -1,0 +1,24 @@
+section#course-detials h2 {
+    color: rgb(0, 255, 234);
+    font-size: 200%;
+    margin-left: 45%;
+    margin-top: 20px;
+}
+
+section#course-detials div#details-container {
+    color: rgb(255, 255, 255);
+    background-color: rgba(68, 68, 68, 0.849);
+    border: 1px solid rgba(140, 251, 255, 0.799);
+    box-shadow: 0px 0px 25px 10px rgba(235, 235, 235, 0.616);
+    border-radius: 5px;
+    height: 610px;
+    width: 80%;
+    font-size: 120%;
+    margin-left: 18%;
+    margin-bottom: 2%;
+}
+
+div#video-intro {
+    border: 1px solid red;
+    height: 320px;
+}

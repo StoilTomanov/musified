@@ -12,6 +12,7 @@ import { ExploreComponent } from './explore/explore.component';
 import { MyLessonsComponent } from './my-lessons/my-lessons.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LessonsService } from './lessons.service';
+import { CourseDetailsComponent } from './course-details/course-details.component';
 
 
 
@@ -25,7 +26,8 @@ import { LessonsService } from './lessons.service';
     NotFoundComponent,
     ContactsComponent,
     ExploreComponent,
-    MyLessonsComponent
+    MyLessonsComponent,
+    CourseDetailsComponent
   ],
   imports: [
     CommonModule,
