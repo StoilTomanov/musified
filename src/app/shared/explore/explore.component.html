@@ -1,7 +1,7 @@
 <section id="explore">
     <div>
         <h1 *ngIf="lessons">Find your new course</h1>
-        <h1 *ngIf="!lessons">Currently there are no courses available</h1>
+        <h1 *ngIf="!lessons || lessons.length == 0">Currently there are no courses available</h1>
     </div>
     <div id="explore-container" *ngIf="lessons">
         <div class="course-card" *ngFor="let lesson of lessons">

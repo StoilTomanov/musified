@@ -2,7 +2,7 @@
     <h1 *ngIf="lessons">
         My Courses
     </h1>
-    <h1 *ngIf="!lessons">
+    <h1 *ngIf="!lessons || lessons.length == 0">
         You have not subscribed for any courses so far. Find your first one <a routerLink="/explore">here</a>
     </h1>
     <div class="item-container" *ngFor="let lesson of lessons">

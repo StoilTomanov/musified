@@ -7,6 +7,7 @@ export interface ILesson { // TODO: the database model will likely change, ensur
     videoUrl: string,
     imagePreviewUrl:string,
     progress: number,
+    createdOn: string,
     views: number,
     __v: number,
 }

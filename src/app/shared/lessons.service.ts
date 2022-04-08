@@ -18,5 +18,9 @@ export class LessonsService {
     return this.http.get<ILesson>('http://localhost:4000/api/records/' + id);
   }
 
+  public subscribeToLesson$(id: string): Observable<ILesson> {
+    return this.http.put<ILesson>('http://localhost:4000/api/records/subscribe/' + id, {});
+    // TODO pass the userId in the one of the interceptors
+  }
 
 }

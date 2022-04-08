@@ -18,7 +18,7 @@
             </div>
             <!-- TODO: the below div is static - make it dynamic using data from db -->
             <div class="short-description">
-                <p class="shor-desc-p">Course created on: 99.99.9999</p>
+                <p class="shor-desc-p">Course created on: {{lessonById.createdOn}}</p>
                 <p class="shor-desc-p">Course available untill: 99.99.9999</p>
                 <p class="shor-desc-p">Course rating: 10 / 5</p>
             </div>
@@ -28,7 +28,7 @@
         </div>
         <div id="buttons-actions">
             <button class="action-btn">Rate this course</button>
-            <button class="action-btn">Dive In</button>
+            <button class="action-btn" (click)="onSubscribe()">Dive In</button>
             <button class="action-btn">Report an issue</button>
         </div>
     </div>

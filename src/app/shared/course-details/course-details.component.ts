@@ -17,10 +17,14 @@ export class CourseDetailsComponent implements OnInit {
     ) { }
     
   ngOnInit(): void {
-    
     this.lessonById = undefined;
     this.lessonService.getLessonById$(this.router.snapshot.params['id'])
       .subscribe(data => this.lessonById = data);
+  }
+
+  onSubscribe(): void{
+    console.log(this.lessonById);
+    // TODO: finish the subscription
   }
 
 }
