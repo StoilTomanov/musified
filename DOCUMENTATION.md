@@ -66,5 +66,3 @@ Musified
 - Implementing media upload / delete
 - Implementing subscription / unsubscription of courses
 - Implementing admin views
-
-### What's next
