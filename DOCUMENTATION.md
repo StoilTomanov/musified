@@ -3,14 +3,14 @@
 | Contents
 |---
 | [Instalation](#Instalation)
-| [About](#About project)
-| [Architecture](#Project architecture)
-| - [Modules and components](#Modules and components)
+| [About project](#About-Project)
+| [Project architecture](#Project-architecture)
+| - [Modules and components](#Modules-and-components)
 | - [Services](#Services)
 | - [Interceptors](#Interceptors)
 | - [Tests](#Tests)
-| - [Technologies used](#Technologies used)
-| - [Point of improvement](#Point of improvement)
+| - [Technologies used](#Technologies-used)
+| - [Point of improvement](#Point-of-improvement)
 
 
 ## Getting started
