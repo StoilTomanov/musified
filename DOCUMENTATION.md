@@ -1,5 +1,9 @@
 # Musified
 
+| Contents
+|---
+| [Instalation](#Instalation)
+
 ## Getting started
 
 ### Instalation
