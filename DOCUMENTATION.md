@@ -3,8 +3,8 @@
 | Contents
 |---
 | [Instalation](#Instalation)
-| [About project](#About project)
-| [Project architecture](#Project architecture)
+| [About](#About project)
+| [Architecture](#Project architecture)
 | - [Modules and components](#Modules and components)
 | - [Services](#Services)
 | - [Interceptors](#Interceptors)
