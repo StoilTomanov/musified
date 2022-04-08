@@ -1,8 +1,9 @@
 <section id="explore">
     <div>
-        <h1>Find your new course</h1>
+        <h1 *ngIf="lessons">Find your new course</h1>
+        <h1 *ngIf="!lessons">Currently there are no courses available</h1>
     </div>
-    <div id="explore-container">
+    <div id="explore-container" *ngIf="lessons">
         <div class="course-card" *ngFor="let lesson of lessons">
             <div class="course-img">
                 <img src={{lesson.imagePreviewUrl}} alt="guitar" height="186px">
@@ -15,7 +16,7 @@
                     Course length: {{lesson.duration}} min
                 </p>
                 <p>
-                    Level: {{lesson.level}}
+                    Course level: {{lesson.level}}
                 </p>
             </div>
             <div class="details-btn">
