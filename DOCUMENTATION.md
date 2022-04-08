@@ -35,43 +35,46 @@
 
 ### Modules and components
 
-- App module
+#### App module
  * App
 
-- Auth module
+#### Auth module
  * Login
  * Registration
  * Logout
 
-- Core module
+#### Core module
  * Header
  * Footer
 
-- Shared module
- * Home
- * Mission
- * Contacts
- * Course details
- * Lessons
- * Profile
+#### Shared module
+- Home
+- Mission
+- Contacts
+- Course details
+- Lessons
+- Profile
 
 ### Services
 
-- Two main services
- * User service
- * Lessons service
+- User service
+- Lessons service
 
 ### Interceptors
+
 - Auth interceptor
 - Token interceptor
 
 ### Tests
+
 - Currently no test have been written
 
 ### Technologies used
+
 - This is a pure Angular project meaning no extra dependancies are used at this moment
 
 ### Point of improvement
+
 - Improving data storage
 - Implementing media storage
 - Implementing media upload / delete
