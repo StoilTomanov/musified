@@ -1,7 +1,5 @@
 # Musified
 
-Musified
-
 ## Getting started
 
 ### Instalation
