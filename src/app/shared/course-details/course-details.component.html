@@ -3,20 +3,33 @@
         <h2>Course details</h2>
     </div>
     <div id="details-container">
-        <div id="video-intro">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/sqD--VFzkSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen [width]="1020"
-                [height]="320"></iframe>
+        <div id="video-preview">
+
+            <video class="video-player" src="../../../assets/basic_chords.mp4" controls>
+
+            </video>
+
         </div>
-        <div id="details">
+        <div id="details" *ngIf="lessonById">
             <div class="short-description">
-
+                <p class="shor-desc-p">Course name: {{lessonById.name}}</p>
+                <p class="shor-desc-p">Course duration: {{lessonById.duration}}</p>
+                <p class="shor-desc-p">Course level: {{lessonById.level}}</p>
             </div>
+            <!-- TODO: the below div is static - make it dynamic using data from db -->
             <div class="short-description">
-
+                <p class="shor-desc-p">Course created on: 99.99.9999</p>
+                <p class="shor-desc-p">Course available untill: 99.99.9999</p>
+                <p class="shor-desc-p">Course rating: 10 / 5</p>
             </div>
         </div>
-        <div id="description">
-
+        <div id="description" *ngIf="lessonById">
+            <p class="desc-p">{{lessonById.description}}</p>
+        </div>
+        <div id="buttons-actions">
+            <button class="action-btn">Rate this course</button>
+            <button class="action-btn">Dive In</button>
+            <button class="action-btn">Report an issue</button>
         </div>
     </div>
 </section>

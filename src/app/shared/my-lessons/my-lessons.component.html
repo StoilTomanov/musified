@@ -2,92 +2,32 @@
     <h1>
         My Lessons
     </h1>
-    <div class="item-container">
+    <div class="item-container" *ngFor="let lesson of lessons">
         <div class="video-preview">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSUkBDJW3QrGUpYpnqiOvqBDy9eUnSyrr8rg&usqp=CAU" alt="video preview">
+            <img src="{{lesson.imagePreviewUrl}}" alt="video preview">
         </div>
         <div class="video-decription">
             <p>
-                Name: Chord progression
+                Name: {{lesson.name}}
             </p>
             <p>
-                Duration: 40 min
+                Duration: {{lesson.duration}}
             </p>
             <p>
-                Level: Intermediate
+                Level: {{lesson.level}}
             </p>
             <p>
                 Progress: <progress _ngcontent-glx-c24="" value="65" max="100" class="level"></progress>
             </p>
         </div>
         <div class="video-actions">
-            <button type="button" class="watch-video">
+            <button type="button" class="watch-video" data-id="{{lesson._id}}">
                 Watch
             </button>
-            <button type="button" class="details-video">
+            <button type="button" class="details-video" data-id="{{lesson._id}}">
                 Details 
             </button>
-            <button type="button" class="unsubscribe-video">
-                Give up
-            </button>
-        </div>
-    </div>
-    <div class="item-container">
-        <div class="video-preview">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSUkBDJW3QrGUpYpnqiOvqBDy9eUnSyrr8rg&usqp=CAU" alt="video preview">
-        </div>
-        <div class="video-decription">
-            <p>
-                Name: Chord progression
-            </p>
-            <p>
-                Duration: 40 min
-            </p>
-            <p>
-                Level: Intermediate
-            </p>
-            <p>
-                Progress: <progress _ngcontent-glx-c24="" value="65" max="100" class="level"></progress>
-            </p>
-        </div>
-        <div class="video-actions">
-            <button type="button" class="watch-video">
-                Watch
-            </button>
-            <button type="button" class="details-video">
-                Details 
-            </button>
-            <button type="button" class="unsubscribe-video">
-                Give up
-            </button>
-        </div>
-    </div>
-    <div class="item-container">
-        <div class="video-preview">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSUkBDJW3QrGUpYpnqiOvqBDy9eUnSyrr8rg&usqp=CAU" alt="video preview">
-        </div>
-        <div class="video-decription">
-            <p>
-                Name: Chord progression
-            </p>
-            <p>
-                Duration: 40 min
-            </p>
-            <p>
-                Level: Intermediate
-            </p>
-            <p>
-                Progress: <progress _ngcontent-glx-c24="" value="65" max="100" class="level"></progress>
-            </p>
-        </div>
-        <div class="video-actions">
-            <button type="button" class="watch-video">
-                Watch
-            </button>
-            <button type="button" class="details-video">
-                Details 
-            </button>
-            <button type="button" class="unsubscribe-video">
+            <button type="button" class="unsubscribe-video" data-id="{{lesson._id}}">
                 Give up
             </button>
         </div>

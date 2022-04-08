@@ -10,9 +10,13 @@ export class LessonsService {
     private http: HttpClient
   ) { }
 
-  public getAllItems(): Observable<ILesson[]> {
-    // TODO: implement login and registration
-    return this.http.get<ILesson[]>('http://localhost:4000/api/records')
+  public getAllItems$(): Observable<ILesson[]> {
+    return this.http.get<ILesson[]>('http://localhost:4000/api/records');
   }
+
+  public getLessonById$(id: string): Observable<ILesson> {
+    return this.http.get<ILesson>('http://localhost:4000/api/records/' + id);
+  }
+
 
 }

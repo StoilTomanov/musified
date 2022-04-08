@@ -18,7 +18,114 @@ section#course-detials div#details-container {
     margin-bottom: 2%;
 }
 
-div#video-intro {
-    border: 1px solid red;
-    height: 320px;
+div#video-preview {
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.637);
+}
+
+div#details .short-description {
+    display: inline-block;
+    width: 490px;
+    background-color: rgba(95, 95, 95, 0.605);
+    height: 100px;
+    margin: 10px;
+    margin-left: 10px;
+    border: 1px solid rgba(178, 178, 178, 0.749);
+    box-shadow: 0 0 5px 2px rgba(236, 236, 236, 0.76);
+    border-radius: 3px;
+}
+
+div#description {
+    height: 125px;
+    width: 100%;
+    background-color: rgba(95, 95, 95, 0.605);
+    max-width: 1000px;
+    border: 1px solid rgba(178, 178, 178, 0.749);
+    box-shadow: 0 0 5px 2px rgba(236, 236, 236, 0.76);
+    border-radius: 3px;
+    margin-left: 11px;
+}
+
+div#buttons-actions {
+    height: 52px;
+}
+
+div#buttons-actions button.action-btn {
+    display: inline-block;
+}
+
+div#buttons-actions button:nth-child(1) {
+    font-size: 85%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(39, 157, 254);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    top: 15px;
+    left: 15px;
+    transition: 0.2s;
+}
+
+div#buttons-actions button:nth-child(2) {
+    font-size: 85%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(43, 209, 21);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    top: 15px;
+    left: 202px;
+    transition: 0.2s;
+}
+
+div#buttons-actions button:nth-child(3) {
+    font-size: 85%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(243, 69, 46);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    top: 15px;
+    left: 394px;
+    transition: 0.2s;
+}
+
+div#buttons-actions button:hover {
+    transition: 0.3s;
+    box-shadow: 1px 1px 20px 5px rgb(182, 182, 182);
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: rgb(216, 216, 216);
+}
+
+div#buttons-actions button:active {
+    transition: 0.3s;
+    box-shadow: 1px 1px 20px 5px rgba(101, 171, 252, 0.89);
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgba(142, 255, 179, 0.842);
+}
+
+.video-player {
+    width: 100%;
+    max-width: 700px;
+    margin-left: 160px;
+}
+
+div.short-description p.shor-desc-p {
+    font-size: 92%;
+    margin: 0;
+    margin-left: 5px;
+}
+
+div#description p.desc-p {
+    font-size: 75%;
+    margin: 0;
+    margin-left: 5px;
 }

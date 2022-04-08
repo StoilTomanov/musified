@@ -32,8 +32,7 @@ export class UserService {
     })
   };
 
-  logout$(
-  ): Observable<IUser> {
+  logout$(): Observable<IUser> {
     // TODO: consider doing additional check for empty fields
     return this.http.get<IUser>('http://localhost:4000/users/logout',{
       headers:{
