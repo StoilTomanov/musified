@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LessonsService } from './lessons.service';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { WatchLessonComponent } from './watch-lesson/watch-lesson.component';
+import { VideoPreviewComponent } from './course-details/video-preview/video-preview.component';
 
 
 
@@ -29,7 +30,8 @@ import { WatchLessonComponent } from './watch-lesson/watch-lesson.component';
     ExploreComponent,
     MyLessonsComponent,
     CourseDetailsComponent,
-    WatchLessonComponent
+    WatchLessonComponent,
+    VideoPreviewComponent
   ],
   imports: [
     CommonModule,

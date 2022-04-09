@@ -3,13 +3,9 @@
         <h2>Course details</h2>
     </div>
     <div id="details-container" *ngIf="lessonById">
-        <div id="video-preview">
+        <app-video-preview>
 
-            <video class="video-player" src="../../../assets/basic_chords.mp4" controls>
-
-            </video>
-
-        </div>
+        </app-video-preview>
         <div id="details" *ngIf="lessonById">
             <div class="short-description">
                 <p class="shor-desc-p">Course name: {{lessonById.name}}</p>
