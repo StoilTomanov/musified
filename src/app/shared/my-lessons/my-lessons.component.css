@@ -4,6 +4,20 @@ section#dashboard h1 {
     margin-left: 48%;
 }
 
+section#dashboard h1.no-lessons {
+    color: rgb(0, 255, 234);
+    font-size: 190%;
+    text-align: center;
+    margin-left: 16%;
+}
+
+section#dashboard h1.loading {
+    color: rgb(0, 255, 234);
+    font-size: 200%;
+    text-align: center;
+    margin-left: 14%;
+}
+
 div.item-container {
     background-color: rgba(68, 68, 68, 0.849);
     display: flex;

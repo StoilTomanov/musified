@@ -2,7 +2,7 @@
     <div>
         <h2>Course details</h2>
     </div>
-    <div id="details-container">
+    <div id="details-container" *ngIf="lessonById">
         <div id="video-preview">
 
             <video class="video-player" src="../../../assets/basic_chords.mp4" controls>
@@ -28,8 +28,8 @@
         </div>
         <div id="buttons-actions">
             <button class="action-btn">Rate this course</button>
-            <button class="action-btn" (click)="onSubscribe()">Dive In</button>
-            <button class="action-btn">Report an issue</button>
+            <button class="action-btn" (click)="onSubscribe($event)">Dive In</button>
+            <button class="action-btn" (click)="onReport($event)">Report an issue</button>
         </div>
     </div>
 </section>

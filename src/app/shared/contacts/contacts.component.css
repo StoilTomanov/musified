@@ -1,12 +1,12 @@
 section#contacts h1 {
     color: rgb(0, 255, 234);
     font-size: 200%;
-    margin-left: 48%;
+    margin-left: 47%;
 }
 
 section#contacts div#contact-info {
-    width: 50%;
-    margin-left: 32%;
+    width: 70%;
+    margin-left: 23%;
 }
 
 section#contacts p {
@@ -22,9 +22,10 @@ div#contact-form div.forms {
     border: 1px solid rgba(255, 255, 255, 0.575);
     box-shadow: 0px 0px 45px 20px rgba(235, 235, 235, 0.616);
     border-radius: 5px;
-    width: 60%;
+    width: 71%;
+    height: 360px;
     padding: 2%;
-    margin-left: 26%;
+    margin-left: 20%;
     margin-bottom: 5%;
     font-size: 110%;
 }
@@ -41,7 +42,7 @@ div#contact-form div.forms label {
     display: block;
     text-align: center;
     align-items: center;
-    margin-bottom: 2px;
+    margin-bottom: 30px;
 }
 
 div#contact-form div.forms button {
@@ -54,8 +55,9 @@ button.submit-btn {
     font-size: 70%;
     border: 1px solid rgb(0, 255, 234);
     border-radius: 5px;
+    width: 100px;
     background-color: rgba(240, 248, 255, 0);
-    margin-left: 45%;
+    margin-left: 44%;
     /* margin-bottom: 5%; */
     margin-top: 3%;
     transition: 0.2s;
@@ -105,7 +107,7 @@ div#contact-form textarea {
 }
 
 @media screen and (max-height: 880px) {
-    section#contacts h1 {
+    /* section#contacts h1 {
         font-size: 190%;
         margin-top: 10px;
         margin-left: 50%;
@@ -127,7 +129,7 @@ div#contact-form textarea {
         margin-top: 20px;
         padding: 5px;
         width: 98.5%;
-        height: 100px;
+        height: 220px;
         background-color: rgba(243, 243, 243, 0.973);
         border: 2px inset rgba(82, 243, 248, 0.459);
         border-radius: 5px;
@@ -142,5 +144,5 @@ div#contact-form textarea {
         margin-top: 15px;
         margin-bottom: -10px;
         transition: 0.2s;
-    }
+    } */
 }

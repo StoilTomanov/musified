@@ -13,6 +13,7 @@ import { CoursesComponent } from './shared/profile/courses/courses.component';
 import { OverviewComponent } from './shared/profile/overview/overview.component';
 import { ProfileDetailsComponent } from './shared/profile/profile-details/profile-details.component';
 import { ProfileComponent } from './shared/profile/profile.component';
+import { WatchLessonComponent } from './shared/watch-lesson/watch-lesson.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,11 @@ const routes: Routes = [
     path: 'mylessons',
     pathMatch: 'full',
     component: MyLessonsComponent
+  },
+  {
+    path: 'watch/:id',
+    pathMatch: 'full',
+    component: WatchLessonComponent
   },
   {
     path: 'explore',

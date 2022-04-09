@@ -13,6 +13,7 @@ import { MyLessonsComponent } from './my-lessons/my-lessons.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LessonsService } from './lessons.service';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import { WatchLessonComponent } from './watch-lesson/watch-lesson.component';
 
 
 
@@ -27,7 +28,8 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
     ContactsComponent,
     ExploreComponent,
     MyLessonsComponent,
-    CourseDetailsComponent
+    CourseDetailsComponent,
+    WatchLessonComponent
   ],
   imports: [
     CommonModule,

@@ -73,9 +73,27 @@ div.profile-card label {
     margin-bottom: 2px;
 }
 
-table tr th.table-header {
+table tr th.table-header:nth-child(1) {
     display: inline;
-    margin-left: 139px;
+    position: relative;
+    left: 145px;
+}
+
+table tr th.table-header:nth-child(2) {
+    display: inline;
+    position: relative;
+    left: 290px;
+}
+
+table tr th.table-header:nth-child(3) {
+    display: inline;
+    position: relative;
+    left: 440px;
+}
+
+table {
+    position: relative;
+    top: 18px;
 }
 
 div#courses table tr th {

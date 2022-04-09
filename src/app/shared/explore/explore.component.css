@@ -4,6 +4,20 @@ section#explore h1 {
     margin-left: 39%;
 }
 
+section#explore h1.no-lessons {
+    color: rgb(0, 255, 234);
+    font-size: 200%;
+    text-align: center;
+    margin-left: 16%;
+}
+
+section#explore h1.loading {
+    color: rgb(0, 255, 234);
+    font-size: 200%;
+    text-align: center;
+    margin-left: 13%;
+}
+
 div#explore-container {
     display: block;
     margin-left: 17%;

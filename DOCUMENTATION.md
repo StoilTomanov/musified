@@ -41,11 +41,11 @@
 #### Auth module
  * Login
  * Registration
- * Logout
 
 #### Core module
  * Header
  * Footer
+ * Logout
 
 #### Shared module
 - Home

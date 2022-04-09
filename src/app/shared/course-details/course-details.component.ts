@@ -13,18 +13,22 @@ export class CourseDetailsComponent implements OnInit {
   
   constructor(
     private lessonService: LessonsService,
-    private router: ActivatedRoute,
+    private activatedRouter: ActivatedRoute,
+    private router: Router,
     ) { }
     
   ngOnInit(): void {
     this.lessonById = undefined;
-    this.lessonService.getLessonById$(this.router.snapshot.params['id'])
+    this.lessonService.getLessonById$(this.activatedRouter.snapshot.params['id'])
       .subscribe(data => this.lessonById = data);
   }
 
-  onSubscribe(): void{
-    console.log(this.lessonById);
+  onSubscribe(event: Event): void{
     // TODO: finish the subscription
+  }
+
+  onReport(event: Event){
+    this.router.navigate(['contacts']);
   }
 
 }
