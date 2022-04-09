@@ -49,13 +49,7 @@ div#theory p {
 
 div#controls {
     position: relative;
-    display: inline;
-}
-
-hr#hr-line {
-    position: relative;
-    bottom: 55px;
-    box-shadow: 0 0 5px rgb(255, 255, 255);
+    bottom: 40px;
 }
 
 div#controls button.controls-btn-back {
@@ -68,7 +62,6 @@ div#controls button.controls-btn-back {
     width: 20%;
     border-radius: 5px;
     position: relative;
-    bottom: 65px;
     left: 7px;
     transition: 0.2s;
 }
@@ -83,7 +76,6 @@ div#controls button.controls-btn-quiz {
     width: 20%;
     border-radius: 5px;
     position: relative;
-    bottom: 65px;
     left: 70px;
     transition: 0.2s;
 }
@@ -98,7 +90,6 @@ div#controls button.controls-btn-give-up {
     width: 20%;
     border-radius: 5px;
     position: relative;
-    bottom: 65px;
     left: 130px;
     transition: 0.2s;
 }
@@ -113,7 +104,6 @@ div#controls button.controls-btn-issue {
     width: 20%;
     border-radius: 5px;
     position: relative;
-    bottom: 65px;
     left: 195px;
     transition: 0.2s;
 }
