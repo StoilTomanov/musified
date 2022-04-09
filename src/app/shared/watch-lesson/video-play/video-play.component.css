@@ -1,0 +1,13 @@
+div#video-play {
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.888);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.video-player {
+    width: 1024px;
+    height: 450px;
+    max-width: 1024px;
+    margin-left: 0px;
+}

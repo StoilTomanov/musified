@@ -15,6 +15,7 @@ import { LessonsService } from './lessons.service';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { WatchLessonComponent } from './watch-lesson/watch-lesson.component';
 import { VideoPreviewComponent } from './course-details/video-preview/video-preview.component';
+import { VideoPlayComponent } from './watch-lesson/video-play/video-play.component';
 
 
 
@@ -31,7 +32,8 @@ import { VideoPreviewComponent } from './course-details/video-preview/video-prev
     MyLessonsComponent,
     CourseDetailsComponent,
     WatchLessonComponent,
-    VideoPreviewComponent
+    VideoPreviewComponent,
+    VideoPlayComponent
   ],
   imports: [
     CommonModule,

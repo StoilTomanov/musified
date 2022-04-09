@@ -1,0 +1,119 @@
+section#watch-lesson h2 {
+    color: rgb(0, 255, 234);
+    font-size: 200%;
+    margin-left: 12%;
+    text-align: center;
+}
+
+section#watch-lesson div#lesson-container {
+    color: rgb(255, 255, 255);
+    background-color: rgba(68, 68, 68, 0.849);
+    border: 1px solid rgba(140, 251, 255, 0.799);
+    box-shadow: 0px 0px 25px 10px rgba(235, 235, 235, 0.616);
+    border-radius: 5px;
+    height: 600px;
+    width: 80%;
+    font-size: 120%;
+    margin-left: 18%;
+    margin-bottom: 2%;
+}
+
+div#lesson-details {
+    height: 148px;
+    width: 99.8%;
+    background-color: rgba(34, 84, 92, 0.737);
+    max-width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.749);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+
+div#lesson-details {
+    display: block;
+}
+
+div#theory {
+    position: relative;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+div#theory p {
+    position: relative;
+    font-size: 75%;
+    margin-top: 0px;
+    margin-left: 5px;
+}
+
+div#controls {
+    position: relative;
+    display: inline;
+}
+
+hr#hr-line {
+    position: relative;
+    bottom: 55px;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+}
+
+div#controls button.controls-btn-back {
+    position: relative;
+    font-size: 80%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(46, 154, 243);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    bottom: 65px;
+    left: 7px;
+    transition: 0.2s;
+}
+
+div#controls button.controls-btn-quiz {
+    position: relative;
+    font-size: 80%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(14, 210, 50);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    bottom: 65px;
+    left: 70px;
+    transition: 0.2s;
+}
+
+div#controls button.controls-btn-give-up {
+    position: relative;
+    font-size: 80%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(196, 161, 2);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    bottom: 65px;
+    left: 130px;
+    transition: 0.2s;
+}
+
+div#controls button.controls-btn-issue {
+    position: relative;
+    font-size: 80%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(201, 37, 15);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    bottom: 65px;
+    left: 195px;
+    transition: 0.2s;
+}
