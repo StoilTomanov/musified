@@ -65,6 +65,10 @@
 - Auth interceptor
 - Token interceptor
 
+### Guards
+
+- Auth guard
+
 ### Tests
 
 - Currently no test have been written

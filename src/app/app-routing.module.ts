@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { AuthGuard } from './guards/auth.guard';
 import { ContactsComponent } from './shared/contacts/contacts.component';
 import { CourseDetailsComponent } from './shared/course-details/course-details.component';
 import { ExploreComponent } from './shared/explore/explore.component';
@@ -39,11 +40,13 @@ const routes: Routes = [
   },
   {
     path: 'mylessons',
+    canActivate: [AuthGuard],
     pathMatch: 'full',
     component: MyLessonsComponent
   },
   {
     path: 'watch/:id',
+    canActivate: [AuthGuard],
     pathMatch: 'full',
     component: WatchLessonComponent
   },
@@ -54,6 +57,7 @@ const routes: Routes = [
   },
   {
     path: 'details/:id',
+    canActivate: [AuthGuard],
     pathMatch: 'full',
     component: CourseDetailsComponent
   },
@@ -64,6 +68,8 @@ const routes: Routes = [
   },
   {
     path: 'profile',
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     component: ProfileComponent,
     children: [
       {
