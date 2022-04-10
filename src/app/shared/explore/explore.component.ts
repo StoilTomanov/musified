@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LessonsService } from '../lessons.service';
 import { ILesson } from '../../interfaces/lessons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-explore',
@@ -9,16 +10,20 @@ import { ILesson } from '../../interfaces/lessons';
 })
 export class ExploreComponent implements OnInit {
   lessons: ILesson[] | undefined
+  lessonId: string = '';
 
   constructor(
-    private lessonService: LessonsService
+    private lessonService: LessonsService,
+    private router: Router,
   ) {
   }
-// TODO: 04.04.2022 - the Details button is worling only if its clicked in the link (a tag).. make it work for the whole butotn
   ngOnInit(): void {
     this.lessons = undefined;
     this.lessonService.getAllItems$()
       .subscribe(data => this.lessons = data);
   }
-
+  onDetails(event: Event) {
+    this.lessonId = (event.target as Element).id;
+    this.router.navigate(['/details/' + this.lessonId])
+  }
 }

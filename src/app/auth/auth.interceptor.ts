@@ -22,6 +22,7 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(tap(event => {
       if (event instanceof HttpResponse) {
+        
         if (event.url?.endsWith('/login') || event.url?.endsWith('/register')) {
           const newUser: IUser = event.body;
           this.storage.setStorage(newUser);

@@ -1,8 +1,9 @@
 section#course-detials h2 {
     color: rgb(0, 255, 234);
     font-size: 200%;
-    margin-left: 45%;
+    margin-left: 15%;
     margin-top: 20px;
+    text-align: center;
 }
 
 section#course-detials div#details-container {

@@ -14,9 +14,15 @@
     </header>
     <nav id="nav">
         <ul>
-            <div id="items" *ngIf="isLogged">
+            <div id="items" *ngIf="isLogged && isAdmin == 'false'">
                 <li><a routerLink="/explore">Explore</a></li>
                 <li><a routerLink="/mylessons">My Lessons</a></li>
+                <li><a routerLink="/profile">Profile</a></li>
+                <li><a routerLink="/contacts">Contacts</a></li>
+            </div>
+            <div id="items" *ngIf="isLogged && isAdmin == 'true'">
+                <li><a routerLink="/explore">Dashboard</a></li>
+                <li><a routerLink="/explore">New course</a></li>
                 <li><a routerLink="/profile">Profile</a></li>
                 <li><a routerLink="/contacts">Contacts</a></li>
             </div>

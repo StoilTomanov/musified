@@ -30,8 +30,17 @@
 ## About project
 
 - Musified is educational online platform that allows users to enroll for any course uploaded in the platform. Courses are music related and are all for free 🙂
+- Once you created an account you will be able to explore and enroll for a new course. From there you will find all your courses in the `My Courses` section from where you can play them, rate them, take a quiz and more. Once course is considered completed once the video materials have been played as well the quiz is taken with at least 80% correct answers. In case your score is lower you can re-watch or re-take the quiz as many time you need. Enjoy and let the music be with you!
 
 ## Project architecture
+
+##### Note: The first and only first created account will always be an `Admin` account. In a production environment the admin account will be preset
+
+#### Public part
+- Visible pages will be `Home`, `Mission`, `Explore`, `Contacts`
+
+#### Private part
+- Visible pages will be `Dashboard`, `New course` - if `Admin` account, `Explore`, `My Lessons`, `Profile`, `Contacts`
 
 ### Modules and components
 

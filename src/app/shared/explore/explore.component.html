@@ -23,7 +23,7 @@
                 </p>
             </div>
             <div class="details-btn">
-                <button type="button"><a routerLink='/details/{{lesson._id}}'>Details</a></button>
+                <button type="button" data-id="{{lesson._id}}" (click)="onDetails($event)">Details</button>
             </div>
         </div>
         <div id="paginator">

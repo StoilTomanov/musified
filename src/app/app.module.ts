@@ -27,7 +27,8 @@ import { SharedModule } from './shared/shared.module';
     {
       provide: AuthHandlerService,
       useClass: AuthHandlerService
-    }
+    },
+    AuthHandlerService
   ],
   bootstrap: [AppComponent]
 })

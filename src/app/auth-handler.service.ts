@@ -9,10 +9,11 @@ export class AuthHandlerService {
   public setStorage(data: IUser): void {
     sessionStorage.setItem('username', data.username);
     sessionStorage.setItem('email', data.email);
+    sessionStorage.setItem('isAdmin', data.isAdmin);
     sessionStorage.setItem('accessToken', data.accessToken);
   }
 
-  public getStorage(data: IUser): Storage {
+  public getStorage(): Storage {
     return sessionStorage;
   }
 

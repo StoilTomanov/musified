@@ -1,4 +1,5 @@
-import { Component, AfterContentChecked } from '@angular/core';
+import { Component, AfterContentChecked, OnInit } from '@angular/core';
+import { AuthHandlerService } from 'src/app/auth-handler.service';
 import { UserService } from 'src/app/auth/user.service';
 
 @Component({
@@ -6,12 +7,15 @@ import { UserService } from 'src/app/auth/user.service';
   templateUrl: './header-nav.component.html',
   styleUrls: ['./header-nav.component.css']
 })
-export class HeaderNavComponent implements AfterContentChecked {
+export class HeaderNavComponent implements AfterContentChecked, OnInit {
   isLogged: boolean = false;
-
+  isAdmin!: string;
   username!: string;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private storage: AuthHandlerService
+  ) { }
 
   logout(): void {
     this.userService.logout$()
@@ -20,12 +24,20 @@ export class HeaderNavComponent implements AfterContentChecked {
     return;
   }
 
+  ngOnInit(): void {
+
+  }
+
   ngAfterContentChecked(): void {
     if (sessionStorage['username'] && sessionStorage['accessToken']) {
       this.isLogged = true;
       this.username = sessionStorage['username']
     } else {
       this.isLogged = false;
+    }
+    const result = this.storage.getStorage();
+    if(result['isAdmin']){
+      this.isAdmin = result['isAdmin'];
     }
   }
 
