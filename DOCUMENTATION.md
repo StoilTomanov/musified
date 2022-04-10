@@ -95,3 +95,5 @@
 - Implementing media upload / delete
 - Implementing subscription / unsubscription of courses
 - Implementing admin views
+- Implementing profile data update
+- Implementing admin functionality
