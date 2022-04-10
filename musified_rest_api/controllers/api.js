@@ -18,7 +18,7 @@ router.get('/', async(req, res) => {
 });
 
 
-router.get('/:id', preload(), async(req, res) => {
+router.get('/:id', isLogged(), preload(), async(req, res) => {
     try {
         const result = res.locals.lesson;
         res.status(200).json(result);
@@ -32,10 +32,12 @@ router.get('/:id', preload(), async(req, res) => {
 })
 
 router.post('/', isLogged(), async(req, res) => {
+    console.log(req.body);
     const lesson = {
         name: req.body.name,
         description: req.body.description,
         level: req.body.level,
+        theory: req.body.theory,
         duration: req.body.duration,
         videoUrl: req.body.videoUrl,
         imagePreviewUrl: req.body.imagePreviewUrl,

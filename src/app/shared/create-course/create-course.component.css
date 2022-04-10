@@ -1,0 +1,100 @@
+div.forms#createForm {
+    background-color: rgba(78, 134, 136, 0.432);
+    word-wrap: break-word;
+    border: 1px solid rgba(255, 255, 255, 0.575);
+    box-shadow: 0px 0px 45px 20px rgba(235, 235, 235, 0.616);
+    border-radius: 5px;
+    width: 60%;
+    padding: 0%;
+    margin-left: 26%;
+    margin-top: 5%;
+    font-size: 120%;
+}
+
+hr {
+    margin-top: -32px;
+    margin-bottom: 5%;
+}
+
+div.forms h2 {
+    background-color: rgba(2, 211, 193, 0.377);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: -14;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+div.forms label {
+    color: rgb(255, 255, 255);
+    display: block;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 2px;
+    margin-top: -10px;
+}
+
+div.forms input {
+    background-color: rgba(252, 252, 252, 0.918);
+    color: rgb(0, 0, 0);
+    display: block;
+    border: 1px solid rgb(0, 255, 234);
+    border-radius: 3px;
+    text-align: center;
+    font-size: 55%;
+    position: relative;
+    margin-left: 37%;
+    margin-bottom: 20px;
+}
+
+div.error-msg {
+    text-align: center;
+    font-size: 80%;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 4px rgba(255, 0, 0, 0.687);
+}
+
+div.forms input.ng-valid.ng-touched {
+    box-shadow: 0 0 10px 5px rgba(56, 255, 93, 0.842);
+}
+
+div.forms input.ng-invalid.ng-touched {
+    box-shadow: 0 0 10px 5px rgba(255, 56, 56, 0.893);
+}
+
+div.forms button {
+    display: block;
+}
+
+div.forms button[disabled=""] {
+    background-color: rgb(205, 205, 205);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 0px 0px;
+    font-size: 70%;
+}
+
+div.forms span {
+    color: rgb(255, 255, 255);
+}
+
+button.submit-btn {
+    color: rgb(0, 255, 234);
+    font-size: 70%;
+    border: 1px solid rgb(0, 255, 234);
+    border-radius: 5px;
+    background-color: rgba(240, 248, 255, 0);
+    margin-left: 45%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    transition: 0.2s;
+}
+
+button.submit-btn:hover {
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 5px rgb(255, 255, 255);
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: 72%;
+}

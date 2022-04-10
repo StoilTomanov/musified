@@ -36,6 +36,9 @@
 
 #### Note: The first and only first created account will always be an `Admin` account. In a production environment the admin account will be preset
 
+#### Note: For the first record you create please use this resourse link: `../../../../assets/basic_chords.mp4`. The resourses will be uploaded / retrived from cloud storage API soon
+
+
 #### Public part
 - Visible pages will be `Home`, `Mission`, `Explore`, `Contacts`
 

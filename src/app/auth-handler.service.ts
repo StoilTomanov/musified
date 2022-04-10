@@ -11,6 +11,7 @@ export class AuthHandlerService {
     sessionStorage.setItem('email', data.email);
     sessionStorage.setItem('isAdmin', data.isAdmin);
     sessionStorage.setItem('accessToken', data.accessToken);
+    sessionStorage.setItem('userId', data._id);
   }
 
   public getStorage(): Storage {

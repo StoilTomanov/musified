@@ -1,0 +1,41 @@
+<section id="create-course">
+    <div class="forms" id="createForm">
+        <form (ngSubmit)="onCreateSubmit()" #createForm="ngForm">
+            <h2>Create new course</h2>
+            <hr>
+            <label for="name">Course name</label>
+            <input required minlength="3" name="name" id="name" type="text" placeholder="Improvisation" ngModel #name="ngModel">
+            <div class="error-msg" *ngIf="name.invalid && name.touched">
+                Course name is required and it must be at least 3 characters long
+            </div>
+            <label for="duration">Duration</label>
+            <input required name="duration" id="duration" type="text" placeholder="40 min" ngModel #duration="ngModel">
+            <div class="error-msg" *ngIf="duration.invalid && duration.touched">
+                Duration is required
+            </div>
+            <label for="level">Level</label>
+            <input required name="level" id="level" type="text" placeholder="40 min" ngModel #level="ngModel">
+            <div class="error-msg" *ngIf="level.invalid && level.touched">
+                Level is required
+            </div>
+            <label for="description">Short description</label>
+            <input required minlength="5" maxlength="200" name="description" id="description" type="text" placeholder="Basic chords course" ngModel #description="ngModel">
+            <div class="error-msg" *ngIf="description.invalid && description.touched">
+                Description is required and it must be at least 5 characters long and less than 200 characters long
+            </div>
+            <label for="theory">Theory</label>
+            <input required minlength="50" maxlength="430" name="theory" id="theory" type="text" placeholder="Basic chord course is cool" ngModel #theory="ngModel">
+            <div class="error-msg" *ngIf="theory.invalid && theory.touched">
+                Theory is required and it must be at least 50 characters long and less than 430 characters long
+            </div>
+            <label for="videoUrl">Link to resourse</label>
+            <input required maxlength="200" name="videoUrl" id="videoUrl" type="text" placeholder="../../../../assets/basic_chords.mp4" ngModel #videoUrl="ngModel">
+            <div class="error-msg" *ngIf="videoUrl.invalid && videoUrl.touched">
+                Link to the resourse is required
+            </div>
+            <label for="imagePreview">Image preview Url</label>
+            <input maxlength="200" name="imagePreview" id="imagePreview" type="text" placeholder="https://newimage.png" ngModel #imagePreview="ngModel">
+            <button type="submit" class="submit-btn" [disabled]="createForm.invalid && createForm.touched || createForm.untouched">Register</button>
+        </form>
+    </div>
+</section>

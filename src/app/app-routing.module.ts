@@ -5,6 +5,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ContactsComponent } from './shared/contacts/contacts.component';
 import { CourseDetailsComponent } from './shared/course-details/course-details.component';
+import { CreateCourseComponent } from './shared/create-course/create-course.component';
 import { ExploreComponent } from './shared/explore/explore.component';
 import { HomeComponent } from './shared/home/home.component';
 import { MissionComponent } from './shared/mission/mission.component';
@@ -54,6 +55,12 @@ const routes: Routes = [
     path: 'explore',
     pathMatch: 'full',
     component: ExploreComponent
+  },
+  {
+    path: 'create',
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
+    component: CreateCourseComponent
   },
   {
     path: 'details/:id',

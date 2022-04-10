@@ -14,6 +14,10 @@ export class LessonsService {
     return this.http.get<ILesson[]>('http://localhost:4000/api/records');
   }
 
+  public createCourse$(lessonData: {}): Observable<ILesson> {
+    return this.http.post<ILesson>('http://localhost:4000/api/records', lessonData);
+  }
+
   public getLessonById$(id: string): Observable<ILesson> {
     return this.http.get<ILesson>('http://localhost:4000/api/records/' + id);
   }
