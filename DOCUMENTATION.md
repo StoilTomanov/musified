@@ -34,7 +34,7 @@
 
 ## Project architecture
 
-##### Note: The first and only first created account will always be an `Admin` account. In a production environment the admin account will be preset
+#### Note: The first and only first created account will always be an `Admin` account. In a production environment the admin account will be preset
 
 #### Public part
 - Visible pages will be `Home`, `Mission`, `Explore`, `Contacts`
