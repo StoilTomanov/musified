@@ -22,7 +22,7 @@
         <div id="description" *ngIf="lessonById">
             <p class="desc-p">{{lessonById.description}}</p>
         </div>
-        <div id="buttons-actions">
+        <div id="buttons-actions" *ngIf="isLogged">
             <button class="action-btn">Rate this course</button>
             <button class="action-btn" (click)="onSubscribe($event)">Dive In</button>
             <button class="action-btn" (click)="onReport($event)">Report an issue</button>

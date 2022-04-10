@@ -18,7 +18,7 @@ router.get('/', async(req, res) => {
 });
 
 
-router.get('/:id', isLogged(), preload(), async(req, res) => {
+router.get('/:id', preload(), async(req, res) => {
     try {
         const result = res.locals.lesson;
         res.status(200).json(result);

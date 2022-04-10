@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router , ActivatedRoute } from '@angular/router';
+import { AuthHandlerService } from 'src/app/auth-handler.service';
 import { ILesson } from 'src/app/interfaces';
 import { LessonsService } from '../lessons.service';
 
@@ -15,9 +16,14 @@ export class CourseDetailsComponent implements OnInit {
     private lessonService: LessonsService,
     private activatedRouter: ActivatedRoute,
     private router: Router,
+    private storage: AuthHandlerService,
     ) { }
+
+    isLogged!: boolean;
     
   ngOnInit(): void {
+    const storageStatus = this.storage.getStorage()
+    this.isLogged = storageStatus['userId']
     this.lessonById = undefined;
     this.lessonService.getLessonById$(this.activatedRouter.snapshot.params['id'])
       .subscribe(data => this.lessonById = data);

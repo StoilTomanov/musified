@@ -64,7 +64,6 @@ const routes: Routes = [
   },
   {
     path: 'details/:id',
-    canActivate: [AuthGuard],
     pathMatch: 'full',
     component: CourseDetailsComponent
   },
