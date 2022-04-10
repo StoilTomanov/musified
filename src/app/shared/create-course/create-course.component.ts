@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ILesson } from 'src/app/interfaces';
 import { LessonsService } from '../lessons.service';
 
@@ -13,7 +14,8 @@ export class CreateCourseComponent implements OnInit {
 
   lessonData!: ILesson
   constructor(
-    private lessonService: LessonsService
+    private lessonService: LessonsService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -24,7 +26,7 @@ export class CreateCourseComponent implements OnInit {
     const formData = this.form.value;
     const newDate = new Date();
 
-    this.lessonService.createCourse$({
+    const result = this.lessonService.createCourse$({
       name: formData.name,
       description: formData.description,
       theory: formData.theory,
@@ -35,8 +37,9 @@ export class CreateCourseComponent implements OnInit {
       createdOn: `${newDate.getDate()}.${Number(newDate.getMonth()) + 1}.${newDate.getFullYear()}`,
       owner: sessionStorage['userId']
     }).subscribe(data => this.lessonData = data);
-    console.log(this.lessonData);
 
+    
+    this.router.navigate(['/explore']);
     return this.lessonData;
   }
 
