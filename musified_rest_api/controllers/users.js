@@ -22,7 +22,6 @@ router.post('/register', isGuest(), async(req, res) => {
         }
 
         const result = await register(req.body.username.trim(), req.body.email.trim().toLowerCase(), req.body.password.trim());
-        console.log(result);
         res.status(201).json(result);
 
     } catch (error) {

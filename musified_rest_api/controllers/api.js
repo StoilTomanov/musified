@@ -32,7 +32,6 @@ router.get('/:id', isLogged(), preload(), async(req, res) => {
 })
 
 router.post('/', isLogged(), async(req, res) => {
-    console.log(req.body);
     const lesson = {
         name: req.body.name,
         description: req.body.description,
@@ -107,7 +106,6 @@ router.delete('/:id', isLogged(), preload(), isOwner(), async(req, res) => { //T
 
     try {
         const result = await lessonServices.deleteRecordById(id);
-        console.log('service', result);
         res.status(200).json(result);
     } catch (error) {
         console.error(error.message);

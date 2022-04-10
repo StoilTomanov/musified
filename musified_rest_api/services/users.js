@@ -28,11 +28,13 @@ async function register(username, email, password) {
     }
 
     const hasAdmin = await User.find({});
+    const newDate = new Date();
     if (hasAdmin.length == 0) {
         const user = new User({
             email,
             username,
             isAdmin: true,
+            dateJoined: `${newDate.getDate()}.${Number(newDate.getMonth()) + 1}.${newDate.getFullYear()}`,
             hashedPassword: await bcrypt.hash(password, 10),
         });
         await user.save();
@@ -42,6 +44,7 @@ async function register(username, email, password) {
             email,
             username,
             isAdmin: false,
+            dateJoined: `${newDate.getDate()}.${Number(newDate.getMonth()) + 1}.${newDate.getFullYear()}`,
             hashedPassword: await bcrypt.hash(password, 10),
         });
         await user.save();

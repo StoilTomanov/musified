@@ -3,8 +3,9 @@ const { model, Schema } = require('mongoose');
 const userSchema = new Schema({
     email: { type: String, required: [true, 'Email is required.'] },
     username: { type: String, required: [true, 'Username is required.'] },
-    date_joined: { type: String, required: true },
+    dateJoined: { type: String, required: true },
     level: { type: String, required: true, default: 'Beginner' },
+    profilePicture: { type: String, default: '../assets/user-logo.png' },
     passed_courses: { type: Number, required: true, default: 0 },
     isAdmin: { type: Boolean, required: true },
     hashedPassword: { type: String, required: true },

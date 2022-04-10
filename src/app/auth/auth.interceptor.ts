@@ -20,12 +20,14 @@ export class AuthInterceptor implements HttpInterceptor {
   ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    request = request.clone({
-      setHeaders: {
-        'X-Authorization': `${sessionStorage['accessToken']}`,
-        'Content-Type': 'application/json'
-      }
-    })
+    if(sessionStorage['accessToken'] && sessionStorage['userId']){
+      request = request.clone({
+        setHeaders: {
+          'X-Authorization': `${sessionStorage['accessToken']}`,
+          'Content-Type': 'application/json'
+        }
+      })
+    }
     return next.handle(request).pipe(tap(event => {
       if (event instanceof HttpResponse) {
 

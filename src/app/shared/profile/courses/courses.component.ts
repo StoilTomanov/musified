@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/auth/user.service';
+import { IUser } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-courses',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit {
+  userData!: IUser;
 
-  constructor() { }
+  constructor(
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
+    this.userService.readUser$()
+    .subscribe(data => this.userData = data);
   }
 
 }
