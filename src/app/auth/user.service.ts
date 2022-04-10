@@ -40,6 +40,15 @@ export class UserService {
       }
     })
   };
+
+  readUser$(): Observable<IUser>{
+    return this.http.get<IUser>('http://localhost:4000/users/readuser',{
+      headers:{
+        'X-Authorization': sessionStorage['accessToken']
+      }
+    })
+  }
+
 }
 
 

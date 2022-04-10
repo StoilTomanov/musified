@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './token.interceptor';
 
 
 @NgModule({
@@ -20,12 +19,6 @@ import { TokenInterceptor } from './token.interceptor';
     FooterComponent,
     HeaderNavComponent,
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true,
-    },
-  ]
+  providers: []
 })
 export class CoreModule { }

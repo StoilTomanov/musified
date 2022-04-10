@@ -53,6 +53,10 @@ function logout(token) {
     blacklist.push(token);
 }
 
+async function getUserData(userId) {
+    return await User.findById({ _id: userId });
+}
+
 function verifySession(token) {
     const payload = jwt.verify(token, JWT_SECRET);
     if (blacklist.includes(token)) {
@@ -86,5 +90,6 @@ module.exports = {
     login,
     register,
     logout,
-    verifySession
+    verifySession,
+    getUserData,
 }

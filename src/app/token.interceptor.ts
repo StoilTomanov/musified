@@ -3,13 +3,9 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor,
-  HttpErrorResponse,
-  HttpResponse
+  HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
-
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -17,6 +13,12 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    request = request.clone({
+      setHeaders: {
+        'X-Authorization': `${sessionStorage['accessToken']}`,
+        'Content-Type': 'application/json'
+      }
+    })
     return next.handle(request);
   }
 }
