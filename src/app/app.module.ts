@@ -9,7 +9,6 @@ import { AuthModule } from './auth/auth.module';
 import { UserService } from './auth/user.service';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,11 +29,6 @@ import { TokenInterceptor } from './token.interceptor';
       useClass: AuthHandlerService
     },
     AuthHandlerService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true,
-    }
   ],
   bootstrap: [AppComponent]
 })

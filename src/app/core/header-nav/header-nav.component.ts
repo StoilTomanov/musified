@@ -18,10 +18,12 @@ export class HeaderNavComponent implements AfterContentChecked, OnInit {
   ) { }
 
   logout(): void {
-    this.userService.logout$()
-      .subscribe()
-    this.isLogged = false;
-    return;
+    if (sessionStorage['accessToken']) {
+      this.userService.logout$()
+        .subscribe()
+      this.isLogged = false;
+      return;
+    }
   }
 
   ngOnInit(): void {
@@ -36,7 +38,7 @@ export class HeaderNavComponent implements AfterContentChecked, OnInit {
       this.isLogged = false;
     }
     const result = this.storage.getStorage();
-    if(result['isAdmin']){
+    if (result['isAdmin']) {
       this.isAdmin = result['isAdmin'];
     }
   }
