@@ -19,7 +19,7 @@
 
 1. Install all dependancies required for the application to work using `npm install` in the command panel
 
-2. Install all dependancies required for the REST server to work again using `npm install` in the command panel. Note: REST server is in a separate folder which means you will first need to naviagte to this folder
+2. Install all dependancies required for the REST server to work again using `npm install` in the command panel. Note: REST server is in a separate folder which means you will first need to naviagte to this folder - `musified_rest_api`
 
 3. Ensure you are using your correct MongoDb connection string. You can check `index.js` file for that.
 
@@ -40,7 +40,9 @@
 - Visible pages will be `Home`, `Mission`, `Explore`, `Contacts`
 
 #### Private part
-- Visible pages will be `Dashboard`, `New course` - if `Admin` account, `Explore`, `My Lessons`, `Profile`, `Contacts`
+- Visible pages will be `Courses` - if `Admin`, `New course` - if `Admin` account, `Explore`, `My Lessons`, `Profile`, `Contacts`
+
+- Admin account will have the functionality to create and edit courses
 
 ### Modules and components
 
