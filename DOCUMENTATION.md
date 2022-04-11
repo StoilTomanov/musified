@@ -113,6 +113,7 @@
 - Details and Give up buttons in My Lessons component
 - Back, quiz, give up and Report an issue buttons in watch-lesson component
 - Rate and Report an issue buttons in course details component
+- Pagination
 
 - Deploy the application
 - Cloud storage API implementation
