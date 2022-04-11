@@ -11,6 +11,14 @@ async function readAll() {
     return result;
 }
 
+async function getMyLessons(userId) {
+    const result = await Lesson.find({});
+    const mappedResult = result.map(lesson => lesson.subscribers.includes(userId));
+    console.log(mappedResult);
+    return mappedResult
+}
+
+
 
 async function readById(id) {
     const result = await Lesson.findById({ _id: id }).lean();
@@ -59,4 +67,5 @@ module.exports = {
     update,
     deleteRecordById,
     subscribeToLesson,
+    getMyLessons,
 }

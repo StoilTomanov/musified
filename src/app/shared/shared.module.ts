@@ -10,7 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ExploreComponent } from './explore/explore.component';
 import { MyLessonsComponent } from './my-lessons/my-lessons.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { LessonsService } from './lessons.service';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { WatchLessonComponent } from './watch-lesson/watch-lesson.component';

@@ -15,7 +15,7 @@ export class LessonsService {
   }
 
   public getMyLessons$(): Observable<ILesson[]> {
-    return this.http.get<ILesson[]>('http://localhost:4000/api/records');
+    return this.http.get<ILesson[]>('http://localhost:4000/api/records/mylessons');
   }
 
   public createCourse$(lessonData: {}): Observable<ILesson> {
