@@ -100,3 +100,23 @@
 - Implementing admin views
 - Implementing profile data update
 - Implementing admin functionality
+
+#### What's left TODO: (11.04.2022)
+- Learn more button in home page
+- Handle contact form
+- Handle contact form
+- Lesson details for Admin account - course statistic
+- Lesson details for Admin account - course statistic
+- Profile/courses view
+- Profile details update
+- Handle progress bars
+- Details and Give up buttons in My Lessons component
+- Back, quiz, give up and Report an issue buttons in watch-lesson component
+- Rate and Report an issue buttons in course details component
+
+- Deploy the application
+- Cloud storage API implementation
+- Angular animations
+- State management
+- Unit tests
+- Research the geolocation API and see if can be useful for this app
