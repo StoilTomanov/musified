@@ -1,4 +1,4 @@
-<div class="profile-card">
+<div class="profile-card" *ngIf="userData">
     <p>Joined: {{userData.dateJoined}}</p>
     <p>Passed courses {{userData.passed_courses}}</p>
     <p>Level: {{userData.level}}</p>

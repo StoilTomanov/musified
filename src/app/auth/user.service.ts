@@ -34,21 +34,20 @@ export class UserService {
 
   logout$(): Observable<IUser> {
     // TODO: consider doing additional check for empty fields
-    return this.http.get<IUser>('http://localhost:4000/users/logout',{
-      headers:{
+    return this.http.get<IUser>('http://localhost:4000/users/logout', {
+      headers: {
         'X-Authorization': sessionStorage['accessToken']
       }
     })
   };
 
-  readUser$(): Observable<IUser>{
-    return this.http.get<IUser>('http://localhost:4000/users/readuser',{
-      headers:{
+  readUser$(): Observable<IUser> {
+    return this.http.get<IUser>('http://localhost:4000/users/readuser', {
+      headers: {
         'X-Authorization': sessionStorage['accessToken']
       }
     })
   }
-
 }
 
 

@@ -1,4 +1,4 @@
-const { model, Schema } = require('mongoose');
+const { model, Schema, Types: { ObjectId } } = require('mongoose');
 
 const userSchema = new Schema({
     email: { type: String, required: [true, 'Email is required.'] },
@@ -7,6 +7,7 @@ const userSchema = new Schema({
     level: { type: String, required: true, default: 'Beginner' },
     profilePicture: { type: String, default: '../assets/user-logo.png' },
     passed_courses: { type: Number, required: true, default: 0 },
+    subscriptions: { type: [ObjectId], default: [] },
     isAdmin: { type: Boolean, required: true },
     hashedPassword: { type: String, required: true },
 });

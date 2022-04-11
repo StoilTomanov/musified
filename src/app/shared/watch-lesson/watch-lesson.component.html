@@ -10,9 +10,8 @@
 
         <div id="lesson-details">
             <div id="theory">
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, modi voluptas laborum omnis, minus minima non culpa laudantium sequi similique aut suscipit sit inventore, necessitatibus vitae quas? Vero, hic veritatis.
-
+                <p *ngIf="lessonById">
+                    {{lessonById.theory}}
                 </p>
             </div>
         </div>

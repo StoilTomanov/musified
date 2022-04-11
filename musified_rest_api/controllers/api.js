@@ -85,7 +85,7 @@ router.put('/:id', isLogged(), preload(), isOwner(), async(req, res) => {
 });
 
 // subscribe to lesson
-router.put('/subscribe/:id', isLogged(), preload(), isOwner(), async(req, res) => {
+router.put('/subscribe/:id', isLogged(), preload(), async(req, res) => {
     const lessonId = req.params.id;
     const userId = req.user._id
 

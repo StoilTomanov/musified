@@ -8,7 +8,7 @@ import { IUser } from 'src/app/interfaces';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit {
-  userData!: IUser;
+  userData!: IUser
 
   constructor(
     private userService: UserService

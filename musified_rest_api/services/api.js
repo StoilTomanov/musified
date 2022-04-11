@@ -43,6 +43,10 @@ async function subscribeToLesson(lessonId, userId) {
         throw new Error('No record found!');
     }
 
+    if (currentLesson.subscribers.includes(userId)) {
+        throw new Error('You are already subscribed to this course')
+    }
+
     currentLesson.subscribers.push(userId);
     await currentLesson.save();
 

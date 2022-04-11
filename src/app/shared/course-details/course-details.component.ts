@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router , ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthHandlerService } from 'src/app/auth-handler.service';
+import { UserService } from 'src/app/auth/user.service';
 import { ILesson } from 'src/app/interfaces';
 import { LessonsService } from '../lessons.service';
 
@@ -11,16 +12,16 @@ import { LessonsService } from '../lessons.service';
 })
 export class CourseDetailsComponent implements OnInit {
   lessonById: ILesson | undefined;
-  
+
   constructor(
     private lessonService: LessonsService,
     private activatedRouter: ActivatedRoute,
     private router: Router,
     private storage: AuthHandlerService,
-    ) { }
+  ) { }
 
-    isLogged!: boolean;
-    
+  isLogged!: boolean;
+
   ngOnInit(): void {
     const storageStatus = this.storage.getStorage()
     this.isLogged = storageStatus['userId']
@@ -29,11 +30,15 @@ export class CourseDetailsComponent implements OnInit {
       .subscribe(data => this.lessonById = data);
   }
 
-  onSubscribe(event: Event): void{
-    // TODO: finish the subscription
+  onSubscribe(): void {
+    const lessonId: string = this.activatedRouter.snapshot.params['id'];
+    this.lessonService.subscribeToLesson$(lessonId)
+      .subscribe(data => this.lessonById = data);
+    this.router.navigate(['mylessons']);
+
   }
 
-  onReport(event: Event){
+  onReport() {
     this.router.navigate(['contacts']);
   }
 
