@@ -15,6 +15,7 @@ export class CourseDetailsComponent implements OnInit {
 
   constructor(
     private lessonService: LessonsService,
+    private userService: UserService,
     private activatedRouter: ActivatedRoute,
     private router: Router,
     private storage: AuthHandlerService,
@@ -32,6 +33,8 @@ export class CourseDetailsComponent implements OnInit {
 
   onSubscribe(): void {
     const lessonId: string = this.activatedRouter.snapshot.params['id'];
+    this.userService.updateUser$(`${sessionStorage['userId']}`, lessonId)
+      .subscribe();
     this.lessonService.subscribeToLesson$(lessonId)
       .subscribe(data => this.lessonById = data);
     this.router.navigate(['mylessons']);

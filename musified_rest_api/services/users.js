@@ -60,6 +60,23 @@ async function getUserData(userId) {
     return await User.findById({ _id: userId });
 }
 
+async function updateUser(userId, lessonId) {
+    const user = await User.findOne({ _id: userId })
+
+    if (!user) {
+        throw new Error('User does not exists.')
+    }
+    if (lessonId) {
+        if (!user.subscriptions.includes(lessonId)) {
+            user.subscriptions.push(lessonId);
+            await user.save();
+        } else {
+            throw new Error('User is already subscribed to this lesson');
+        }
+    }
+
+}
+
 function verifySession(token) {
     const payload = jwt.verify(token, JWT_SECRET);
     if (blacklist.includes(token)) {
@@ -95,4 +112,5 @@ module.exports = {
     logout,
     verifySession,
     getUserData,
+    updateUser,
 }

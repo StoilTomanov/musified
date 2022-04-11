@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { isGuest, isLogged } = require('../middlewares/guards');
-const { register, login, logout, getUserData } = require('../services/users');
+const { register, login, logout, getUserData, updateUser } = require('../services/users');
 const mapError = require('../utils/errorMapper');
 
 router.post('/login', isGuest(), async(req, res) => {
@@ -43,6 +43,20 @@ router.get('/readuser', isLogged(), async(req, res) => {
     try {
         const userId = req.user._id;
         const result = await getUserData(userId);
+        res.status(200).json(result);
+    } catch (error) {
+        console.error(error.message);
+        const mappedError = mapError(error);
+        res.status(400).json({ message: mappedError });
+    }
+    res.status(204).end();
+});
+
+router.put('/:id', isLogged(), async(req, res) => {
+    try {
+        const userId = req.params.id;
+        const lessonId = req.body.lessonId;
+        const result = await updateUser(userId, lessonId);
         res.status(200).json(result);
     } catch (error) {
         console.error(error.message);

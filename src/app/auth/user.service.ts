@@ -48,6 +48,17 @@ export class UserService {
       }
     })
   }
+
+  updateUser$(userId: string, lessonId: string): Observable<IUser> {
+    return this.http.put<IUser>('http://localhost:4000/users/' + userId, {
+      "lessonId":`${lessonId}`
+    }, {
+      headers: {
+        'X-Authorization': `${sessionStorage['accessToken']}`
+      }
+    })
+  }
+
 }
 
 

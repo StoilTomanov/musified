@@ -14,7 +14,7 @@
                 Duration is required
             </div>
             <label for="level">Level</label>
-            <input required name="level" id="level" type="text" placeholder="40 min" ngModel #level="ngModel">
+            <input required name="level" id="level" type="text" placeholder="Beginner" ngModel #level="ngModel">
             <div class="error-msg" *ngIf="level.invalid && level.touched">
                 Level is required
             </div>
@@ -33,8 +33,8 @@
             <div class="error-msg" *ngIf="videoUrl.invalid && videoUrl.touched">
                 Link to the resourse is required
             </div>
-            <label for="imagePreview">Image preview Url</label>
-            <input maxlength="200" name="imagePreview" id="imagePreview" type="text" placeholder="https://newimage.png" ngModel #imagePreview="ngModel">
+            <label for="imagePreviewUrl">Image preview Url</label>
+            <input maxlength="200" name="imagePreviewUrl" id="imagePreviewUrl" type="text" placeholder="https://newimage.png" ngModel #imagePreviewUrl="ngModel">
             <button type="submit" class="submit-btn" [disabled]="createForm.invalid && createForm.touched || createForm.untouched">Register</button>
         </form>
     </div>
