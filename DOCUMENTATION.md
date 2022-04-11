@@ -104,8 +104,6 @@
 #### What's left TODO: (11.04.2022)
 - Learn more button in home page
 - Handle contact form
-- Handle contact form
-- Lesson details for Admin account - course statistic
 - Lesson details for Admin account - course statistic
 - Profile/courses view
 - Profile details update
