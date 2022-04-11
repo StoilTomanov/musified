@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ILesson } from 'src/app/interfaces';
 import { LessonsService } from '../lessons.service';
@@ -8,7 +8,7 @@ import { LessonsService } from '../lessons.service';
   templateUrl: './my-lessons.component.html',
   styleUrls: ['./my-lessons.component.css']
 })
-export class MyLessonsComponent implements OnInit {
+export class MyLessonsComponent implements OnInit, AfterContentInit {
   lessons: ILesson[] | undefined
   lessonId: string = '';
 
@@ -18,9 +18,13 @@ export class MyLessonsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterContentInit(): void {
     this.lessons = undefined;
-    this.lessonService.getAllItems$()
+    this.lessonService.getMyLessons$()
       .subscribe(data => this.lessons = data);
+
   }
 
   onWatch(event: Event) {

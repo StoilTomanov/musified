@@ -2,12 +2,24 @@ const router = require('express').Router();
 const { isLogged, isOwner } = require('../middlewares/guards');
 const preload = require('../middlewares/preload');
 const lessonServices = require('../services/api');
+const userServices = require('../services/users');
 const mapError = require('../utils/errorMapper');
 
 router.get('/', async(req, res) => {
     try {
-        const result = await lessonServices.readAll();
-        res.status(200).json(result);
+        if (req.user) {
+            const currentUser = await userServices.getUserData(req.user._id)
+            if (!currentUser.isAdmin) {
+                const result = await lessonServices.getAvailableLessons(currentUser._id);
+                res.status(200).json(result);
+            } else {
+                const result = await lessonServices.readAll();
+                res.status(200).json(result);
+            }
+        } else {
+            const result = await lessonServices.readAll();
+            res.status(200).json(result);
+        }
     } catch (error) {
         console.error(error.message);
         const mappedError = mapError(error);

@@ -38,7 +38,6 @@ export class CourseDetailsComponent implements OnInit {
     this.lessonService.subscribeToLesson$(lessonId)
       .subscribe(data => this.lessonById = data);
     this.router.navigate(['mylessons']);
-
   }
 
   onReport() {

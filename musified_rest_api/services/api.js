@@ -13,10 +13,16 @@ async function readAll() {
 
 async function getMyLessons(userId) {
     const result = await Lesson.find({});
-    const mappedResult = result.map(lesson => lesson.subscribers.includes(userId));
-    console.log(mappedResult);
-    return mappedResult
+    const filteredResults = result.filter(lesson => lesson.subscribers.includes(userId))
+    return filteredResults;
 }
+
+async function getAvailableLessons(userId) {
+    const result = await Lesson.find({});
+    const filteredResults = result.filter(lesson => !lesson.subscribers.includes(userId))
+    return filteredResults;
+}
+
 
 
 
@@ -68,4 +74,5 @@ module.exports = {
     deleteRecordById,
     subscribeToLesson,
     getMyLessons,
+    getAvailableLessons
 }

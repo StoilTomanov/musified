@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, Component, OnInit } from '@angular/core';
 import { LessonsService } from '../lessons.service';
 import { ILesson } from '../../interfaces/lessons';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './explore.component.html',
   styleUrls: ['./explore.component.css']
 })
-export class ExploreComponent implements OnInit {
+export class ExploreComponent implements OnInit, AfterContentInit{
   lessons: ILesson[] | undefined
   lessonId: string = '';
 
@@ -18,10 +18,14 @@ export class ExploreComponent implements OnInit {
   ) {
   }
   ngOnInit(): void {
+  }
+
+  ngAfterContentInit(): void {
     this.lessons = undefined;
     this.lessonService.getAllItems$()
       .subscribe(data => this.lessons = data);
   }
+
   onDetails(event: Event) {
     this.lessonId = (event.target as Element).id;
     this.router.navigate(['/details/' + this.lessonId])
