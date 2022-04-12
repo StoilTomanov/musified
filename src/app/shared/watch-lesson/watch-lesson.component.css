@@ -123,3 +123,39 @@ div#controls button:active {
     color: rgb(255, 255, 255);
     background-color: rgba(142, 255, 179, 0.842);
 }
+
+div#controls button.confirm-no {
+    position: relative;
+    font-size: 80%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(8, 185, 8);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    left: 255px;
+    transition: 0.2s;
+}
+
+div#controls button.confirm-yes {
+    position: relative;
+    font-size: 80%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(202, 33, 10);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    left: 375px;
+    transition: 0.2s;
+}
+
+#theory p.confirm-give-in {
+    position: relative;
+    font-size: 85%;
+    color: rgb(231, 231, 6);
+    margin-top: 30px;
+    margin-left: 37%;
+}

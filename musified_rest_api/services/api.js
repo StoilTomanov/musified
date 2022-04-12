@@ -58,12 +58,27 @@ async function subscribeToLesson(lessonId, userId) {
     }
 
     if (currentLesson.subscribers.includes(userId)) {
-        throw new Error('You are already subscribed to this course')
+        throw new Error('You are already subscribed to this course');
     }
 
     currentLesson.subscribers.push(userId);
     await currentLesson.save();
 
+}
+
+async function unsubscribeToLesson(lessonId, userId) {
+    const currentLesson = await Lesson.findById({ _id: lessonId });
+    if (!currentLesson) {
+        throw new Error('No record found!');
+    }
+
+    if (currentLesson.subscribers.includes(userId)) {
+        const index = currentLesson.subscribers.indexOf(userId);
+        currentLesson.subscribers.splice(index, 1);
+    } else {
+        throw new Error('You are not subscribed for this course');
+    }
+    await currentLesson.save();
 }
 
 module.exports = {
@@ -74,5 +89,6 @@ module.exports = {
     deleteRecordById,
     subscribeToLesson,
     getMyLessons,
-    getAvailableLessons
+    getAvailableLessons,
+    unsubscribeToLesson,
 }

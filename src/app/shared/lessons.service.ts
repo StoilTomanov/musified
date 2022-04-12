@@ -31,4 +31,9 @@ export class LessonsService {
     // TODO pass the userId in the one of the interceptors
   }
 
+  public unsubscribeToLesson$(id: string): Observable<ILesson> {
+    return this.http.put<ILesson>('http://localhost:4000/api/records/unsubscribe/' + id, {});
+    // TODO pass the userId in the one of the interceptors
+  }
+
 }

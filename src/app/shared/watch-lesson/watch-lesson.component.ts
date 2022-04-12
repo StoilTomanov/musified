@@ -16,10 +16,27 @@ export class WatchLessonComponent implements OnInit {
     private router: Router,
   ) { }
 
+  hasGiveIn: boolean = false;
+
   ngOnInit(): void {
     this.lessonById = undefined;
     this.lessonService.getLessonById$(this.activatedRouter.snapshot.params['id'])
       .subscribe(data => this.lessonById = data);
+  }
+
+  onGiveUp(): void {
+    this.hasGiveIn = true;
+  }
+
+  onConfirm(event: Event): void {
+    if ((event.target as Element).classList[0] == 'confirm-no') {
+      this.hasGiveIn = false;
+    } else if ((event.target as Element).classList[0] == 'confirm-yes') {
+      this.lessonService.unsubscribeToLesson$(this.activatedRouter.snapshot.params['id'])
+        .subscribe();
+      this.router.navigate(['mylessons']);
+    }
+
   }
 
   onBack(): void {
