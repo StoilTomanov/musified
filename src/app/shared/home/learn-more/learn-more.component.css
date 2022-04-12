@@ -4,17 +4,17 @@ section#learn-more div#learn-more-container {
     border: 1px solid rgba(140, 251, 255, 0.799);
     box-shadow: 0px 0px 25px 10px rgba(235, 235, 235, 0.616);
     border-radius: 5px;
-    height: 600px;
+    height: 450px;
     width: 80%;
     position: relative;
-    top: 50px;
+    top: 100px;
     font-size: 120%;
     margin-left: 18%;
     margin-bottom: 2%;
 }
 
 div#video-play {
-    height: 600px;
+    height: 450px;
     background-color: rgba(0, 0, 0, 0.888);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -24,7 +24,7 @@ div#video-play {
 
 .video-player {
     width: 1024px;
-    height: 600px;
+    height: 450px;
     max-width: 1024px;
     margin-left: 0px;
     border-bottom-left-radius: 5px;
@@ -38,7 +38,7 @@ div#backToHome button {
     border-radius: 5px;
     background-color: rgba(240, 248, 255, 0);
     margin-left: 53%;
-    margin-top: 5%;
+    margin-top: 10%;
     width: 100px;
     transition: 0.2s;
 }
