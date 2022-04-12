@@ -18,10 +18,13 @@ import { VideoPreviewComponent } from './course-details/video-preview/video-prev
 import { VideoPlayComponent } from './watch-lesson/video-play/video-play.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { LearnMoreComponent } from './home/learn-more/learn-more.component';
 
 @NgModule({
   declarations: [
     ProfileComponent,
+    HomeComponent,
     CoursesComponent,
     OverviewComponent,
     ProfileDetailsComponent,
@@ -34,13 +37,17 @@ import { FormsModule } from '@angular/forms';
     WatchLessonComponent,
     VideoPreviewComponent,
     VideoPlayComponent,
-    CreateCourseComponent
+    CreateCourseComponent,
+    LearnMoreComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     HttpClientModule,
     FormsModule
+  ],
+  exports:[
+    HomeComponent
   ],
   providers: [
     {

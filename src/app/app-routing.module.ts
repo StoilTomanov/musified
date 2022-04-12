@@ -8,6 +8,7 @@ import { CourseDetailsComponent } from './shared/course-details/course-details.c
 import { CreateCourseComponent } from './shared/create-course/create-course.component';
 import { ExploreComponent } from './shared/explore/explore.component';
 import { HomeComponent } from './shared/home/home.component';
+import { LearnMoreComponent } from './shared/home/learn-more/learn-more.component';
 import { MissionComponent } from './shared/mission/mission.component';
 import { MyLessonsComponent } from './shared/my-lessons/my-lessons.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
@@ -23,6 +24,11 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: HomeComponent
+  },
+  {
+    path: 'learnmore',
+    pathMatch: 'full',
+    component: LearnMoreComponent
   },
   {
     path: 'login',
