@@ -14,6 +14,7 @@ export class RegisterComponent {
 
   hasMatch: boolean = true;
   private userData!: IUser;
+  errors: string = '';
 
   constructor(private userService: UserService) { }
 
@@ -28,9 +29,13 @@ export class RegisterComponent {
   onRegisterSubmit(): IUser {
     const formData = this.form.value;
     this.userService.register$(formData.username, formData.email, formData.password)
-    .subscribe(data => this.userData = data)
-    // TODO: send data to the rest service and log in the application
-    // TODO: implement repass check - DONE
+      .subscribe({
+        next: (data) => { this.userData = data },
+        error: (err) => { this.errors = err.error.message }
+      })
+    setTimeout(() => {
+      this.errors = ''
+    }, 4000);
     return this.userData;
   }
 }

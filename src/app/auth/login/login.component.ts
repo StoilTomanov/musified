@@ -10,7 +10,8 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent {
   @ViewChild('loginForm') form!: NgForm
-  
+  errors: string = '';
+
   private userData!: IUser;
 
   constructor(private userService: UserService) {
@@ -20,7 +21,15 @@ export class LoginComponent {
   onLoginSubmit(): IUser {
     const formData = this.form.value;
     this.userService.login$(formData.username, formData.password)
-    .subscribe(data => this.userData = data)
+      .subscribe({
+        next: (data) => { this.userData = data },
+        error: (err) => { this.errors = err.error.message }
+      });
+
+    setTimeout(() => {
+      this.errors = ''
+    }, 4000);
+
     return this.userData;
   }
 

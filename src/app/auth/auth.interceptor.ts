@@ -34,7 +34,7 @@ export class AuthInterceptor implements HttpInterceptor {
         if (event.url?.endsWith('/login') || event.url?.endsWith('/register')) {
           const newUser: IUser = event.body;
           this.storage.setStorage(newUser);
-          this.router.navigate(['explore']);
+          this.router.navigate(['mylessons']);
         } else if (event.url?.endsWith('/logout')) {
           this.storage.removeStorage();
         }
