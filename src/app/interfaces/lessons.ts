@@ -9,7 +9,7 @@ export interface ILesson { // TODO: the database model will likely change, ensur
     imagePreviewUrl:string,
     progress: number,
     createdOn: string,
-    subscribers: [],
+    subscribers: any[],
     views: number,
     rating: any[],
     ratingScore: number,

@@ -31,7 +31,7 @@
             <button type="button" class="watch-video" data-id="{{lesson._id}}" (click)="onWatch($event)">
                 Watch
             </button>
-            <button type="button" class="details-video" data-id="{{lesson._id}}">
+            <button type="button" class="details-video" data-id="{{lesson._id}}" data-subscribed="true" (click)="onDetails($event)">
                 Details 
             </button>
             <button type="button" class="unsubscribe-video" data-id="{{lesson._id}}">

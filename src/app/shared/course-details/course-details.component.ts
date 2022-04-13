@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthHandlerService } from 'src/app/auth-handler.service';
 import { UserService } from 'src/app/auth/user.service';
@@ -12,6 +12,7 @@ import { LessonsService } from '../lessons.service';
 })
 export class CourseDetailsComponent implements OnInit {
   lessonById: ILesson | undefined;
+  isSubscribed!: boolean;
 
   constructor(
     private lessonService: LessonsService,
@@ -39,7 +40,17 @@ export class CourseDetailsComponent implements OnInit {
         }
         this.ratingDarkStars = 5 - this.ratingYellowStars;
       });
+
+      this.userService.readUser$()
+      .subscribe(data => {
+        const lessonId: string = this.activatedRouter.snapshot.params['id'];
+        if (data.subscriptions.includes(lessonId)){
+          this.isSubscribed = true;
+        }
+      });
+      
   }
+
 
   onSubscribe(): void {
     const lessonId: string = this.activatedRouter.snapshot.params['id'];
@@ -53,7 +64,7 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   onBack(): void {
-    this.router.navigate(['mylessons']);
+    this.router.navigate(['explore']);
   }
 
   onReport() {

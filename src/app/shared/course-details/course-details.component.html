@@ -25,7 +25,7 @@
         <div id="description" *ngIf="lessonById">
             <p class="desc-p">{{lessonById.description}}</p>
         </div>
-        <div id="buttons-actions" *ngIf="isLogged">
+        <div id="buttons-actions" *ngIf="isLogged && !isSubscribed">
             <button class="action-btn" (click)="onBack()">Back to explore</button>
             <button class="action-btn" (click)="onSubscribe()">Dive In</button>
             <button class="action-btn" (click)="onReport()">Report an issue</button>

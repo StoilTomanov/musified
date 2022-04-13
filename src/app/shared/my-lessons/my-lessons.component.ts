@@ -24,12 +24,16 @@ export class MyLessonsComponent implements OnInit, AfterContentInit {
     this.lessons = undefined;
     this.lessonService.getMyLessons$()
       .subscribe(data => this.lessons = data);
-
   }
 
   onWatch(event: Event) {
     this.lessonId = (event.target as Element).id;
     this.router.navigate(['watch/' + this.lessonId]);
+  }
+
+  onDetails(event: Event): void {
+    this.lessonId = (event.target as Element).id;
+    this.router.navigate(['details/' + this.lessonId]);
   }
 
 }

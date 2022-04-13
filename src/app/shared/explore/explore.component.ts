@@ -18,6 +18,7 @@ export class ExploreComponent implements OnInit, AfterContentInit{
   ) {
   }
   ngOnInit(): void {
+
   }
 
   ngAfterContentInit(): void {

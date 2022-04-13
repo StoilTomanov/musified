@@ -5,7 +5,7 @@ export interface IUser {
     dateJoined: string,
     profilePicture: string,
     passed_courses: string,
-    subscriptions: [],
+    subscriptions: any[],
     level: string,
     isAdmin: string,
     accessToken: string
