@@ -1,14 +1,4 @@
 <section id="dashboard">
-    <!-- <div *ngIf="lessons">
-        <h1 *ngIf="lessons && lessons.length > 0">
-            My Lessons
-        </h1>
-        <h1 *ngIf="lessons.length == 0" class="no-lessons">
-            You have not subscribed for any lessons so far 🙁 Find your first one <a routerLink="/explore">here</a>
-        </h1>
-        <h1 *ngIf="!lessons">Loading...</h1>
-    </div> -->
-
     <div *ngIf="!lessons">
         <h1 *ngIf="!lessons" class="loading">Loading...</h1>
     </div>
@@ -17,8 +7,11 @@
         <h1 *ngIf="lessons.length == 0" class="no-lessons">You have not subscribed for any lessons so far 🙁 Find your first one <a routerLink="/explore">here</a></h1>
     </div>
     <div class="item-container" *ngFor="let lesson of lessons">
-        <div class="video-preview">
-            <img src="{{lesson.imagePreviewUrl}}" alt="video preview">
+        <div class="video-preview" *ngIf="lesson.imagePreviewUrl != ''">
+            <img src={{lesson.imagePreviewUrl}} alt="video preview">
+        </div>
+        <div class="video-preview" *ngIf="lesson.imagePreviewUrl == ''">
+            <img src="../../../assets//no_image.png" alt="video preview">
         </div>
         <div class="video-decription">
             <p>

@@ -3,7 +3,7 @@
         Course: {{lessonById.name}}
     </h2>
 
-    <div id="lesson-container">
+    <div id="lesson-container" *ngIf="lessonById">
         <app-video-play>
 
         </app-video-play>
@@ -18,12 +18,24 @@
                 </p>
             </div>
         </div>
-        <div id="controls" *ngIf="!hasGiveIn">
-            <button class="controls-btn-back">Rate this lesson</button>
+        <div id="controls" *ngIf="!hasGiveIn && !beingRated">
+            <button class="controls-btn-back" *ngIf="hasRated">Rated</button>
+            <button class="controls-btn-back" (click)="onRate()" *ngIf="!hasRated">Rate this lesson</button>
             <button class="controls-btn-quiz">Take a quiz</button>
             <button class="controls-btn-give-up" (click)="onGiveUp()">Give up</button>
             <button class="controls-btn-issue" (click)="onReport()">Report an issue</button>
         </div>
+        <div id="controls" *ngIf="beingRated">
+            <div id="rating-options" (click)="submitRating($event)">
+                <button class="rate-score-back">Back</button>
+                <button class="rate-score">1</button>
+                <button class="rate-score">2</button>
+                <button class="rate-score">3</button>
+                <button class="rate-score">4</button>
+                <button class="rate-score">5</button>
+            </div>
+        </div>
+
         <div id="controls" *ngIf="hasGiveIn">
             <button class="confirm-no" (click)="onConfirm($event)">No 🙂</button>
             <button class="confirm-yes" (click)="onConfirm($event)">Yes 🙁</button>

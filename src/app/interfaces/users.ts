@@ -5,8 +5,8 @@ export interface IUser {
     dateJoined: string,
     profilePicture: string,
     passed_courses: string,
+    subscriptions: [],
     level: string,
     isAdmin: string,
     accessToken: string
-    // TODO: add user role - admin / not-admin
 }

@@ -11,7 +11,8 @@ export interface ILesson { // TODO: the database model will likely change, ensur
     createdOn: string,
     subscribers: [],
     views: number,
-    rating: [],
+    rating: any[],
+    ratingScore: number,
     owner: string,
     __v: number,
 }

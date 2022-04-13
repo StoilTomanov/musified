@@ -7,12 +7,13 @@ const lessonSchema = new Schema({
     level: { type: String, required: [true, 'Level is required'] },
     duration: { type: String, required: [true, 'Duration is required'] }, // TODO: consider changing the tipe to string so you can pass either minutes, hours, etc.
     videoUrl: { type: String, required: [true, 'Viedo Url address is required'] },
-    imagePreviewUrl: { type: String, default: '../assets/no_image.png' },
+    imagePreviewUrl: { type: String, default: '../../../assets/no_image.png' },
     progress: { type: Number, default: 0 }, // TODO: figure out how to set a different progress for each user
     createdOn: { type: String, required: [true, 'Date is required. Please select one'] },
     subscribers: { type: [ObjectId], default: [], ref: 'User' },
     views: { type: Number, default: 0 },
     rating: { type: [ObjectId], default: [], ref: 'User' },
+    ratingScore: { type: Number, default: 0 },
     owner: { type: ObjectId, ref: 'User' }
 });
 

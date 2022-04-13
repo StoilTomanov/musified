@@ -159,3 +159,55 @@ div#controls button.confirm-yes {
     margin-top: 30px;
     margin-left: 37%;
 }
+
+div#rating-options {
+    text-align: center;
+}
+
+button.rate-score-back {
+    background-color: rgb(255, 225, 161);
+    color: rgb(0, 0, 0);
+    border: 0px;
+    font-size: 85%;
+    margin-left: 5%;
+    width: 70px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 45px;
+    transition: 0.2s ease;
+}
+
+button.rate-score-back:hover {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button.rate-score-back:active {
+    background-color: rgb(194, 194, 194);
+    transition: 0.1s ease;
+}
+
+button.rate-score {
+    background-color: rgb(21, 243, 255);
+    color: rgb(0, 0, 0);
+    border: 0px;
+    font-size: 85%;
+    margin-left: 5%;
+    width: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 45px;
+    transition: 0.2s ease;
+}
+
+button.rate-score:hover {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button.rate-score:active {
+    background-color: rgb(194, 194, 194);
+    transition: 0.2s ease;
+}

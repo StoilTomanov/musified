@@ -11,6 +11,10 @@ import { LessonsService } from '../lessons.service';
 })
 export class WatchLessonComponent implements OnInit {
   lessonById: ILesson | undefined;
+  hasGiveIn: boolean = false;
+  hasRated: boolean = false;
+  beingRated: boolean = false;
+
   constructor(
     private lessonService: LessonsService,
     private userService: UserService,
@@ -18,12 +22,14 @@ export class WatchLessonComponent implements OnInit {
     private router: Router,
   ) { }
 
-  hasGiveIn: boolean = false;
 
   ngOnInit(): void {
     this.lessonById = undefined;
     this.lessonService.getLessonById$(this.activatedRouter.snapshot.params['id'])
-      .subscribe(data => this.lessonById = data);
+      .subscribe(data => {
+        this.lessonById = data;
+        this.hasRated = this.lessonById.rating.includes(sessionStorage['userId']);
+      });
   }
 
   onGiveUp(): void {
@@ -47,6 +53,26 @@ export class WatchLessonComponent implements OnInit {
 
   }
 
+  onRate(): void {
+    this.beingRated = true;
+  }
+
+
+  submitRating(event: Event): void {
+    const target = event.target as Element;
+    const command = target.textContent;
+    if (command == 'Back') {
+      this.beingRated = false;
+    } else {
+      const lessonId: string = this.activatedRouter.snapshot.params['id'];
+      if (typeof Number(command) == 'number') {
+        this.lessonService.updateProgress$(lessonId, Number(command))
+          .subscribe();
+        this.beingRated = false;
+        this.hasRated = true;
+      }
+    }
+  }
 
   onReport() {
     this.router.navigate(['contacts']);

@@ -17,11 +17,8 @@
                 <p class="shor-desc-p">Course created on: {{lessonById.createdOn}}</p>
                 <p class="shor-desc-p">Course available untill: 20.12.2022</p>
                 <p class="shor-desc-p">Course rating:
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star unchecked"></span>
-                    <span class="fa fa-star unchecked"></span>
+                    <span class="fa fa-star checked" *ngFor="let star of [].constructor(ratingYellowStars)"></span>
+                    <span class="fa fa-star unchecked" *ngFor="let star of [].constructor(ratingDarkStars)"></span>
                 </p>
             </div>
         </div>

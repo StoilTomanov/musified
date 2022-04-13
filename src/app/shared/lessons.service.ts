@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { ILesson } from '../interfaces';
 
 @Injectable()
@@ -28,12 +28,17 @@ export class LessonsService {
 
   public subscribeToLesson$(id: string): Observable<ILesson> {
     return this.http.put<ILesson>('http://localhost:4000/api/records/subscribe/' + id, {});
-    // TODO pass the userId in the one of the interceptors
   }
 
   public unsubscribeToLesson$(id: string): Observable<ILesson> {
     return this.http.put<ILesson>('http://localhost:4000/api/records/unsubscribe/' + id, {});
-    // TODO pass the userId in the one of the interceptors
+  }
+
+  public updateProgress$(lessonId: string, ratingScore: number): Observable<ILesson> {
+    return this.http.put<ILesson>('http://localhost:4000/api/records/updateprogress/' + lessonId, {
+      'rating': `${ratingScore}`,
+      'action': 'ratingUpdate'
+    }).pipe(map(data => data));
   }
 
 }

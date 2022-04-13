@@ -109,6 +109,21 @@ router.put('/:id', isLogged(), preload(), isOwner(), async(req, res) => {
     res.end();
 });
 
+router.put('/updateprogress/:id', isLogged(), async(req, res) => {
+    const lessonId = req.params.id;
+    const userId = req.user._id;
+    try {
+        const result = await lessonServices.updateProgress(userId, lessonId, req.body.rating);
+        res.status(200).json(result);
+    } catch (error) {
+        console.error(error.message);
+        const mappedError = mapError(error);
+        res.status(400).json({ message: mappedError });
+    };
+
+    res.end();
+});
+
 // subscribe to lesson
 router.put('/subscribe/:id', isLogged(), preload(), async(req, res) => {
     const lessonId = req.params.id;
@@ -122,7 +137,6 @@ router.put('/subscribe/:id', isLogged(), preload(), async(req, res) => {
         const mappedError = mapError(error);
         res.status(400).json({ message: mappedError });
     };
-
     res.end();
 });
 

@@ -38,7 +38,7 @@ import { LearnMoreComponent } from './home/learn-more/learn-more.component';
     VideoPreviewComponent,
     VideoPlayComponent,
     CreateCourseComponent,
-    LearnMoreComponent
+    LearnMoreComponent,
   ],
   imports: [
     CommonModule,

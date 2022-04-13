@@ -8,8 +8,11 @@
     </div>
     <div id="explore-container" *ngIf="lessons">
         <div class="course-card" *ngFor="let lesson of lessons">
-            <div class="course-img">
+            <div class="course-img" *ngIf="lesson.imagePreviewUrl != ''">
                 <img src={{lesson.imagePreviewUrl}} alt="guitar" height="186px">
+            </div>
+            <div class="course-img" *ngIf="lesson.imagePreviewUrl == ''">
+                <img src="../../../assets/no_image.png" alt="guitar" height="186px">
             </div>
             <div class="course-description">
                 <p>

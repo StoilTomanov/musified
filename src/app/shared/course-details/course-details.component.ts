@@ -22,13 +22,23 @@ export class CourseDetailsComponent implements OnInit {
   ) { }
 
   isLogged!: boolean;
+  ratingYellowStars!: number;
+  ratingDarkStars!: number;
 
   ngOnInit(): void {
     const storageStatus = this.storage.getStorage()
     this.isLogged = storageStatus['userId']
     this.lessonById = undefined;
     this.lessonService.getLessonById$(this.activatedRouter.snapshot.params['id'])
-      .subscribe(data => this.lessonById = data);
+      .subscribe(data => {
+        this.lessonById = data;
+        if (this.lessonById.rating.length == 0) {
+          this.ratingYellowStars = Math.round(this.lessonById.ratingScore / 1);
+        } else {
+          this.ratingYellowStars = Math.round(this.lessonById.ratingScore / this.lessonById.rating.length);
+        }
+        this.ratingDarkStars = 5 - this.ratingYellowStars;
+      });
   }
 
   onSubscribe(): void {
@@ -37,11 +47,11 @@ export class CourseDetailsComponent implements OnInit {
       .subscribe();
     this.lessonService.subscribeToLesson$(lessonId)
       .subscribe(data => this.lessonById = data);
-      setTimeout(() => {
-        this.router.navigate(['mylessons']);
-      }, 300);
+    setTimeout(() => {
+      this.router.navigate(['mylessons']);
+    }, 300);
   }
-  
+
   onBack(): void {
     this.router.navigate(['mylessons']);
   }

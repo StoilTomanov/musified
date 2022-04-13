@@ -17,14 +17,22 @@ async function getMyLessons(userId) {
     return filteredResults;
 }
 
+async function updateProgress(userId, lessonId, ratingScore) {
+    const result = await Lesson.findById({ _id: lessonId });
+    if (result) {
+        result.rating.push(userId);
+        result.ratingScore += Number(ratingScore);
+        result.save();
+    } else {
+        throw new Error('Course is not found');
+    }
+}
+
 async function getAvailableLessons(userId) {
     const result = await Lesson.find({});
     const filteredResults = result.filter(lesson => !lesson.subscribers.includes(userId))
     return filteredResults;
 }
-
-
-
 
 async function readById(id) {
     const result = await Lesson.findById({ _id: id }).lean();
@@ -91,4 +99,5 @@ module.exports = {
     getMyLessons,
     getAvailableLessons,
     unsubscribeToLesson,
+    updateProgress,
 }
