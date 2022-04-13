@@ -19,10 +19,10 @@
             </div>
         </div>
         <div id="controls" *ngIf="!hasGiveIn">
-            <button class="controls-btn-back" (click)="onBack()">Back to your lessons</button>
+            <button class="controls-btn-back">Rate this lesson</button>
             <button class="controls-btn-quiz">Take a quiz</button>
             <button class="controls-btn-give-up" (click)="onGiveUp()">Give up</button>
-            <button class="controls-btn-issue">Report an issue</button>
+            <button class="controls-btn-issue" (click)="onReport()">Report an issue</button>
         </div>
         <div id="controls" *ngIf="hasGiveIn">
             <button class="confirm-no" (click)="onConfirm($event)">No 🙂</button>

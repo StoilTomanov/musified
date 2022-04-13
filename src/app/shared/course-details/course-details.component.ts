@@ -33,10 +33,16 @@ export class CourseDetailsComponent implements OnInit {
 
   onSubscribe(): void {
     const lessonId: string = this.activatedRouter.snapshot.params['id'];
-    this.userService.updateUser$(`${sessionStorage['userId']}`, lessonId)
+    this.userService.updateUser$(`${sessionStorage['userId']}`, lessonId, 'subscribe')
       .subscribe();
     this.lessonService.subscribeToLesson$(lessonId)
       .subscribe(data => this.lessonById = data);
+      setTimeout(() => {
+        this.router.navigate(['mylessons']);
+      }, 300);
+  }
+  
+  onBack(): void {
     this.router.navigate(['mylessons']);
   }
 

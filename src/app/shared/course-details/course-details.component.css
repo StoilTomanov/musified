@@ -1,3 +1,12 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+span.checked {
+    color: rgb(255, 218, 6);
+}
+
+span.unchecked {
+    color: rgb(7, 7, 7);
+}
+
 section#course-detials h2 {
     color: rgb(0, 255, 234);
     font-size: 200%;

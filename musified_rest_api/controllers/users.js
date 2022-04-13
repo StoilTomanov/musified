@@ -56,7 +56,8 @@ router.put('/:id', isLogged(), async(req, res) => {
     try {
         const userId = req.params.id;
         const lessonId = req.body.lessonId;
-        const result = await updateUser(userId, lessonId);
+        const action = req.body.action;
+        const result = await updateUser(userId, lessonId, action);
         res.status(200).json(result);
     } catch (error) {
         console.error(error.message);

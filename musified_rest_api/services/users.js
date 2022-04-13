@@ -60,18 +60,28 @@ async function getUserData(userId) {
     return await User.findById({ _id: userId });
 }
 
-async function updateUser(userId, lessonId) {
+async function updateUser(userId, lessonId, action) {
     const user = await User.findOne({ _id: userId })
 
     if (!user) {
         throw new Error('User does not exists.')
     }
     if (lessonId) {
-        if (!user.subscriptions.includes(lessonId)) {
-            user.subscriptions.push(lessonId);
-            await user.save();
-        } else {
-            throw new Error('User is already subscribed to this lesson');
+        if (action == 'subscribe') {
+            if (!user.subscriptions.includes(lessonId)) {
+                user.subscriptions.push(lessonId);
+                await user.save();
+            } else {
+                throw new Error('User is already subscribed for this lesson');
+            }
+        } else if (action == 'unsubscribe') {
+            if (user.subscriptions.includes(lessonId)) {
+                const index = user.subscriptions.indexOf(lessonId);
+                user.subscriptions.splice(index, 1);
+                await user.save();
+            } else {
+                throw new Error('User is already unsubscribed for this lesson');
+            }
         }
     }
 

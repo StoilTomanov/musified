@@ -102,7 +102,7 @@
 - Implementing admin functionality
 
 #### What's left TODO: (11.04.2022)
-- Learn more button in home page
+- Learn more button in home page - Done
 - Handle contact form
 - Lesson details for Admin account - course statistic
 - Profile/courses view

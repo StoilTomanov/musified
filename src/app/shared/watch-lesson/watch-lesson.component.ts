@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/auth/user.service';
 import { ILesson } from 'src/app/interfaces';
 import { LessonsService } from '../lessons.service';
 
@@ -12,6 +13,7 @@ export class WatchLessonComponent implements OnInit {
   lessonById: ILesson | undefined;
   constructor(
     private lessonService: LessonsService,
+    private userService: UserService,
     private activatedRouter: ActivatedRoute,
     private router: Router,
   ) { }
@@ -32,15 +34,22 @@ export class WatchLessonComponent implements OnInit {
     if ((event.target as Element).classList[0] == 'confirm-no') {
       this.hasGiveIn = false;
     } else if ((event.target as Element).classList[0] == 'confirm-yes') {
-      this.lessonService.unsubscribeToLesson$(this.activatedRouter.snapshot.params['id'])
+      const lessonId: string = this.activatedRouter.snapshot.params['id'];
+      this.userService.updateUser$(`${sessionStorage['userId']}`, lessonId, 'unsubscribe')
         .subscribe();
-      this.router.navigate(['mylessons']);
+      this.lessonService.unsubscribeToLesson$(lessonId)
+        .subscribe();
+
+      setTimeout(() => {
+        this.router.navigate(['mylessons']);
+      }, 150);
     }
 
   }
 
-  onBack(): void {
-    this.router.navigate(['mylessons']);
+
+  onReport() {
+    this.router.navigate(['contacts']);
   }
 
 }

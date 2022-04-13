@@ -49,9 +49,10 @@ export class UserService {
     })
   }
 
-  updateUser$(userId: string, lessonId: string): Observable<IUser> {
+  updateUser$(userId: string, lessonId: string, action: string): Observable<IUser> {
     return this.http.put<IUser>('http://localhost:4000/users/' + userId, {
-      "lessonId":`${lessonId}`
+      "lessonId": `${lessonId}`,
+      "action": `${action}`
     }, {
       headers: {
         'X-Authorization': `${sessionStorage['accessToken']}`
