@@ -7,37 +7,47 @@
         <h1 *ngIf="lessons.length == 0" class="no-lessons">You have not subscribed for any lessons so far 🙁 Find your first one <a routerLink="/explore">here</a></h1>
     </div>
     <div class="item-container" *ngFor="let lesson of lessons">
+
+
         <div class="video-preview" *ngIf="lesson.imagePreviewUrl != ''">
             <img src={{lesson.imagePreviewUrl}} alt="video preview">
         </div>
         <div class="video-preview" *ngIf="lesson.imagePreviewUrl == ''">
             <img src="../../../assets//no_image.png" alt="video preview">
         </div>
-        <div class="video-decription">
-            <p>
-                Name: {{lesson.name}}
-            </p>
-            <p>
-                Duration: {{lesson.duration}}
-            </p>
-            <p>
-                Level: {{lesson.level}}
-            </p>
-            <p>
-                Progress: <progress _ngcontent-glx-c24="" value="{{lesson.progress}}" max="100" class="level"></progress>
-            </p>
-        </div>
-        <div class="video-actions">
-            <button type="button" class="watch-video" data-id="{{lesson._id}}" (click)="onWatch($event)">
+        <div data-id="{{lesson._id}}">
+            <div id="hideFirstDiv" *ngIf="!hasGiveIn">
+                <div class="video-decription">
+                    <p>
+                        Name: {{lesson.name}}
+                    </p>
+                    <p>
+                        Duration: {{lesson.duration}}
+                    </p>
+                    <p>
+                        Level: {{lesson.level}}
+                    </p>
+                    <p>
+                        Progress: <progress _ngcontent-glx-c24="" value="{{lesson.progress}}" max="100" class="level"></progress>
+                    </p>
+                </div>
+            </div>
+            <div id="hideSecondDiv" *ngIf="hasGiveIn">
+                <p class="confirm-give-in">Are you sure you want to give up?</p>
+                <button class="confirm-no" (click)="onConfirm($event)">No 🙂</button>
+                <button class="confirm-yes" data-id="{{lesson._id}}" (click)="onConfirm($event)">Yes 🙁</button>
+            </div>
+            <div class="video-actions" *ngIf="!hasGiveIn">
+                <button type="button" class="watch-video" data-id="{{lesson._id}}" (click)="onWatch($event)">
                 Watch
             </button>
-            <button type="button" class="details-video" data-id="{{lesson._id}}" data-subscribed="true" (click)="onDetails($event)">
+                <button type="button" class="details-video" data-id="{{lesson._id}}" data-subscribed="true" (click)="onDetails($event)">
                 Details 
             </button>
-            <button type="button" class="unsubscribe-video" data-id="{{lesson._id}}">
+                <button type="button" class="unsubscribe-video" data-id="{{lesson._id}}" (click)="onGiveUp($event)">
                 Give up
             </button>
+            </div>
         </div>
     </div>
-
 </section>

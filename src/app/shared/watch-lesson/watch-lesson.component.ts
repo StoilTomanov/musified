@@ -50,7 +50,6 @@ export class WatchLessonComponent implements OnInit {
         this.router.navigate(['mylessons']);
       }, 150);
     }
-
   }
 
   onRate(): void {
