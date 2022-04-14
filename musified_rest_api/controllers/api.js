@@ -124,6 +124,20 @@ router.put('/updateprogress/:id', isLogged(), async(req, res) => {
     res.end();
 });
 
+router.put('/updateviewsscore/:id', isLogged(), async(req, res) => {
+    const lessonId = req.params.id;
+    try {
+        const result = await lessonServices.updateViewsScore(lessonId);
+        res.status(200).json(result);
+    } catch (error) {
+        console.error(error.message);
+        const mappedError = mapError(error);
+        res.status(400).json({ message: mappedError });
+    };
+
+    res.end();
+});
+
 // subscribe to lesson
 router.put('/subscribe/:id', isLogged(), preload(), async(req, res) => {
     const lessonId = req.params.id;

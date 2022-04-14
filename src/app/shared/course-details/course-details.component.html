@@ -18,22 +18,27 @@
                 <p class="shor-desc-p">Course available untill: 20.12.2022</p>
                 <p class="shor-desc-p">Course rating:
                     <span class="fa fa-star checked" *ngFor="let star of [].constructor(ratingYellowStars)"></span>
-                    <span class="fa fa-star unchecked" *ngFor="let star of [].constructor(ratingDarkStars)"></span>
+                    <span class="fa fa-star unchecked" *ngFor="let star of [].constructor(ratingDarkStars)"></span> / {{lessonById.views}} views
                 </p>
             </div>
         </div>
         <div id="description" *ngIf="lessonById">
             <p class="desc-p">{{lessonById.description}}</p>
         </div>
-        <div id="buttons-actions" *ngIf="isLogged && !isSubscribed">
+        <div id="buttons-actions" *ngIf="isLogged && !isSubscribed && !isAdmin">
             <button class="action-btn" (click)="onBack()">Back to explore</button>
             <button class="action-btn" (click)="onSubscribe()">Dive In</button>
             <button class="action-btn" (click)="onReport()">Report an issue</button>
         </div>
+        <div id="buttons-actions" *ngIf="isLogged && isAdmin">
+            <button class="action-btn" (click)="onBackToCourses()">My Courses</button>
+            <button class="action-btn" (click)="onEdit()">Edit course</button>
+            <button class="action-btn" (click)="onDelete()">Delete course</button>
+        </div>
         <div id="buttons-actions" *ngIf="isLogged && isSubscribed">
             <button class="action-btn" (click)="onBackToCourses()">My Courses</button>
             <button class="action-btn">Already enrolled</button>
-            <button class="action-btn" (click)="onReport()">Report an issue</button>
+            <button class="action-btn" (click)="onReport()">Delete course</button>
         </div>
     </div>
 </section>

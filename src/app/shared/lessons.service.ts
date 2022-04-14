@@ -22,6 +22,10 @@ export class LessonsService {
     return this.http.post<ILesson>('http://localhost:4000/api/records', lessonData);
   }
 
+  public deleteCourse$(lessonId: string): Observable<ILesson> {
+    return this.http.delete<ILesson>('http://localhost:4000/api/records/' + lessonId);
+  }
+
   public getLessonById$(id: string): Observable<ILesson> {
     return this.http.get<ILesson>('http://localhost:4000/api/records/' + id);
   }
@@ -39,6 +43,10 @@ export class LessonsService {
       'rating': `${ratingScore}`,
       'action': 'ratingUpdate'
     }).pipe(map(data => data));
+  }
+
+  public updateViewsScore$(lessonId: string): Observable<ILesson> {
+    return this.http.put<ILesson>('http://localhost:4000/api/records/updateviewsscore/' + lessonId, {});
   }
 
 }

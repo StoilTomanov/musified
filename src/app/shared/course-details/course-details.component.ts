@@ -13,6 +13,7 @@ import { LessonsService } from '../lessons.service';
 export class CourseDetailsComponent implements OnInit {
   lessonById: ILesson | undefined;
   isSubscribed!: boolean;
+  isAdmin: boolean = sessionStorage['isAdmin'];
 
   constructor(
     private lessonService: LessonsService,
@@ -41,7 +42,12 @@ export class CourseDetailsComponent implements OnInit {
           }
           this.ratingDarkStars = 5 - this.ratingYellowStars;
         });
-    }, 100)
+    }, 100);
+
+    if (sessionStorage['isAdmin'] == 'false') {
+      this.lessonService.updateViewsScore$(this.activatedRouter.snapshot.params['id'])
+        .subscribe();
+    }
 
     this.userService.readUser$()
       .subscribe(data => {
@@ -76,6 +82,17 @@ export class CourseDetailsComponent implements OnInit {
 
   onReport() {
     this.router.navigate(['contacts']);
+  }
+
+  onEdit(): void {
+
+  }
+
+  onDelete(): void {
+    const lessonId = this.activatedRouter.snapshot.params['id'];
+    this.lessonService.deleteCourse$(lessonId)
+      .subscribe();
+    this.router.navigate(['explore']);
   }
 
 }

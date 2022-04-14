@@ -28,6 +28,16 @@ async function updateProgress(userId, lessonId, ratingScore) {
     }
 }
 
+async function updateViewsScore(lessonId) {
+    const result = await Lesson.findById({ _id: lessonId });
+    if (result) {
+        result.views++;
+        result.save();
+    } else {
+        throw new Error('Course is not found');
+    }
+}
+
 async function getAvailableLessons(userId) {
     const result = await Lesson.find({});
     const filteredResults = result.filter(lesson => !lesson.subscribers.includes(userId))
@@ -100,4 +110,5 @@ module.exports = {
     getAvailableLessons,
     unsubscribeToLesson,
     updateProgress,
+    updateViewsScore,
 }
