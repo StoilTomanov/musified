@@ -30,5 +30,10 @@
             <button class="action-btn" (click)="onSubscribe()">Dive In</button>
             <button class="action-btn" (click)="onReport()">Report an issue</button>
         </div>
+        <div id="buttons-actions" *ngIf="isLogged && isSubscribed">
+            <button class="action-btn" (click)="onBackToCourses()">My Courses</button>
+            <button class="action-btn">Already enrolled</button>
+            <button class="action-btn" (click)="onReport()">Report an issue</button>
+        </div>
     </div>
 </section>

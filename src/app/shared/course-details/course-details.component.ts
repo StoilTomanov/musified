@@ -41,7 +41,7 @@ export class CourseDetailsComponent implements OnInit {
           }
           this.ratingDarkStars = 5 - this.ratingYellowStars;
         });
-    },100)
+    }, 100)
 
     this.userService.readUser$()
       .subscribe(data => {
@@ -67,6 +67,11 @@ export class CourseDetailsComponent implements OnInit {
 
   onBack(): void {
     this.router.navigate(['explore']);
+  }
+
+
+  onBackToCourses(): void {
+    this.router.navigate(['mylessons']);
   }
 
   onReport() {
