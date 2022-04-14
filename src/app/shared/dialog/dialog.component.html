@@ -1,0 +1,5 @@
+<div id="controls-dialog" *ngIf="data._id">
+    <p class="confirm-give-in-dialog">Are you sure you want to give up?</p>
+    <button mat-dialog-close class="confirm-no-dialog" data-id="{{data._id}}" (click)="onConfirm($event)">No 🙂</button>
+    <button mat-dialog-close class="confirm-yes-dialog" data-id="{{data._id}}" (click)="onConfirm($event)">Yes 🙁</button>
+</div>

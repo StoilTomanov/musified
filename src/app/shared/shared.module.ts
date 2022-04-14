@@ -21,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { LearnMoreComponent } from './home/learn-more/learn-more.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,14 +43,16 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
     CreateCourseComponent,
     LearnMoreComponent,
     EditCourseComponent,
+    DialogComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
-  exports:[
+  exports: [
     HomeComponent
   ],
   providers: [

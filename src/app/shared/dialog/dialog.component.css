@@ -1,0 +1,53 @@
+div#controls-dialog button.confirm-no-dialog {
+    position: relative;
+    font-size: 80%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(8, 185, 8);
+    border: 0px;
+    text-align: center;
+    width: 25%;
+    border-radius: 5px;
+    position: relative;
+    left: 100px;
+    top: 30px;
+    transition: 0.2s;
+}
+
+div#controls-dialog button.confirm-yes-dialog {
+    position: relative;
+    font-size: 80%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(202, 33, 10);
+    border: 0px;
+    text-align: center;
+    width: 25%;
+    border-radius: 5px;
+    position: relative;
+    left: 200px;
+    top: 30px;
+    transition: 0.2s;
+}
+
+p.confirm-give-in-dialog {
+    position: relative;
+    font-size: 100%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 20px;
+}
+
+div#controls-dialog button:hover {
+    transition: 0.3s;
+    box-shadow: 1px 1px 20px 5px rgb(182, 182, 182);
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: rgb(216, 216, 216);
+}
+
+div#controls-dialog button:active {
+    transition: 0.3s;
+    box-shadow: 1px 1px 20px 5px rgba(101, 171, 252, 0.89);
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgba(142, 255, 179, 0.842);
+}

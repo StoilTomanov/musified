@@ -104,7 +104,7 @@
 #### What's left TODO: (11.04.2022)
 - Learn more button in home page - Done
 - Handle contact form
-- Lesson details for Admin account - course statistic
+- Edit course ( Admin only ) - Done
 - Profile/courses view - Done
 - Profile details update
 - Handle progress bars
@@ -115,7 +115,7 @@
 
 - Deploy the application
 - Cloud storage API implementation
-- Angular animations
+- Angular animations - Done
 - State management
 - Unit tests
 - Research the geolocation API and see if can be useful for this app

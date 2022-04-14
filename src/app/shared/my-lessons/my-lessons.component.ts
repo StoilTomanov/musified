@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/auth/user.service';
 import { ILesson } from 'src/app/interfaces';
 import { LessonsService } from '../lessons.service';
+import { MatDialog } from '@angular/material/dialog'
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-my-lessons',
@@ -12,6 +14,7 @@ import { LessonsService } from '../lessons.service';
 export class MyLessonsComponent implements OnInit, AfterContentInit {
   lessons: ILesson[] | undefined
   lessonId: string = '';
+  lessonById!: ILesson;
   hasGiveIn: boolean = false; // to be false
   noContainers = false;
 
@@ -20,6 +23,7 @@ export class MyLessonsComponent implements OnInit, AfterContentInit {
     private userService: UserService,
     private activatedRouter: ActivatedRoute,
     private router: Router,
+    private dialogRef: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -43,31 +47,9 @@ export class MyLessonsComponent implements OnInit, AfterContentInit {
 
   onGiveUp(event: Event): void {
     this.hasGiveIn = true;
-  }
-
-  onConfirm(event: Event): void {
-    if ((event.target as Element).classList[0] == 'confirm-no') {
-      this.hasGiveIn = false;
-    } else if ((event.target as Element).classList[0] == 'confirm-yes') {
-      const lessonId: string = (event.target as Element).id;
-      this.userService.updateUser$(`${sessionStorage['userId']}`, lessonId, 'unsubscribe')
-        .subscribe();
-      this.lessonService.unsubscribeToLesson$(lessonId)
-        .subscribe();
-      this.hasGiveIn = false;
-      const parentElement = (event.target as Element).parentElement?.parentElement?.parentElement
-      const container = document.getElementById(`${parentElement?.id}`);
-      parentElement?.parentElement?.removeChild(container as Node);
-      this.noContainers = this.checkContainer();
-    }
-  }
-
-  checkContainer(): boolean {
-    if (document.getElementById('dashboard')?.children[1].children.length == 0) {
-      return true;
-    } else {
-      return false;
-    }
+    this.dialogRef.open(DialogComponent, {
+      data: { _id: this.lessonId = (event.target as Element).id}
+    });
   }
 
 }

@@ -6,16 +6,16 @@
         <h1 *ngIf="lessons && lessons.length > 0 && !noContainers">My Lessons</h1>
         <h1 *ngIf="lessons.length == 0 || noContainers" class="no-lessons">You have not subscribed for any courses so far 🙁 Find your first one <a routerLink="/explore">here</a></h1>
     </div>
-    <div *ngFor="let lesson of lessons; index as i">
-        <div class="item-container" data-id={{i}}>
+    <div *ngFor="let lesson of lessons">
+        <div class="item-container" data-id="{{lesson._id}}">
             <div class="video-preview" *ngIf="lesson.imagePreviewUrl != ''">
                 <img src={{lesson.imagePreviewUrl}} alt="video preview">
             </div>
             <div class="video-preview" *ngIf="lesson.imagePreviewUrl == ''">
                 <img src="../../../assets//no_image.png" alt="video preview">
             </div>
-            <div data-id="{{lesson._id}}">
-                <div id="controls" *ngIf="!hasGiveIn">
+            <div>
+                <div id="controls">
                     <div class="video-decription">
                         <p>
                             Name: {{lesson.name}}
@@ -31,12 +31,7 @@
                         </p>
                     </div>
                 </div>
-                <div id="controls" *ngIf="hasGiveIn">
-                    <p class="confirm-give-in">Are you sure you want to give up?</p>
-                    <button class="confirm-no" (click)="onConfirm($event)">No 🙂</button>
-                    <button class="confirm-yes" data-id="{{lesson._id}}" (click)="onConfirm($event)">Yes 🙁</button>
-                </div>
-                <div class="video-actions" *ngIf="!hasGiveIn">
+                <div class="video-actions">
                     <button type="button" class="watch-video" data-id="{{lesson._id}}" (click)="onWatch($event)">
                 Watch
             </button>
