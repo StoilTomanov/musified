@@ -124,7 +124,7 @@ div.video-actions button:active {
     background-color: rgba(142, 255, 179, 0.842);
 }
 
-div#hideSecondDiv button.confirm-no {
+div#controls button.confirm-no {
     position: relative;
     font-size: 80%;
     color: rgb(255, 255, 255);
@@ -139,7 +139,7 @@ div#hideSecondDiv button.confirm-no {
     transition: 0.2s;
 }
 
-div#hideSecondDiv button.confirm-yes {
+div#controls button.confirm-yes {
     position: relative;
     font-size: 80%;
     color: rgb(255, 255, 255);
@@ -163,7 +163,7 @@ p.confirm-give-in {
     left: 230px;
 }
 
-div#hideSecondDiv button:hover {
+div#controls button:hover {
     transition: 0.3s;
     box-shadow: 1px 1px 20px 5px rgb(182, 182, 182);
     cursor: pointer;
@@ -171,7 +171,7 @@ div#hideSecondDiv button:hover {
     background-color: rgb(216, 216, 216);
 }
 
-div#hideSecondDiv button:active {
+div#controls button:active {
     transition: 0.3s;
     box-shadow: 1px 1px 20px 5px rgba(101, 171, 252, 0.89);
     cursor: pointer;

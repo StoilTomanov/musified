@@ -13,6 +13,7 @@ export class MyLessonsComponent implements OnInit, AfterContentInit {
   lessons: ILesson[] | undefined
   lessonId: string = '';
   hasGiveIn: boolean = false; // to be false
+  noContainers = false;
 
   constructor(
     private lessonService: LessonsService,
@@ -54,7 +55,17 @@ export class MyLessonsComponent implements OnInit, AfterContentInit {
       this.lessonService.unsubscribeToLesson$(lessonId)
         .subscribe();
       this.hasGiveIn = false;
-      this.router.navigate(['details/' + lessonId]);
+      const container = document.getElementById(`${(event.target as Element).parentElement?.parentElement?.parentElement?.id}`);
+      (event.target as Element).parentElement?.parentElement?.parentElement?.parentElement?.removeChild(container as Node);
+      this.noContainers = this.checkContainer();
+    }
+  }
+
+  checkContainer(): boolean {
+    if (document.getElementById('dashboard')?.children[1].children.length == 0) {
+      return true;
+    } else {
+      return false;
     }
   }
 
