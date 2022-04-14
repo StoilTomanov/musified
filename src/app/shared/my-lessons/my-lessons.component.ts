@@ -55,8 +55,9 @@ export class MyLessonsComponent implements OnInit, AfterContentInit {
       this.lessonService.unsubscribeToLesson$(lessonId)
         .subscribe();
       this.hasGiveIn = false;
-      const container = document.getElementById(`${(event.target as Element).parentElement?.parentElement?.parentElement?.id}`);
-      (event.target as Element).parentElement?.parentElement?.parentElement?.parentElement?.removeChild(container as Node);
+      const parentElement = (event.target as Element).parentElement?.parentElement?.parentElement
+      const container = document.getElementById(`${parentElement?.id}`);
+      parentElement?.parentElement?.removeChild(container as Node);
       this.noContainers = this.checkContainer();
     }
   }
