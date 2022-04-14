@@ -25,12 +25,12 @@
         <div id="description" *ngIf="lessonById">
             <p class="desc-p">{{lessonById.description}}</p>
         </div>
-        <div id="buttons-actions" *ngIf="isLogged && !isSubscribed && !isAdmin">
+        <div id="buttons-actions" *ngIf="isLogged && !isSubscribed && isAdmin == 'false'">
             <button class="action-btn" (click)="onBack()">Back to explore</button>
             <button class="action-btn" (click)="onSubscribe()">Dive In</button>
             <button class="action-btn" (click)="onReport()">Report an issue</button>
         </div>
-        <div id="buttons-actions" *ngIf="isLogged && isAdmin">
+        <div id="buttons-actions" *ngIf="isLogged && isAdmin == 'true'">
             <button class="action-btn" (click)="onBackToCourses()">My Courses</button>
             <button class="action-btn" (click)="onEdit()">Edit course</button>
             <button class="action-btn" (click)="onDelete()">Delete course</button>
@@ -38,7 +38,7 @@
         <div id="buttons-actions" *ngIf="isLogged && isSubscribed">
             <button class="action-btn" (click)="onBackToCourses()">My Courses</button>
             <button class="action-btn">Already enrolled</button>
-            <button class="action-btn" (click)="onReport()">Delete course</button>
+            <button class="action-btn" (click)="onReport()">Report an issue</button>
         </div>
     </div>
 </section>

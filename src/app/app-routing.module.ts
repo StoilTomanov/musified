@@ -6,6 +6,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { ContactsComponent } from './shared/contacts/contacts.component';
 import { CourseDetailsComponent } from './shared/course-details/course-details.component';
 import { CreateCourseComponent } from './shared/create-course/create-course.component';
+import { EditCourseComponent } from './shared/edit-course/edit-course.component';
 import { ExploreComponent } from './shared/explore/explore.component';
 import { HomeComponent } from './shared/home/home.component';
 import { LearnMoreComponent } from './shared/home/learn-more/learn-more.component';
@@ -67,6 +68,12 @@ const routes: Routes = [
     pathMatch: 'full',
     canActivate: [AuthGuard],
     component: CreateCourseComponent
+  },
+  {
+    path: 'edit/:id',
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
+    component: EditCourseComponent
   },
   {
     path: 'details/:id',

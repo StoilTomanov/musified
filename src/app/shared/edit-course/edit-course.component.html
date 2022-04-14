@@ -1,7 +1,7 @@
 <section id="create-course">
-    <div class="forms" id="createForm">
-        <form (ngSubmit)="onCreateSubmit()" #createForm="ngForm">
-            <h2>Create new course</h2>
+    <div class="forms" id="editForm" *ngIf="currentLesson">
+        <form (ngSubmit)="onEditSubmit()" #editForm="ngForm">
+            <h2>Edit course</h2>
             <hr>
             <label for="name">Course name</label>
             <input required minlength="3" name="name" id="name" type="text" placeholder="Improvisation" ngModel #name="ngModel">
@@ -35,7 +35,7 @@
             </div>
             <label for="imagePreviewUrl">Image preview Url</label>
             <input maxlength="200" name="imagePreviewUrl" id="imagePreviewUrl" type="text" placeholder="https://newimage.png" ngModel #imagePreviewUrl="ngModel">
-            <button type="submit" class="submit-btn" [disabled]="createForm.invalid && createForm.touched || createForm.untouched">Create</button>
+            <button type="submit" class="submit-btn" [disabled]="editForm.invalid && editForm.touched">Edit</button>
         </form>
     </div>
 </section>

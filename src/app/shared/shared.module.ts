@@ -20,6 +20,7 @@ import { CreateCourseComponent } from './create-course/create-course.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { LearnMoreComponent } from './home/learn-more/learn-more.component';
+import { EditCourseComponent } from './edit-course/edit-course.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { LearnMoreComponent } from './home/learn-more/learn-more.component';
     VideoPlayComponent,
     CreateCourseComponent,
     LearnMoreComponent,
+    EditCourseComponent,
   ],
   imports: [
     CommonModule,

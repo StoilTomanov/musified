@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ExploreComponent implements OnInit, AfterContentInit{
   lessons: ILesson[] | undefined
   lessonId: string = '';
+  isAdmin: string = sessionStorage['isAdmin'];
 
   constructor(
     private lessonService: LessonsService,

@@ -13,7 +13,7 @@ import { LessonsService } from '../lessons.service';
 export class CourseDetailsComponent implements OnInit {
   lessonById: ILesson | undefined;
   isSubscribed!: boolean;
-  isAdmin: boolean = sessionStorage['isAdmin'];
+  isAdmin: string = sessionStorage['isAdmin'];
 
   constructor(
     private lessonService: LessonsService,
@@ -29,8 +29,9 @@ export class CourseDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const storageStatus = this.storage.getStorage()
-    this.isLogged = storageStatus['userId']
+    this.isLogged = storageStatus['userId'];
     this.lessonById = undefined;
+    
     setTimeout(() => {
       this.lessonService.getLessonById$(this.activatedRouter.snapshot.params['id'])
         .subscribe(data => {
@@ -59,7 +60,6 @@ export class CourseDetailsComponent implements OnInit {
 
   }
 
-
   onSubscribe(): void {
     const lessonId: string = this.activatedRouter.snapshot.params['id'];
     this.userService.updateUser$(`${sessionStorage['userId']}`, lessonId, 'subscribe')
@@ -85,7 +85,8 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   onEdit(): void {
-
+    const lessonId = this.activatedRouter.snapshot.params['id'];
+    this.router.navigate(['edit/' + lessonId]);
   }
 
   onDelete(): void {
