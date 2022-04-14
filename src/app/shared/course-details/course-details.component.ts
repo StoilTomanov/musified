@@ -30,25 +30,27 @@ export class CourseDetailsComponent implements OnInit {
     const storageStatus = this.storage.getStorage()
     this.isLogged = storageStatus['userId']
     this.lessonById = undefined;
-    this.lessonService.getLessonById$(this.activatedRouter.snapshot.params['id'])
-      .subscribe(data => {
-        this.lessonById = data;
-        if (this.lessonById.rating.length == 0) {
-          this.ratingYellowStars = Math.round(this.lessonById.ratingScore / 1);
-        } else {
-          this.ratingYellowStars = Math.round(this.lessonById.ratingScore / this.lessonById.rating.length);
-        }
-        this.ratingDarkStars = 5 - this.ratingYellowStars;
-      });
+    setTimeout(() => {
+      this.lessonService.getLessonById$(this.activatedRouter.snapshot.params['id'])
+        .subscribe(data => {
+          this.lessonById = data;
+          if (this.lessonById.rating.length == 0) {
+            this.ratingYellowStars = Math.round(this.lessonById.ratingScore / 1);
+          } else {
+            this.ratingYellowStars = Math.round(this.lessonById.ratingScore / this.lessonById.rating.length);
+          }
+          this.ratingDarkStars = 5 - this.ratingYellowStars;
+        });
+    },100)
 
-      this.userService.readUser$()
+    this.userService.readUser$()
       .subscribe(data => {
         const lessonId: string = this.activatedRouter.snapshot.params['id'];
-        if (data.subscriptions.includes(lessonId)){
+        if (data.subscriptions.includes(lessonId)) {
           this.isSubscribed = true;
         }
       });
-      
+
   }
 
 
