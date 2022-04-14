@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, OnInit } from '@angular/core';
+import { AfterContentInit, Component, DoCheck, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/auth/user.service';
 import { ILesson } from 'src/app/interfaces';
@@ -54,7 +54,7 @@ export class MyLessonsComponent implements OnInit, AfterContentInit {
       this.lessonService.unsubscribeToLesson$(lessonId)
         .subscribe();
       this.hasGiveIn = false;
-      this.router.navigate(['explore']);
+      this.router.navigate(['details/' + lessonId]);
     }
   }
 
