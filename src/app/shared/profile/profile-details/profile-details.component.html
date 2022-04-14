@@ -1,8 +1,13 @@
 <div class="profile-card" *ngIf="userData">
     <form action="" method="">
-        <label for="username">Username<input id="username" type="text" value="{{userData.username}}"></label>
-        <label for="email">Email<input id="email" value="{{userData.email}}" type="text"></label>
-        <label for="password">Password<input id="password" type="password"></label>
+        <label for="username">Username</label>
+        <input id="username" type="text" value="{{userData.username}}">
+        <label for="email">Email</label>
+        <input id="email" value="{{userData.email}}" type="text">
+        <label for="oldPassword">Old password</label>
+        <input id="oldPassword" type="password">
+        <label for="newPassword">New password</label>
+        <input id="newPassword" type="password">
         <button type="submit" class="submit-btn">Update</button>
     </form>
 </div>

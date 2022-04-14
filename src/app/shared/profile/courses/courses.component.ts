@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, Component, OnInit } from '@angular/core';
 import { ILesson } from 'src/app/interfaces';
 import { LessonsService } from '../../lessons.service';
 

@@ -10,13 +10,15 @@
                 </td>
             </tr>
             <!-- Consider adding pagination -->
-            <tr>
+            <tr *ngIf="lessonsData.length != 0">
                 <th>Overal progress:</th>
                 <td>
                     <progress class="level" value="{{currentProgress}}" max="100"></progress>
                 </td>
             </tr>
+            <tr *ngIf="lessonsData.length == 0">
+                <th>Currently you are not subscribed to any courses</th>
+            </tr>
         </table>
-
     </div>
 </div>

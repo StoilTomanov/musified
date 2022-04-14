@@ -10,6 +10,7 @@ section#profile div.panel {
     border-radius: 5px;
     padding: 2%;
     width: 72%;
+    height: 600px;
     font-size: 120%;
     margin-left: 20%;
     margin-top: 4%;
@@ -17,18 +18,19 @@ section#profile div.panel {
 }
 
 div#profile-card img {
-    width: 20%;
+    width: 15%;
 }
 
 div.profile-card {
     background-color: rgba(78, 134, 136, 0.432);
     word-wrap: break-word;
     border: 1px solid rgba(255, 255, 255, 0.575);
-    box-shadow: 0px 0px 45px 20px rgba(235, 235, 235, 0.616);
+    box-shadow: 0px 0px 15px 5px rgba(235, 235, 235, 0.616);
+    height: 330px;
     border-radius: 5px;
     width: 95%;
     padding: 2%;
-    margin-top: 10%;
+    margin-top: 3%;
     font-size: 90%;
 }
 
@@ -45,11 +47,14 @@ div.profile-card input {
     text-align: center;
     font-size: 55%;
     position: relative;
+    left: 25%;
     height: 20px;
-    width: 100%;
+    margin-bottom: 10px;
+    width: 50%;
 }
 
-div.profile-card input#username {
+
+/* div.profile-card input#username {
     margin-left: 51%;
 }
 
@@ -57,20 +62,32 @@ div.profile-card input#email {
     margin-left: 56.9%;
 }
 
-div.profile-card input#password {
+div.profile-card input#oldPassword {
     margin-left: 50.8%;
 }
+
+div.profile-card input#newPassword {
+    margin-left: 50.8%;
+} */
 
 div.profile-card button {
     display: block;
     font-size: 90%;
+    margin: 0;
+    position: relative;
+    left: 340px;
+    top: 20px;
+    width: 200px;
 }
 
 div.profile-card label {
     color: rgb(255, 255, 255);
     display: flex;
+    text-align: center;
     position: relative;
+    display: block;
     margin-bottom: 2px;
+    margin-top: 10px;
 }
 
 table tr th.table-header:nth-child(1) {
@@ -113,7 +130,8 @@ thead tr.table-row th a:active {
 button.submit-btn {
     color: rgb(0, 255, 234);
     font-size: 70%;
-    border: 1px solid rgb(0, 255, 234);
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 0 10px 0px rgb(212, 212, 212);
     border-radius: 5px;
     background-color: rgba(240, 248, 255, 0);
     margin-left: 45%;
@@ -125,10 +143,17 @@ button.submit-btn {
 button.submit-btn:hover {
     color: rgb(255, 255, 255);
     border: 1px solid rgb(255, 255, 255);
-    box-shadow: 0px 0px 20px 5px rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 5px rgb(255, 255, 255);
     transition: 0.2s;
     cursor: pointer;
     font-size: 72%;
+}
+
+button.submit-btn:active {
+    color: rgb(0, 255, 234);
+    box-shadow: 0px 0px 5px 2px rgb(255, 255, 255);
+    transition: 0.1s;
+    cursor: pointer;
 }
 
 @media screen and (max-height: 862px) {
