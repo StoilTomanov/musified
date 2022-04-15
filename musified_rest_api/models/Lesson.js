@@ -11,6 +11,7 @@ const lessonSchema = new Schema({
     progress: { type: Number, default: 0 }, // TODO: figure out how to set a different progress for each user
     createdOn: { type: String, required: [true, 'Date is required. Please select one'] },
     subscribers: { type: [ObjectId], default: [], ref: 'User' },
+    quiz: { type: Array, default: [] },
     views: { type: Number, default: 0 },
     rating: { type: [ObjectId], default: [], ref: 'User' },
     ratingScore: { type: Number, default: 0 },

@@ -38,6 +38,12 @@ export class LessonsService {
     return this.http.put<ILesson>('http://localhost:4000/api/records/subscribe/' + id, {});
   }
 
+  public submitQuiz$(lessonId: string, quizData: {}): Observable<ILesson> {
+    return this.http.put<ILesson>('http://localhost:4000/api/records/submitquiz/' + lessonId, {
+      quizData
+    });
+  }
+
   public unsubscribeToLesson$(id: string): Observable<ILesson> {
     return this.http.put<ILesson>('http://localhost:4000/api/records/unsubscribe/' + id, {});
   }

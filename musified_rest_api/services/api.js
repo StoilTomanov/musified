@@ -69,6 +69,66 @@ async function deleteRecordById(id) { // param is the lesson object
     return result;
 }
 
+async function submitQuiz(lessonId, quizData) {
+    const currentLesson = await Lesson.findById({ _id: lessonId });
+    if (!currentLesson) {
+        throw new Error('No record found!');
+    }
+
+    const extractedQuizData = {
+        'quiestion-1': quizData['question-1'],
+        'answer-1': quizData['answer-1'],
+        'answer-2': quizData['answer-2'],
+        'answer-3': quizData['answer-3'],
+        'answer-4': quizData['answer-4'],
+        'quiestion-2': quizData['question-2'],
+        'answer-5': quizData['answer-5'],
+        'answer-6': quizData['answer-6'],
+        'answer-7': quizData['answer-7'],
+        'answer-8': quizData['answer-8'],
+        'quiestion-3': quizData['question-3'],
+        'answer-9': quizData['answer-9'],
+        'answer-10': quizData['answer-10'],
+        'answer-11': quizData['answer-11'],
+        'answer-12': quizData['answer-12'],
+    }
+
+    for (const key in quizData) {
+        const word = key.slice(0, 14);
+        const indexOfQuestion = key.slice(15);
+        if (word == 'correct-answer') {
+            if (quizData[key] != '') {
+                if (Number(indexOfQuestion) <= 4) {
+                    extractedQuizData['correct-answer-1'] = quizData[key];
+                } else if (Number(indexOfQuestion) > 4 && Number(indexOfQuestion) <= 8) {
+                    extractedQuizData['correct-answer-2'] = quizData[key];
+                } else if (Number(indexOfQuestion) > 8 && Number(indexOfQuestion) <= 12) {
+                    extractedQuizData['correct-answer-3'] = quizData[key];
+                }
+            }
+        }
+    }
+
+    if (extractedQuizData['correct-answer-1'] == '' && extractedQuizData['correct-answer-2'] == '' && extractedQuizData['correct-answer-3'] == '') {
+        throw new Error('Invalid data');
+    } else if (extractedQuizData['correct-answer-1'] == undefined && extractedQuizData['correct-answer-2'] == undefined && extractedQuizData['correct-answer-3'] == undefined) {
+        throw new Error('Invalid data');
+    }
+
+    if (extractedQuizData['question-1'] != '' && extractedQuizData['correct-answer-1'] == undefined) {
+        throw new Error('Invalid data');
+    } else if (extractedQuizData['question-2'] != '' && extractedQuizData['correct-answer-2'] == undefined) {
+        throw new Error('Invalid data');
+    } else if (extractedQuizData['question-3'] != '' && extractedQuizData['correct-answer-3'] == undefined) {
+        throw new Error('Invalid data');
+    }
+
+
+    currentLesson.quiz.push(extractedQuizData);
+    await currentLesson.save();
+
+}
+
 async function subscribeToLesson(lessonId, userId) {
     const currentLesson = await Lesson.findById({ _id: lessonId });
     if (!currentLesson) {
@@ -111,4 +171,5 @@ module.exports = {
     unsubscribeToLesson,
     updateProgress,
     updateViewsScore,
+    submitQuiz,
 }

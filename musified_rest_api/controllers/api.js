@@ -83,6 +83,21 @@ router.post('/', isLogged(), async(req, res) => {
     res.end();
 });
 
+router.put('/submitquiz/:id', isLogged(), preload(), isOwner(), async(req, res) => {
+    const lessonId = req.params.id;
+    const quizData = req.body.quizData;
+    try {
+        const result = await lessonServices.submitQuiz(lessonId, quizData);
+        res.status(200).json(result);
+    } catch (error) {
+        console.error(error.message);
+        const mappedError = mapError(error);
+        res.status(400).json({ message: mappedError });
+    };
+
+    res.end();
+});
+
 router.put('/:id', isLogged(), preload(), isOwner(), async(req, res) => {
     const id = req.params.id;
     const lesson = {

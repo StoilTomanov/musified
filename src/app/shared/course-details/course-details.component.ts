@@ -34,7 +34,7 @@ export class CourseDetailsComponent implements OnInit {
     const storageStatus = this.storage.getStorage()
     this.isLogged = storageStatus['userId'];
     this.lessonById = undefined;
-    
+
     setTimeout(() => {
       this.lessonService.getLessonById$(this.activatedRouter.snapshot.params['id'])
         .subscribe(data => {
@@ -100,7 +100,9 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   onCreateQuiz(): void {
-    this.dialogRef.open(CreateQuizComponent, {});
+    this.dialogRef.open(CreateQuizComponent, {
+      data: { lessonId: this.lessonById?._id }
+    });
     document.getElementsByTagName('mat-dialog-container')[0].setAttribute('data-url', 'watch');
   }
 

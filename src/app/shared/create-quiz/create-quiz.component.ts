@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { LessonsService } from '../lessons.service';
 
 @Component({
   selector: 'app-create-quiz',
@@ -9,15 +11,21 @@ import { NgForm } from '@angular/forms';
 export class CreateQuizComponent implements OnInit {
   @ViewChild('createQuizForm') form!: NgForm;
 
-  constructor() { }
+  constructor(
+    private lessonService: LessonsService,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+  ) { }
 
   ngOnInit(): void {
-    
-  }
-  
-  onCreateQuizSubmit(): void {
-    console.log(this.form.value);
 
+  }
+
+  onCreateQuizSubmit(event: Event): void {
+    const quizData = this.form.value;
+    const lessonId: string = (event.target as Element).id
+    
+    this.lessonService.submitQuiz$(lessonId, quizData)
+      .subscribe();
   }
 
 }
