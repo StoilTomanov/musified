@@ -18,14 +18,24 @@ body {
 }
 
 mat-dialog-container.mat-dialog-container {
-    background-color: rgb(147, 193, 189);
+    background-color: rgb(215, 255, 254);
     position: relative;
-    left: 400px;
-    bottom: 400px;
+    left: 0px;
+    bottom: 200px;
     padding: 50px;
     margin: 0;
     overflow: visible;
     height: 200px;
+}
+
+.cdk-global-overlay-wrapper {
+    background-color: rgba(209, 209, 209, 0.539);
+    width: 200%;
+}
+
+div.cdk-overlay-backdrop {
+    background-color: rgba(209, 209, 209, 0.539);
+    width: 200%;
 }
 
 .cdk-overlay-container {
