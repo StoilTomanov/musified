@@ -7,6 +7,23 @@ header#header {
     height: 100px;
 }
 
+button#message-icon {
+    font-size: 45%;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+    border: 0px;
+    position: relative;
+    left: 395px;
+    top: 20px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button#message-icon:hover {
+    transition: 0.2s ease;
+    text-shadow: 2px 2px 5px rgb(0, 213, 255);
+}
+
 header#header h1 {
     margin: 0;
     color: rgb(0, 255, 234);

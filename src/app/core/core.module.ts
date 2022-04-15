@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderNavComponent } from './header-nav/header-nav.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -14,6 +13,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
   imports: [
     CommonModule,
     RouterModule,
+    MatBadgeModule,
   ],
   exports: [
     FooterComponent,

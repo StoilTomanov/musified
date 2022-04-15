@@ -43,4 +43,8 @@ export class HeaderNavComponent implements AfterContentChecked, OnInit {
     }
   }
 
+  onMessages(): void {
+
+  }
+
 }
