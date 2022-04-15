@@ -49,6 +49,23 @@ async function readById(id) {
     return result;
 }
 
+async function compareQuizResults(lessonId, quizData) {
+    const lessonToCheck = await Lesson.findById({ _id: lessonId }).lean();
+    const quizResults = {};
+
+    lessonToCheck.quiz.map(quiz => {
+        quizResults.firstQuestion = quiz[quiz['correct-answer-1']] == quizData['answer-1'] ? true : false;
+        quizResults.secondQuestion = quiz[quiz['correct-answer-2']] == quizData['answer-2'] ? true : false;
+        quizResults.thirdQuestion = quiz[quiz['correct-answer-3']] == quizData['answer-3'] ? true : false;
+    });
+
+    if (quizResults.firstQuestion && quizResults.secondQuestion && quizResults.thirdQuestion) {
+        return 'You have successfully passed this course'
+    } else {
+        return 'Your score is not enough. Please try again'
+    }
+}
+
 async function update(lesson, id) { // param is the lesson object
     const result = await Lesson.findById({ _id: id });
     result.name = lesson.name;
@@ -76,17 +93,17 @@ async function submitQuiz(lessonId, quizData) {
     }
 
     const extractedQuizData = {
-        'quiestion-1': quizData['question-1'],
+        'question-1': quizData['question-1'],
         'answer-1': quizData['answer-1'],
         'answer-2': quizData['answer-2'],
         'answer-3': quizData['answer-3'],
         'answer-4': quizData['answer-4'],
-        'quiestion-2': quizData['question-2'],
+        'question-2': quizData['question-2'],
         'answer-5': quizData['answer-5'],
         'answer-6': quizData['answer-6'],
         'answer-7': quizData['answer-7'],
         'answer-8': quizData['answer-8'],
-        'quiestion-3': quizData['question-3'],
+        'question-3': quizData['question-3'],
         'answer-9': quizData['answer-9'],
         'answer-10': quizData['answer-10'],
         'answer-11': quizData['answer-11'],
@@ -172,4 +189,5 @@ module.exports = {
     updateProgress,
     updateViewsScore,
     submitQuiz,
+    compareQuizResults,
 }

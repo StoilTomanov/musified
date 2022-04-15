@@ -1,34 +1,34 @@
-<div id="quiz">
-    <form>
+<div id="quiz" *ngIf="lessonData">
+    <form data-id="{{data}}" (ngSubmit)="onTakeQuizSubmit($event)" #takeQuizForm="ngForm">
         <div>
             <h2 id="quiz-header">Test your knowledge</h2>
         </div>
         <hr id="quiz-hr">
         <div class="questions">
-            <p>1. What is the root note in A minor pentatonic scale?</p>
+            <p>1. {{lessonData[0]['question-1']}}</p>
             <div>
-                <input type="radio" name="answer-1" value="A note" id="a-note"><label for="A note">A note</label>
-                <input type="radio" name="answer-1" value="C note" id="c-note"><label for="C note">C note</label>
-                <input type="radio" name="answer-1" value="D note" id="d-note"><label for="D note">D note</label>
-                <input type="radio" name="answer-1" value="All are correct" id="all-notes"><label for="All are correct">All are correct</label>
+                <input type="radio" ngModel #option="ngModel" name="answer-1" value="{{lessonData[0]['answer-1']}}" id="a-note"><label for="{{lessonData[0]['answer-1']}}">{{lessonData[0]['answer-1']}}</label>
+                <input type="radio" ngModel #option="ngModel" name="answer-1" value="{{lessonData[0]['answer-2']}}" id="c-note"><label for="{{lessonData[0]['answer-2']}}">{{lessonData[0]['answer-2']}}</label>
+                <input type="radio" ngModel #option="ngModel" name="answer-1" value="{{lessonData[0]['answer-3']}}" id="d-note"><label for="{{lessonData[0]['answer-3']}}">{{lessonData[0]['answer-3']}}</label>
+                <input type="radio" ngModel #option="ngModel" name="answer-1" value="{{lessonData[0]['answer-4']}}" id="all-notes"><label for="{{lessonData[0]['answer-4']}}">{{lessonData[0]['answer-4']}}</label>
             </div>
         </div>
         <div class="questions">
-            <p>2. What is the root note in A minor pentatonic scale?</p>
+            <p>2. {{lessonData[0]['question-2']}}</p>
             <div>
-                <input type="radio" name="answer-2" value="A note" id="a-note"><label for="A note">A note</label>
-                <input type="radio" name="answer-2" value="C note" id="c-note"><label for="C note">C note</label>
-                <input type="radio" name="answer-2" value="D note" id="d-note"><label for="D note">D note</label>
-                <input type="radio" name="answer-2" value="All are correct" id="all-notes"><label for="All are correct">All are correct</label>
+                <input type="radio" ngModel #option="ngModel" name="answer-2" value="{{lessonData[0]['answer-5']}}" id="a-note"><label for="{{lessonData[0]['answer-5']}}">{{lessonData[0]['answer-5']}}</label>
+                <input type="radio" ngModel #option="ngModel" name="answer-2" value="{{lessonData[0]['answer-6']}}" id="c-note"><label for="{{lessonData[0]['answer-6']}}">{{lessonData[0]['answer-6']}}</label>
+                <input type="radio" ngModel #option="ngModel" name="answer-2" value="{{lessonData[0]['answer-7']}}" id="d-note"><label for="{{lessonData[0]['answer-7']}}">{{lessonData[0]['answer-7']}}</label>
+                <input type="radio" ngModel #option="ngModel" name="answer-2" value="{{lessonData[0]['answer-8']}}" id="all-notes"><label for="{{lessonData[0]['answer-8']}}">{{lessonData[0]['answer-8']}}</label>
             </div>
         </div>
         <div class="questions">
-            <p>3. What is the root note in A minor pentatonic scale?</p>
+            <p>3. {{lessonData[0]['question-3']}}</p>
             <div>
-                <input type="radio" name="answer-3" value="A note" id="a-note"><label for="A note">A note</label>
-                <input type="radio" name="answer-3" value="C note" id="c-note"><label for="C note">C note</label>
-                <input type="radio" name="answer-3" value="D note" id="d-note"><label for="D note">D note</label>
-                <input type="radio" name="answer-3" value="All are correct" id="all-notes"><label for="All are correct">All are correct</label>
+                <input type="radio" ngModel #option="ngModel" name="answer-3" value="{{lessonData[0]['answer-9']}}" id="a-note"><label for="{{lessonData[0]['answer-9']}}">{{lessonData[0]['answer-9']}}</label>
+                <input type="radio" ngModel #option="ngModel" name="answer-3" value="{{lessonData[0]['answer-10']}}" id="c-note"><label for="{{lessonData[0]['answer-10']}}">{{lessonData[0]['answer-10']}}</label>
+                <input type="radio" ngModel #option="ngModel" name="answer-3" value="{{lessonData[0]['answer-11']}}" id="d-note"><label for="{{lessonData[0]['answer-11']}}">{{lessonData[0]['answer-11']}}</label>
+                <input type="radio" ngModel #option="ngModel" name="answer-3" value="{{lessonData[0]['answer-12']}}" id="all-notes"><label for="{{lessonData[0]['answer-12']}}">{{lessonData[0]['answer-12']}}</label>
             </div>
         </div>
         <div id="quiz-controls">

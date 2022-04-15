@@ -115,6 +115,72 @@ div#buttons-actions button:nth-child(4) {
     transition: 0.2s;
 }
 
+div#buttons-actions-third {
+    height: 52px;
+}
+
+div#buttons-actions-third button.action-btn {
+    display: inline-block;
+}
+
+div#buttons-actions-third button:nth-child(1) {
+    font-size: 85%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(39, 157, 254);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    top: 15px;
+    left: 15px;
+    transition: 0.2s;
+}
+
+div#buttons-actions-third button:nth-child(2) {
+    font-size: 85%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(43, 209, 21);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    top: 15px;
+    left: 204px;
+    transition: 0.2s;
+}
+
+div#buttons-actions-third button:nth-child(3) {
+    font-size: 85%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(203, 23, 23);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    top: 15px;
+    left: 397px;
+    transition: 0.2s;
+}
+
+div#buttons-actions-third button:hover {
+    transition: 0.3s;
+    box-shadow: 1px 1px 20px 5px rgb(182, 182, 182);
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: rgb(216, 216, 216);
+}
+
+div#buttons-actions-third button:active {
+    transition: 0.3s;
+    box-shadow: 1px 1px 20px 5px rgba(101, 171, 252, 0.89);
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgba(142, 255, 179, 0.842);
+}
+
 div#buttons-actions button:hover {
     transition: 0.3s;
     box-shadow: 1px 1px 20px 5px rgb(182, 182, 182);

@@ -42,6 +42,20 @@ router.get('/mylessons', isLogged(), async(req, res) => {
     res.end();
 });
 
+router.put('/comparequisresults/:id', isLogged(), async(req, res) => {
+    const lessonId = req.params.id;
+    const quizData = req.body.quizData;
+    try {
+        const result = await lessonServices.compareQuizResults(lessonId, quizData);
+        res.status(200).json(result);
+    } catch (error) {
+        console.error(error.message);
+        const mappedError = mapError(error);
+        res.status(404).json({ message: mappedError });
+    };
+
+    res.end();
+});
 
 router.get('/:id', preload(), async(req, res) => {
     try {

@@ -34,6 +34,12 @@ export class LessonsService {
     return this.http.get<ILesson>('http://localhost:4000/api/records/' + id);
   }
 
+  public compareQuizResults$(lessonId: string, quizData: {}): Observable<string> {
+    return this.http.put<string>('http://localhost:4000/api/records/comparequisresults/' + lessonId, {
+      quizData
+    });
+  }
+
   public subscribeToLesson$(id: string): Observable<ILesson> {
     return this.http.put<ILesson>('http://localhost:4000/api/records/subscribe/' + id, {});
   }

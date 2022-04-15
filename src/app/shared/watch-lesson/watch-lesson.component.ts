@@ -82,7 +82,9 @@ export class WatchLessonComponent implements OnInit {
   }
 
   onTakeQuiz(): void {
-    this.dialogRef.open(TakeQuizComponent, {});
+    this.dialogRef.open(TakeQuizComponent, {
+      data: this.lessonById?._id
+    });
     document.getElementsByTagName('mat-dialog-container')[0].setAttribute('data-url', 'watch');
   }
 
