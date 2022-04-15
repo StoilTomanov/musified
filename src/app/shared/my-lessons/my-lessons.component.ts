@@ -20,8 +20,6 @@ export class MyLessonsComponent implements OnInit, AfterContentInit {
 
   constructor(
     private lessonService: LessonsService,
-    private userService: UserService,
-    private activatedRouter: ActivatedRoute,
     private router: Router,
     private dialogRef: MatDialog,
   ) { }

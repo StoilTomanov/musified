@@ -1,0 +1,23 @@
+#quiz {
+    color: rgb(255, 255, 255);
+}
+
+#quiz-header {
+    text-align: center;
+    margin: 0px;
+    margin-top: -10px;
+}
+
+#quiz-hr {
+    box-shadow: 0 0 15px 3px rgb(224, 224, 224);
+}
+
+.questions input {
+    display: block;
+    position: relative;
+}
+
+.questions label {
+    display: inline-block;
+    position: relative;
+}

@@ -24,8 +24,23 @@ mat-dialog-container.mat-dialog-container {
     bottom: 200px;
     padding: 50px;
     margin: 0;
+    margin-left: 70px;
     overflow: visible;
     height: 200px;
+}
+
+mat-dialog-container[data-url="watch"] {
+    background-color: rgb(74, 121, 121);
+    padding: 50px;
+    margin: 0;
+    margin-left: 70px;
+    bottom: 0px;
+    height: 800px;
+    overflow: visible;
+}
+
+.cdk-overlay-pane {
+    width: 900px;
 }
 
 .cdk-global-overlay-wrapper {

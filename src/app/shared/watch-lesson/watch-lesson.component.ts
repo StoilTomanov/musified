@@ -3,6 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/auth/user.service';
 import { ILesson } from 'src/app/interfaces';
 import { LessonsService } from '../lessons.service';
+import { MatDialog } from '@angular/material/dialog'
+import { TakeQuizComponent } from '../take-quiz/take-quiz.component';
+
 
 @Component({
   selector: 'app-watch-lesson',
@@ -20,6 +23,7 @@ export class WatchLessonComponent implements OnInit {
     private userService: UserService,
     private activatedRouter: ActivatedRoute,
     private router: Router,
+    private dialogRef: MatDialog,
   ) { }
 
 
@@ -75,6 +79,11 @@ export class WatchLessonComponent implements OnInit {
 
   onReport() {
     this.router.navigate(['contacts']);
+  }
+
+  onTakeQuiz(): void {
+    this.dialogRef.open(TakeQuizComponent, {});
+    document.getElementsByTagName('mat-dialog-container')[0].setAttribute('data-url', 'watch');
   }
 
 }

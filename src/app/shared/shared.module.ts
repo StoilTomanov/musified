@@ -23,6 +23,7 @@ import { LearnMoreComponent } from './home/learn-more/learn-more.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
+import { TakeQuizComponent } from './take-quiz/take-quiz.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { DialogComponent } from './dialog/dialog.component';
     LearnMoreComponent,
     EditCourseComponent,
     DialogComponent,
+    TakeQuizComponent,
   ],
   imports: [
     CommonModule,
