@@ -8,16 +8,52 @@
     margin-top: -10px;
 }
 
+div #quiz-controls button {
+    position: relative;
+    top: 30px;
+    margin-left: 26%;
+    background-color: rgb(201, 230, 255);
+    border: 0px;
+    border-radius: 3px;
+    width: 100px;
+    font-size: 80%;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+div #quiz-controls button:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px 2px rgb(43, 43, 43);
+    transition: 0.2s ease;
+}
+
+div #quiz-controls button:active {
+    background-color: rgb(201, 230, 255);
+    transition: 0.2s ease;
+}
+
 #quiz-hr {
     box-shadow: 0 0 15px 3px rgb(224, 224, 224);
 }
 
-.questions input {
+.questions {
+    font-size: 80%;
+    margin: -10px;
+}
+
+.questions p {
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.questions input[type="radio"] {
     display: block;
-    position: relative;
+    cursor: pointer;
 }
 
 .questions label {
     display: inline-block;
     position: relative;
+    bottom: 18px;
+    left: 30px;
 }
