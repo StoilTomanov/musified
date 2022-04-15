@@ -83,11 +83,25 @@ div#buttons-actions button:nth-child(2) {
     border-radius: 5px;
     position: relative;
     top: 15px;
-    left: 202px;
+    left: 74px;
     transition: 0.2s;
 }
 
 div#buttons-actions button:nth-child(3) {
+    font-size: 85%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(203, 179, 23);
+    border: 0px;
+    text-align: center;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    top: 15px;
+    left: 134px;
+    transition: 0.2s;
+}
+
+div#buttons-actions button:nth-child(4) {
     font-size: 85%;
     color: rgb(255, 255, 255);
     background-color: rgb(243, 69, 46);
@@ -97,7 +111,7 @@ div#buttons-actions button:nth-child(3) {
     border-radius: 5px;
     position: relative;
     top: 15px;
-    left: 394px;
+    left: 190px;
     transition: 0.2s;
 }
 

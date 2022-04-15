@@ -23,7 +23,6 @@
             <div id="items" *ngIf="isLogged && isAdmin == 'true'">
                 <li><a routerLink="/explore">Courses</a></li>
                 <li><a routerLink="/create">New course</a></li>
-                <li><a routerLink="/profile">Profile</a></li>
                 <li><a routerLink="/contacts">Contacts</a></li>
             </div>
             <div id="items" *ngIf="!isLogged">
@@ -32,7 +31,10 @@
                 <li><a routerLink="/explore">Explore</a></li>
                 <li><a routerLink="/contacts">Contacts</a></li>
             </div>
-            <div id="auth-items-user" *ngIf="isLogged">
+            <div id="auth-items-user" *ngIf="isLogged && isAdmin == 'false'">
+                <li><a routerLink="/" (click)="logout()">Logout</a></li>
+            </div>
+            <div id="auth-items-admin" *ngIf="isLogged && isAdmin == 'true'">
                 <li><a routerLink="/" (click)="logout()">Logout</a></li>
             </div>
             <div id="auth-items-guest" *ngIf="!isLogged">

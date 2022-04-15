@@ -1,9 +1,11 @@
-import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthHandlerService } from 'src/app/auth-handler.service';
 import { UserService } from 'src/app/auth/user.service';
 import { ILesson } from 'src/app/interfaces';
 import { LessonsService } from '../lessons.service';
+import { MatDialog } from '@angular/material/dialog'
+import { CreateQuizComponent } from '../create-quiz/create-quiz.component';
 
 @Component({
   selector: 'app-course-details',
@@ -21,6 +23,7 @@ export class CourseDetailsComponent implements OnInit {
     private activatedRouter: ActivatedRoute,
     private router: Router,
     private storage: AuthHandlerService,
+    private dialogRef: MatDialog,
   ) { }
 
   isLogged!: boolean;
@@ -94,6 +97,11 @@ export class CourseDetailsComponent implements OnInit {
     this.lessonService.deleteCourse$(lessonId)
       .subscribe();
     this.router.navigate(['explore']);
+  }
+
+  onCreateQuiz(): void {
+    this.dialogRef.open(CreateQuizComponent, {});
+    document.getElementsByTagName('mat-dialog-container')[0].setAttribute('data-url', 'watch');
   }
 
 }

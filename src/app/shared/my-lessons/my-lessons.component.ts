@@ -46,7 +46,9 @@ export class MyLessonsComponent implements OnInit, AfterContentInit {
   onGiveUp(event: Event): void {
     this.hasGiveIn = true;
     this.dialogRef.open(DialogComponent, {
-      data: { _id: this.lessonId = (event.target as Element).id}
+      data: {
+        _id: this.lessonId = (event.target as Element).id,
+      }
     });
   }
 

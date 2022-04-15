@@ -55,7 +55,7 @@ const routes: Routes = [
   },
   {
     path: 'watch/:id',
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, AdminGuard],
     pathMatch: 'full',
     component: WatchLessonComponent
   },
@@ -88,8 +88,8 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard],
+    canActivate: [AuthGuard, AdminGuard],
+    canActivateChild: [AuthGuard, AdminGuard],
     component: ProfileComponent,
     children: [
       {

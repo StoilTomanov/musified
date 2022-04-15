@@ -33,6 +33,7 @@
         <div id="buttons-actions" *ngIf="isLogged && isAdmin == 'true'">
             <button class="action-btn" (click)="onBackToCourses()">My Courses</button>
             <button class="action-btn" (click)="onEdit()">Edit course</button>
+            <button class="action-btn" (click)="onCreateQuiz()">Create quiz</button>
             <button class="action-btn" (click)="onDelete()">Delete course</button>
         </div>
         <div id="buttons-actions" *ngIf="isLogged && isSubscribed">

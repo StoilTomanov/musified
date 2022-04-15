@@ -1,0 +1,21 @@
+<div id="quiz">
+    <form (ngSubmit)="onCreateQuizSubmit()" #createQuizForm="ngForm">
+        <div>
+            <h2 id="quiz-header">Create a quiz - up to 3 questions</h2>
+        </div>
+        <hr id="quiz-hr">
+        <div class="questions">
+            <p>1. <input type="text" name="question" class="q-a" ngModel #question="ngModel"> - <span>* Mark the correct answer!</span></p>
+            <div>
+                <input type="radio" name="correct-answer-1" ngModel #option="ngModel" value="answer-1" id="a-1"><label for="a-1"><input type="text" name="answer-1" class="q-a" ngModel #answer="ngModel"></label>
+                <input type="radio" name="correct-answer-2" ngModel #option="ngModel" value="answer-2" id="a-2"><label for="a-2"><input type="text" name="answer-2" class="q-a" ngModel #answer="ngModel"></label>
+                <input type="radio" name="correct-answer-3" ngModel #option="ngModel" value="answer-3" id="a-3"><label for="a-3"><input type="text" name="answer-3" class="q-a" ngModel #answer="ngModel"></label>
+                <input type="radio" name="correct-answer-4" ngModel #option="ngModel" value="answer-4" id="a-4"><label for="a-4"><input type="text" name="answer-4" class="q-a" ngModel #answer="ngModel"></label>
+            </div>
+        </div>
+        <div id="quiz-controls">
+            <button mat-dialog-close type="button">Cancel</button>
+            <button mat-dialog-close type="submit">Submit</button>
+        </div>
+    </form>
+</div>

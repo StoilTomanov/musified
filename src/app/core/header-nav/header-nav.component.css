@@ -97,6 +97,12 @@ div#auth-items-user {
     margin-left: -19px;
 }
 
+div#auth-items-admin {
+    position: relative;
+    top: 510px;
+    margin-left: -19px;
+}
+
 div#auth-items-guest {
     position: relative;
     top: 390px;

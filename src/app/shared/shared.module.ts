@@ -24,6 +24,7 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import { TakeQuizComponent } from './take-quiz/take-quiz.component';
+import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { TakeQuizComponent } from './take-quiz/take-quiz.component';
     EditCourseComponent,
     DialogComponent,
     TakeQuizComponent,
+    CreateQuizComponent,
   ],
   imports: [
     CommonModule,
