@@ -1,0 +1,52 @@
+section#messages h1 {
+    color: rgb(0, 255, 234);
+    font-size: 250%;
+    margin-left: 15%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+div#msg-container {
+    box-shadow: 0 0 15px 5px rgb(184, 184, 184);
+    display: block;
+    border-radius: 5px;
+    position: relative;
+    width: 70%;
+    margin-top: -60px;
+    height: 180px;
+    left: 295px;
+    top: 50px;
+    border: 2px solid rgb(183, 180, 0);
+    background-color: rgba(102, 143, 179, 0.489);
+}
+
+div#msg-container p {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative;
+    color: rgb(255, 255, 255);
+}
+
+div#msg-container button {
+    position: relative;
+    top: 55px;
+    left: 40%;
+    width: 150px;
+    font-size: 70%;
+    box-shadow: 0 0 5px 2px rgb(60, 60, 60);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+div#msg-container button:hover {
+    background-color: rgb(5, 115, 149);
+    transition: 0.2s ease;
+    color: rgb(255, 255, 255);
+}
+
+div#msg-container button:active {
+    border: 1px inset;
+    transition: 0.2s ease;
+}

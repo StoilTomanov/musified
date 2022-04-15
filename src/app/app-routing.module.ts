@@ -12,6 +12,7 @@ import { EditCourseComponent } from './shared/edit-course/edit-course.component'
 import { ExploreComponent } from './shared/explore/explore.component';
 import { HomeComponent } from './shared/home/home.component';
 import { LearnMoreComponent } from './shared/home/learn-more/learn-more.component';
+import { MessagesComponent } from './shared/messages/messages.component';
 import { MissionComponent } from './shared/mission/mission.component';
 import { MyLessonsComponent } from './shared/my-lessons/my-lessons.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
@@ -70,6 +71,12 @@ const routes: Routes = [
     pathMatch: 'full',
     canActivate: [AuthGuard, UserGuard],
     component: CreateCourseComponent
+  },
+  {
+    path: 'messages',
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
+    component: MessagesComponent
   },
   {
     path: 'edit/:id',

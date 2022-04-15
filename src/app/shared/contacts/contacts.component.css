@@ -9,6 +9,18 @@ section#contacts div#contact-info {
     margin-left: 23%;
 }
 
+div#to-user {
+    display: block;
+    position: relative;
+    top: 5px;
+    margin-bottom: -55px;
+    left: -280px;
+}
+
+div#to-user input {
+    width: 300px;
+}
+
 section#contacts p {
     text-align: center;
     color: rgb(255, 255, 255);

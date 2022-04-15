@@ -31,7 +31,7 @@ async function initRest() {
     app.use(auth())
     app.use('/api/records', apiCotnroller);
     app.use('/users', usersCotnroller)
-    app.use('/msg', msgCotnroller);
+    app.use('/message', msgCotnroller);
 
     app.get('/', (req, res) => res.json(serverInfo));
 

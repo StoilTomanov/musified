@@ -19,6 +19,9 @@
                     <option value="issue">Technical issue</option>
                     <option value="other">Other</option>
                 </select>
+                <div id="to-user" *ngIf="isAdmin == 'true'">
+                    <label for="to">To: <input type="text"> </label>
+                </div>
                 <div class='textarea'>
                     <textarea name="contact-area" id="contact-area" placeholder="Type your message..."></textarea>
                 </div>

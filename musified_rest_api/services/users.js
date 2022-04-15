@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const User = require('../models/User');
 
 const JWT_SECRET = 'dj3D93LkdO3e93af0c23gjcg54y7co4g8u354gn24c8gmxqj34m58umv<dq0Opoe3r323r957nce'
 const blacklist = [];

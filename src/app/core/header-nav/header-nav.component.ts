@@ -1,4 +1,5 @@
 import { Component, AfterContentChecked, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthHandlerService } from 'src/app/auth-handler.service';
 import { UserService } from 'src/app/auth/user.service';
 
@@ -14,7 +15,8 @@ export class HeaderNavComponent implements AfterContentChecked, OnInit {
 
   constructor(
     private userService: UserService,
-    private storage: AuthHandlerService
+    private storage: AuthHandlerService,
+    private router: Router
   ) { }
 
   logout(): void {
@@ -44,7 +46,7 @@ export class HeaderNavComponent implements AfterContentChecked, OnInit {
   }
 
   onMessages(): void {
-
+    this.router.navigate(['messages']);
   }
 
 }

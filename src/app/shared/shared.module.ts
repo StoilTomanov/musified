@@ -26,6 +26,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { TakeQuizComponent } from './take-quiz/take-quiz.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { QuizResultsComponent } from './quiz-results/quiz-results.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { QuizResultsComponent } from './quiz-results/quiz-results.component';
     TakeQuizComponent,
     CreateQuizComponent,
     QuizResultsComponent,
+    MessagesComponent,
   ],
   imports: [
     CommonModule,
