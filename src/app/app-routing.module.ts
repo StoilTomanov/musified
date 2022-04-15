@@ -4,6 +4,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AdminGuard } from './guards/admin.guard';
 import { AuthGuard } from './guards/auth.guard';
+import { UserGuard } from './guards/user.guard';
 import { ContactsComponent } from './shared/contacts/contacts.component';
 import { CourseDetailsComponent } from './shared/course-details/course-details.component';
 import { CreateCourseComponent } from './shared/create-course/create-course.component';
@@ -67,7 +68,7 @@ const routes: Routes = [
   {
     path: 'create',
     pathMatch: 'full',
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, UserGuard],
     component: CreateCourseComponent
   },
   {
@@ -89,7 +90,7 @@ const routes: Routes = [
   {
     path: 'profile',
     canActivate: [AuthGuard, AdminGuard],
-    canActivateChild: [AuthGuard, AdminGuard],
+    canActivateChild: [AuthGuard],
     component: ProfileComponent,
     children: [
       {

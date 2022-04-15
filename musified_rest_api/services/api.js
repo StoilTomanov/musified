@@ -60,9 +60,9 @@ async function compareQuizResults(lessonId, quizData) {
     });
 
     if (quizResults.firstQuestion && quizResults.secondQuestion && quizResults.thirdQuestion) {
-        return 'You have successfully passed this course'
+        return 'You have successfully passed this course.'
     } else {
-        return 'Your score is not enough. Please try again'
+        return 'Your score is not enough. Please try again.'
     }
 }
 

@@ -1,0 +1,6 @@
+<div id="result-dialog" *ngIf="data">
+    <h3>{{data.hasCompleted}}</h3>
+    <button mat-dialog-close *ngIf="data.hasCompleted == 'Your score is not enough. Please try again.'">Back</button>
+    <button mat-dialog-close *ngIf="data.hasCompleted == 'Your score is not enough. Please try again.'" data-id={{data.lessonId}} (click)="onTryAgain($event)">Try again</button>
+    <button id="more-courses" mat-dialog-close *ngIf="data.hasCompleted == 'You have successfully passed this course.'" data-id={{data.lessonId}} (click)="onMoreCourses($event)">More courses</button>
+</div>

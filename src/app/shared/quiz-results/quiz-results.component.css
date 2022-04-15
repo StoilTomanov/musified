@@ -1,0 +1,30 @@
+div#result-dialog h3 {
+    position: relative;
+    left: 120px;
+    bottom: 50px;
+}
+
+div#result-dialog button {
+    position: relative;
+    left: 100px;
+    color: rgb(255, 255, 255);
+    margin-left: 80px;
+    width: 160px;
+    background-color: rgb(2, 110, 177);
+    border: 0px;
+    font-size: 90%;
+    border-radius: 3px;
+    transition: 0.1s ease;
+    cursor: pointer;
+}
+
+div#result-dialog button#more-courses {
+    left: 210px;
+}
+
+div#result-dialog button:hover {
+    color: rgb(6, 0, 0);
+    transition: 0.1s ease;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px 3px rgb(133, 133, 133);
+}

@@ -52,6 +52,21 @@ router.get('/readuser', isLogged(), async(req, res) => {
     res.status(204).end();
 });
 
+router.put('/passcourse/:id', isLogged(), async(req, res) => {
+    try {
+        const userId = req.params.id;
+        const lessonId = req.body.lessonId;
+        const action = req.body.action;
+        const result = await updateUser(userId, lessonId, action);
+        res.status(200).json(result);
+    } catch (error) {
+        console.error(error.message);
+        const mappedError = mapError(error);
+        res.status(400).json({ message: mappedError });
+    }
+    res.status(204).end();
+});
+
 router.put('/:id', isLogged(), async(req, res) => {
     try {
         const userId = req.params.id;

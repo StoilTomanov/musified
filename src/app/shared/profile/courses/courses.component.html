@@ -5,17 +5,8 @@
             <!-- TODO: consider removing the progress bar and replasing it with a status box -->
             <tr *ngFor="let lesson of lessonsData">
                 <th><a routerLink="/watch/{{lesson._id}}">&#9658;</a>{{lesson.name}}</th>
-                <td>
-                    <progress class="level" value="{{lesson.progress}}" max="100"></progress>
-                </td>
             </tr>
             <!-- Consider adding pagination -->
-            <tr *ngIf="lessonsData.length != 0">
-                <th>Overal progress:</th>
-                <td>
-                    <progress class="level" value="{{currentProgress}}" max="100"></progress>
-                </td>
-            </tr>
             <tr *ngIf="lessonsData.length == 0">
                 <th>Currently you are not subscribed to any courses</th>
             </tr>

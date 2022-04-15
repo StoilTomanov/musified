@@ -21,7 +21,8 @@
         <div id="controls" *ngIf="!hasGiveIn && !beingRated">
             <button class="controls-btn-back" *ngIf="hasRated" disabled>Rated</button>
             <button class="controls-btn-back" (click)="onRate()" *ngIf="!hasRated">Rate this lesson</button>
-            <button class="controls-btn-quiz" (click)="onTakeQuiz()">Take a quiz</button>
+            <button class="controls-btn-quiz" *ngIf="lessonById.quiz.length == 0">Quiz is unavailable</button>
+            <button class="controls-btn-quiz" (click)="onTakeQuiz()" *ngIf="lessonById.quiz.length != 0">Take a quiz</button>
             <button class="controls-btn-give-up" (click)="onGiveUp()">Give up</button>
             <button class="controls-btn-issue" (click)="onReport()">Report an issue</button>
         </div>

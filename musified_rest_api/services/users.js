@@ -82,6 +82,9 @@ async function updateUser(userId, lessonId, action) {
             } else {
                 throw new Error('User is already unsubscribed for this lesson');
             }
+        } else if (action == 'pass-course') {
+            user.passed_courses++;
+            await user.save();
         }
     }
 
