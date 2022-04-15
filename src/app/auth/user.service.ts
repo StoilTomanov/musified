@@ -71,6 +71,16 @@ export class UserService {
     })
   }
 
+  updateUserDetails$(userData: {}): Observable<IUser> {
+    return this.http.put<IUser>('http://localhost:4000/users/updateuser', {
+      userData
+    }, {
+      headers: {
+        'X-Authorization': `${sessionStorage['accessToken']}`
+      }
+    })
+  }
+
 }
 
 

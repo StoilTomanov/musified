@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { isGuest, isLogged } = require('../middlewares/guards');
-const { register, login, logout, getUserData, updateUser } = require('../services/users');
+const { register, login, logout, getUserData, updateUser, updateUserData } = require('../services/users');
 const mapError = require('../utils/errorMapper');
 
 router.post('/login', isGuest(), async(req, res) => {
@@ -37,6 +37,19 @@ router.get('/logout', isLogged(), (req, res) => {
         logout(req.user.token);
     }
     res.status(204).end();
+});
+
+router.put('/updateuser', isLogged(), async(req, res) => {
+    const userData = req.body.userData;
+    try {
+        const result = await updateUserData(userData);
+        res.status(200).json(result);
+    } catch (error) {
+        console.error(error.message);
+        const mappedError = mapError(error);
+        res.status(400).json({ message: mappedError });
+    }
+    res.end();
 });
 
 router.get('/readuser', isLogged(), async(req, res) => {

@@ -60,6 +60,24 @@ async function getUserData(userId) {
     return await User.findById({ _id: userId });
 }
 
+async function updateUserData(userData) {
+    const user = await User.findOne({ _id: userData.userId });
+
+    if (!user) {
+        throw new Error('User does not exists.')
+    }
+    const match = await bcrypt.compare(userData.password, user.hashedPassword);
+
+    if (match) {
+        user.email = userData.email;
+        user.username = userData.username;
+        user.hashedPassword = await bcrypt.hash(userData.newPassword, 10);
+        await user.save();
+    } else {
+        throw new Error('Incorrect password.');
+    }
+}
+
 async function updateUser(userId, lessonId, action) {
     const user = await User.findOne({ _id: userId })
 
@@ -126,4 +144,5 @@ module.exports = {
     verifySession,
     getUserData,
     updateUser,
+    updateUserData,
 }

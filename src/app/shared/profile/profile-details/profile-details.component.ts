@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/auth/user.service';
 import { IUser } from 'src/app/interfaces';
 
@@ -9,14 +11,48 @@ import { IUser } from 'src/app/interfaces';
 })
 export class ProfileDetailsComponent implements OnInit {
   userData!: IUser;
+  errors: string = '';
+  hasErrors!: boolean;
+  @ViewChild('updateUserDataFrom') form!: NgForm
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
     this.userService.readUser$()
-    .subscribe(data => this.userData = data);
+      .subscribe(data => this.userData = data);
+    setTimeout(() => {
+      this.form.form.patchValue({
+        username: this.userData.username,
+        email: this.userData.email,
+      })
+    }, 300)
+  }
+
+  onEditUserDataSubmit(): void {
+    this.hasErrors = false;
+    this.userService.updateUserDetails$({
+      userId: sessionStorage['userId'],
+      email: this.form.value.email,
+      username: this.form.value.username,
+      password: this.form.value.password,
+      newPassword: this.form.value.newPassword,
+    })
+      .subscribe({
+        next: (data) => { },
+        error: (err) => { this.errors = err.error.message; this.hasErrors = true }
+      });
+
+      setTimeout(() => {
+        if(!this.hasErrors){
+          sessionStorage['username'] = this.form.value.username;
+          this.router.navigate(['explore']);
+        }
+      }, 300);
+
+
   }
 
 

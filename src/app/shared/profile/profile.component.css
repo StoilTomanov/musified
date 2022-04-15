@@ -45,12 +45,21 @@ div.profile-card input {
     border: 1px solid rgb(0, 255, 234);
     border-radius: 3px;
     text-align: center;
-    font-size: 55%;
+    font-size: 65%;
     position: relative;
     left: 25%;
     height: 20px;
     margin-bottom: 10px;
     width: 50%;
+}
+
+div.error-msg-profile {
+    text-align: center;
+    font-size: 80%;
+    margin-bottom: -15px;
+    margin-top: -10px;
+    color: rgb(238, 255, 1);
+    text-shadow: 0 0 4px rgba(255, 251, 0, 0.687);
 }
 
 

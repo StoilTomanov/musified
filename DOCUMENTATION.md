@@ -106,11 +106,10 @@
 - Handle contact form
 - Edit course ( Admin only ) - Done
 - Profile/courses view - Done
-- Profile details update
+- Profile details update - Done
 - Details and Give up buttons in My Lessons component - Done
 - Back, quiz, give up and Report an issue buttons in watch-lesson component - Done
 - Rate and Report an issue buttons in course details component - Done
-- Pagination
 
 - Deploy the application
 - Cloud storage API implementation
