@@ -78,6 +78,41 @@ async function updateUserData(userData) {
     }
 }
 
+async function createMessageForAdmin(userId, messageData) {
+    const user = await User.findOne({ isAdmin: true });
+
+    if (!user) {
+        throw new Error('User does not exists.')
+    }
+
+    user.messages.push(messageData);
+    await user.save();
+
+}
+
+async function getAllMessages(userId) {
+    const user = await User.findOne({ _id: userId });
+
+    if (!user) {
+        throw new Error('User does not exists.')
+    }
+
+    return user.messages;
+
+}
+
+async function deleteAllMessages(userId) {
+    const user = await User.findOne({ _id: userId });
+
+    if (!user) {
+        throw new Error('User does not exists.')
+    }
+
+    user.messages = [];
+    await user.save();
+
+}
+
 async function updateUser(userId, lessonId, action) {
     const user = await User.findOne({ _id: userId })
 
@@ -145,4 +180,7 @@ module.exports = {
     getUserData,
     updateUser,
     updateUserData,
+    createMessageForAdmin,
+    getAllMessages,
+    deleteAllMessages,
 }

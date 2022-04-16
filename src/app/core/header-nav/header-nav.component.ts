@@ -12,6 +12,7 @@ export class HeaderNavComponent implements AfterContentChecked, OnInit {
   isLogged: boolean = false;
   isAdmin!: string;
   username!: string;
+  messageData!: any[];
 
   constructor(
     private userService: UserService,
@@ -29,6 +30,8 @@ export class HeaderNavComponent implements AfterContentChecked, OnInit {
   }
 
   ngOnInit(): void {
+    this.userService.getAllMessages$(sessionStorage['userId'])
+      .subscribe(data => this.messageData = data)
 
   }
 

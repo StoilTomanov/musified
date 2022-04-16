@@ -41,6 +41,15 @@ export class UserService {
     })
   };
 
+  getAllMessages$(userId: string): Observable<any[]> {
+    // TODO: consider doing additional check for empty fields
+    return this.http.get<any[]>('http://localhost:4000/users/messages', {
+      headers: {
+        'X-Authorization': sessionStorage['accessToken']
+      }
+    })
+  };
+
   readUser$(): Observable<IUser> {
     return this.http.get<IUser>('http://localhost:4000/users/readuser', {
       headers: {
@@ -53,6 +62,26 @@ export class UserService {
     return this.http.put<IUser>('http://localhost:4000/users/' + userId, {
       "lessonId": `${lessonId}`,
       "action": `${action}`
+    }, {
+      headers: {
+        'X-Authorization': `${sessionStorage['accessToken']}`
+      }
+    })
+  }
+
+  createMessageForAdmin$(userId: string, messageData: {}): Observable<IUser> {
+    return this.http.put<IUser>('http://localhost:4000/users/messages/' + userId, {
+      messageData
+    }, {
+      headers: {
+        'X-Authorization': `${sessionStorage['accessToken']}`
+      }
+    })
+  }
+
+  deleteMessageForAdmin$(userId: string): Observable<IUser> {
+    return this.http.put<IUser>('http://localhost:4000/users/deletemessages/' + userId, {
+      
     }, {
       headers: {
         'X-Authorization': `${sessionStorage['accessToken']}`

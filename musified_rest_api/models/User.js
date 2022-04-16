@@ -8,6 +8,7 @@ const userSchema = new Schema({
     profilePicture: { type: String, default: '../assets/user-logo.png' },
     passed_courses: { type: Number, required: true, default: 0 },
     subscriptions: { type: [ObjectId], default: [] },
+    messages: { type: [Object], default: [] },
     isAdmin: { type: Boolean, required: true },
     hashedPassword: { type: String, required: true },
 });

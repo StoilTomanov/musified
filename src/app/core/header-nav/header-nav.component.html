@@ -10,9 +10,11 @@
         </div>
         <h1>
             <a routerLink="/" id="logo"><img id="logoImg" src="../assets/logo.png" alt="logo">usified</a>
-            <button *ngIf="isLogged" id="message-icon" mat-raised-button color="primary" matBadge="1" matBadgePosition="after" matBadgeColor="accent" (click)="onMessages()">
-          Messages
-        </button>
+            <div *ngIf="messageData">
+                <button *ngIf="isLogged && isAdmin == 'true' " id="message-icon" mat-raised-button color="primary" matBadge="{{messageData.length}}" matBadgePosition="after" matBadgeColor="accent" (click)="onMessages()">
+                    Messages
+                </button>
+            </div>
         </h1>
     </header>
     <nav id="nav">

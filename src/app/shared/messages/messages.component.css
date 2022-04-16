@@ -3,6 +3,7 @@ section#messages h1 {
     font-size: 250%;
     margin-left: 15%;
     margin-top: 20px;
+    margin-bottom: -30px;
     text-align: center;
 }
 
@@ -12,7 +13,7 @@ div#msg-container {
     border-radius: 5px;
     position: relative;
     width: 70%;
-    margin-top: -60px;
+    margin-bottom: 30px;
     height: 180px;
     left: 295px;
     top: 50px;
@@ -28,25 +29,25 @@ div#msg-container p {
     color: rgb(255, 255, 255);
 }
 
-div#msg-container button {
+#msg-btn button {
     position: relative;
-    top: 55px;
-    left: 40%;
-    width: 150px;
-    font-size: 70%;
+    top: 155px;
+    left: 50%;
+    width: 200px;
+    font-size: 80%;
     box-shadow: 0 0 5px 2px rgb(60, 60, 60);
     cursor: pointer;
     border-radius: 5px;
     transition: 0.2s ease;
 }
 
-div#msg-container button:hover {
+#msg-btn button:hover {
     background-color: rgb(5, 115, 149);
     transition: 0.2s ease;
     color: rgb(255, 255, 255);
 }
 
-div#msg-container button:active {
+#msg-btn button:active {
     border: 1px inset;
     transition: 0.2s ease;
 }

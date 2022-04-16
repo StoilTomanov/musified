@@ -75,7 +75,7 @@ const routes: Routes = [
   {
     path: 'messages',
     pathMatch: 'full',
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, UserGuard],
     component: MessagesComponent
   },
   {

@@ -9,21 +9,18 @@
     </div>
     <div id="contact-form">
         <div class="forms">
-            <form action="" method="">
+            <form (ngSubmit)="onMessageSubmit()" #messageForm="ngForm">
                 <label for="topic">
                     Select a topic that your question is related to:
                 </label>
-                <select name="topic" id="topic">
+                <select name="topic" id="topic" ngModel #message="ngModel">
                     <option value="lessons">Lessons related</option>
                     <option value="details">Profile details related</option>
                     <option value="issue">Technical issue</option>
                     <option value="other">Other</option>
                 </select>
-                <div id="to-user" *ngIf="isAdmin == 'true'">
-                    <label for="to">To: <input type="text"> </label>
-                </div>
                 <div class='textarea'>
-                    <textarea name="contact-area" id="contact-area" placeholder="Type your message..."></textarea>
+                    <textarea name="message" id="contact-area" placeholder="Type your message..." ngModel #message="ngModel"></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send</button>
             </form>
