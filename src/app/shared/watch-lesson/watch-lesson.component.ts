@@ -10,7 +10,7 @@ import { TakeQuizComponent } from '../take-quiz/take-quiz.component';
 @Component({
   selector: 'app-watch-lesson',
   templateUrl: './watch-lesson.component.html',
-  styleUrls: ['./watch-lesson.component.css']
+  styleUrls: ['./watch-lesson.component.css'],
 })
 export class WatchLessonComponent implements OnInit {
   lessonById: ILesson | undefined;
