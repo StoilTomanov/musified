@@ -8,12 +8,12 @@ import { UserService } from 'src/app/auth/user.service';
   templateUrl: './header-nav.component.html',
   styleUrls: ['./header-nav.component.css']
 })
+
 export class HeaderNavComponent implements AfterContentChecked, OnInit {
   isLogged: boolean = false;
   isAdmin!: string;
   username!: string;
   messageData!: any[];
-  serviceIsAdmin!: string;
 
   constructor(
     private userService: UserService,
@@ -33,18 +33,7 @@ export class HeaderNavComponent implements AfterContentChecked, OnInit {
   ngOnInit(): void {
     this.userService.getAllMessages$(sessionStorage['userId'])
       .subscribe(data => this.messageData = data)
-    this.userService.readUser$()
-      .subscribe(data => this.serviceIsAdmin = data.isAdmin)
 
-    setTimeout(() => {
-      if (this.serviceIsAdmin == 'true') {
-        sessionStorage['isAdmin'] = 'true';
-        this.isAdmin = 'true';
-      } else {
-        sessionStorage['isAdmin'] = 'false';
-        this.isAdmin = 'false';
-      }
-    }, 100);
   }
 
   ngAfterContentChecked(): void {
@@ -53,6 +42,10 @@ export class HeaderNavComponent implements AfterContentChecked, OnInit {
       this.username = sessionStorage['username']
     } else {
       this.isLogged = false;
+    }
+    const result = this.storage.getStorage();
+    if (result['isAdmin']) {
+      this.isAdmin = result['isAdmin'];
     }
   }
 
