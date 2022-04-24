@@ -18,7 +18,11 @@ export class AdminGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (sessionStorage['isAdmin'] == 'false') {
+    this.userService.readUser$().subscribe(data => {
+      this.userData = data;
+      sessionStorage['isAdmin'] = this.userData.isAdmin;
+    })
+    if (sessionStorage['isAdmin'] == 'false'|| sessionStorage['isAdmin'] == undefined) {
       return true;
     }
     return this.router.createUrlTree(['/explore']);

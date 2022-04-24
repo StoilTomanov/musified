@@ -32,8 +32,7 @@ export class HeaderNavComponent implements AfterContentChecked, OnInit {
 
   ngOnInit(): void {
     this.userService.getAllMessages$(sessionStorage['userId'])
-      .subscribe(data => this.messageData = data)
-
+      .subscribe(data => this.messageData = data);
   }
 
   ngAfterContentChecked(): void {

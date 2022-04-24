@@ -63,6 +63,7 @@ const routes: Routes = [
   },
   {
     path: 'explore',
+    canActivate: [AdminGuard],
     pathMatch: 'full',
     component: ExploreComponent
   },
@@ -116,6 +117,8 @@ const routes: Routes = [
   },
   {
     path: 'contacts',
+    pathMatch: 'full',
+    canActivate: [AdminGuard],
     component: ContactsComponent
   },
   {
