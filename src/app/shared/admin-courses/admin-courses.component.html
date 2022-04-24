@@ -3,7 +3,7 @@
         <h1 *ngIf="!lessons" class="loading">Loading...</h1>
     </div>
     <div *ngIf="lessons">
-        <h1 *ngIf="lessons && lessons.length > 0">Find your new course</h1>
+        <h1 *ngIf="lessons && lessons.length > 0">All created courses</h1>
         <h1 *ngIf="lessons.length == 0 && isAdmin == 'false'" class="no-lessons">Currently there are no courses available 🙁</h1>
         <h1 *ngIf="lessons.length == 0 && isAdmin == 'true'" class="no-lessons">Create your first one <a routerLink="/create">here</a></h1>
     </div>
