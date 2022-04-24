@@ -25,7 +25,7 @@ export class AdminGuard implements CanActivate {
     if (sessionStorage['isAdmin'] == 'false'|| sessionStorage['isAdmin'] == undefined) {
       return true;
     }
-    return this.router.createUrlTree(['/explore']);
+    return this.router.createUrlTree(['/courses']);
   }
 
 }

@@ -1,0 +1,34 @@
+<section id="explore">
+    <div *ngIf="!lessons">
+        <h1 *ngIf="!lessons" class="loading">Loading...</h1>
+    </div>
+    <div *ngIf="lessons">
+        <h1 *ngIf="lessons && lessons.length > 0">Find your new course</h1>
+        <h1 *ngIf="lessons.length == 0 && isAdmin == 'false'" class="no-lessons">Currently there are no courses available 🙁</h1>
+        <h1 *ngIf="lessons.length == 0 && isAdmin == 'true'" class="no-lessons">Create your first one <a routerLink="/create">here</a></h1>
+    </div>
+    <div id="explore-container" *ngIf="lessons">
+        <div class="course-card" *ngFor="let lesson of lessons">
+            <div class="course-img" *ngIf="lesson.imagePreviewUrl != ''">
+                <img src={{lesson.imagePreviewUrl}} alt="guitar" height="186px">
+            </div>
+            <div class="course-img" *ngIf="lesson.imagePreviewUrl == ''">
+                <img src="../../../assets/no_image.png" alt="guitar" height="186px">
+            </div>
+            <div class="course-description">
+                <p>
+                    Course name: {{lesson.name}}
+                </p>
+                <p>
+                    Course length: {{lesson.duration}}
+                </p>
+                <p>
+                    Course level: {{lesson.level}}
+                </p>
+            </div>
+            <div class="details-btn">
+                <button type="button" data-id="{{lesson._id}}" (click)="onDetails($event)">Details</button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -27,6 +27,7 @@ import { TakeQuizComponent } from './take-quiz/take-quiz.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { QuizResultsComponent } from './quiz-results/quiz-results.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AdminCoursesComponent } from './admin-courses/admin-courses.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { MessagesComponent } from './messages/messages.component';
     CreateQuizComponent,
     QuizResultsComponent,
     MessagesComponent,
+    AdminCoursesComponent,
   ],
   imports: [
     CommonModule,

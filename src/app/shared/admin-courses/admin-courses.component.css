@@ -1,0 +1,150 @@
+section#explore h1 {
+    color: rgb(0, 255, 234);
+    font-size: 200%;
+    margin-left: 39%;
+}
+
+section#explore h1.no-lessons {
+    color: rgb(0, 255, 234);
+    font-size: 200%;
+    text-align: center;
+    margin-left: 16%;
+}
+
+section#explore h1.loading {
+    color: rgb(0, 255, 234);
+    font-size: 200%;
+    text-align: center;
+    margin-left: 13%;
+}
+
+div#explore-container {
+    display: block;
+    margin-left: 17%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    position: relative;
+    top: -30px;
+    width: 81.5%;
+    height: 610px;
+    color: white;
+}
+
+div.course-card {
+    height: 320px;
+    margin: 10px;
+    margin-top: 10%;
+    margin-left: 48px;
+    display: inline-block;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    box-shadow: 0px 0px 15px 8px rgb(214, 214, 214);
+}
+
+div.course-img {
+    margin: 0;
+    padding: 0;
+}
+
+div.course-img img {
+    width: 280px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+div.course-description {
+    margin-top: -9px;
+    margin-bottom: -3px;
+    background-color: rgba(122, 122, 122, 0.795);
+}
+
+div.course-description p {
+    margin: 1px;
+    /* margin-top: 15px; */
+    /* margin-bottom: 15px; */
+    height: 35.8px;
+    font-size: 80%;
+}
+
+div.details-btn {
+    margin-bottom: -3px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+div.details-btn button {
+    font-size: 85%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(9, 218, 200);
+    width: 100%;
+    margin: 0;
+    border: 0px;
+    position: relative;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    transition: 0.2s;
+}
+
+div.details-btn button:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    color: rgb(2, 92, 99);
+    background-color: rgb(179, 253, 247);
+}
+
+div.details-btn button:active {
+    transition: 0.1s;
+    cursor: pointer;
+    font-size: 84%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(2, 142, 177, 0.76);
+}
+
+div#paginator {
+    position: fixed;
+    /* border: 1px solid red; */
+    width: 350px;
+    text-align: right;
+    bottom: 25px;
+    left: 65%;
+}
+
+@media screen and (max-height: 862px) {
+    section#explore h1 {
+        font-size: 180%;
+        margin-left: 44%;
+        margin-bottom: 4%;
+    }
+    div#explore-container {
+        margin-left: 14%;
+        margin-bottom: 1%;
+        width: 84.5%;
+        height: 430px;
+    }
+    div.course-card {
+        margin: 5px;
+        margin-left: 110px;
+        margin-bottom: 30px;
+        height: 86%;
+        box-shadow: 0px 0px 15px 8px rgb(214, 214, 214);
+    }
+    div.details-btn button {
+        position: relative;
+    }
+    /* div.course-img img {
+        width: 290px;
+        height: 210px;
+    } */
+    div.course-description {
+        height: 37.4%;
+    }
+    div.course-description p {
+        margin-bottom: 8px;
+    }
+    div#paginator {
+        margin-top: 25px;
+        left: 70%;
+    }
+}

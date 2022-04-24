@@ -5,6 +5,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { AdminGuard } from './guards/admin.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { UserGuard } from './guards/user.guard';
+import { AdminCoursesComponent } from './shared/admin-courses/admin-courses.component';
 import { ContactsComponent } from './shared/contacts/contacts.component';
 import { CourseDetailsComponent } from './shared/course-details/course-details.component';
 import { CreateCourseComponent } from './shared/create-course/create-course.component';
@@ -66,6 +67,12 @@ const routes: Routes = [
     canActivate: [AdminGuard],
     pathMatch: 'full',
     component: ExploreComponent
+  },
+  {
+    path: 'courses',
+    canActivate: [UserGuard],
+    pathMatch: 'full',
+    component: AdminCoursesComponent
   },
   {
     path: 'create',
