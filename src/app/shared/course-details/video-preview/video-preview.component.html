@@ -1,7 +1,5 @@
-<div id="video-preview">
+<div id="video-preview" *ngIf="lessonById">
 
-    <iframe class="video-player" src="{{lessonById?.videoUrl}}" allowfullscreen>
-
-    </iframe>
+    <iframe class="video-player" width="560" height="315" src="{{lessonById.videoUrl}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </div>
