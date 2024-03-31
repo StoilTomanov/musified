@@ -5,64 +5,64 @@ import { ILesson } from '../interfaces';
 
 @Injectable()
 export class LessonsService {
+    baseUrl: string = 'http://localhost:4000/api';
+    constructor(
+        private http: HttpClient
+    ) { }
 
-  constructor(
-    private http: HttpClient
-  ) { }
+    public getAllItems$(): Observable<ILesson[]> {
+        return this.http.get<ILesson[]>('${this.baseUrl}/records');
+    }
 
-  public getAllItems$(): Observable<ILesson[]> {
-    return this.http.get<ILesson[]>('http://localhost:4000/api/records');
-  }
+    public getMyLessons$(): Observable<ILesson[]> {
+        return this.http.get<ILesson[]>(`${this.baseUrl}/records/mylessons`);
+    }
 
-  public getMyLessons$(): Observable<ILesson[]> {
-    return this.http.get<ILesson[]>('http://localhost:4000/api/records/mylessons');
-  }
+    public createCourse$(lessonData: {}): Observable<ILesson> {
+        return this.http.post<ILesson>(`${this.baseUrl}/records`, lessonData);
+    }
 
-  public createCourse$(lessonData: {}): Observable<ILesson> {
-    return this.http.post<ILesson>('http://localhost:4000/api/records', lessonData);
-  }
+    public editCourse$(lessonId: string, lessonData: {}): Observable<ILesson> {
+        return this.http.put<ILesson>(`${this.baseUrl}/records/` + lessonId, lessonData);
+    }
 
-  public editCourse$(lessonId: string, lessonData: {}): Observable<ILesson> {
-    return this.http.put<ILesson>('http://localhost:4000/api/records/' + lessonId, lessonData);
-  }
+    public deleteCourse$(lessonId: string): Observable<ILesson> {
+        return this.http.delete<ILesson>(`${this.baseUrl}/records/` + lessonId);
+    }
 
-  public deleteCourse$(lessonId: string): Observable<ILesson> {
-    return this.http.delete<ILesson>('http://localhost:4000/api/records/' + lessonId);
-  }
+    public getLessonById$(id: string): Observable<ILesson> {
+        return this.http.get<ILesson>(`${this.baseUrl}/records/` + id);
+    }
 
-  public getLessonById$(id: string): Observable<ILesson> {
-    return this.http.get<ILesson>('http://localhost:4000/api/records/' + id);
-  }
+    public compareQuizResults$(lessonId: string, quizData: {}): Observable<string> {
+        return this.http.put<string>(`${this.baseUrl}/records/comparequisresults/` + lessonId, {
+            quizData
+        });
+    }
 
-  public compareQuizResults$(lessonId: string, quizData: {}): Observable<string> {
-    return this.http.put<string>('http://localhost:4000/api/records/comparequisresults/' + lessonId, {
-      quizData
-    });
-  }
+    public subscribeToLesson$(id: string): Observable<ILesson> {
+        return this.http.put<ILesson>(`${this.baseUrl}/records/subscribe/` + id, {});
+    }
 
-  public subscribeToLesson$(id: string): Observable<ILesson> {
-    return this.http.put<ILesson>('http://localhost:4000/api/records/subscribe/' + id, {});
-  }
+    public submitQuiz$(lessonId: string, quizData: {}): Observable<ILesson> {
+        return this.http.put<ILesson>(`${this.baseUrl}/records/submitquiz/` + lessonId, {
+            quizData
+        });
+    }
 
-  public submitQuiz$(lessonId: string, quizData: {}): Observable<ILesson> {
-    return this.http.put<ILesson>('http://localhost:4000/api/records/submitquiz/' + lessonId, {
-      quizData
-    });
-  }
+    public unsubscribeToLesson$(id: string): Observable<ILesson> {
+        return this.http.put<ILesson>(`${this.baseUrl}/records/unsubscribe/` + id, {});
+    }
 
-  public unsubscribeToLesson$(id: string): Observable<ILesson> {
-    return this.http.put<ILesson>('http://localhost:4000/api/records/unsubscribe/' + id, {});
-  }
+    public updateProgress$(lessonId: string, ratingScore: number): Observable<ILesson> {
+        return this.http.put<ILesson>(`${this.baseUrl}/records/updateprogress/` + lessonId, {
+            'rating': `${ratingScore}`,
+            'action': 'ratingUpdate'
+        }).pipe(map(data => data));
+    }
 
-  public updateProgress$(lessonId: string, ratingScore: number): Observable<ILesson> {
-    return this.http.put<ILesson>('http://localhost:4000/api/records/updateprogress/' + lessonId, {
-      'rating': `${ratingScore}`,
-      'action': 'ratingUpdate'
-    }).pipe(map(data => data));
-  }
-
-  public updateViewsScore$(lessonId: string): Observable<ILesson> {
-    return this.http.put<ILesson>('http://localhost:4000/api/records/updateviewsscore/' + lessonId, {});
-  }
+    public updateViewsScore$(lessonId: string): Observable<ILesson> {
+        return this.http.put<ILesson>(`${this.baseUrl}/records/updateviewsscore/` + lessonId, {});
+    }
 
 }

@@ -30,46 +30,46 @@ import { MessagesComponent } from './messages/messages.component';
 import { AdminCoursesComponent } from './admin-courses/admin-courses.component';
 
 @NgModule({
-  declarations: [
-    ProfileComponent,
-    HomeComponent,
-    CoursesComponent,
-    OverviewComponent,
-    ProfileDetailsComponent,
-    MissionComponent,
-    NotFoundComponent,
-    ContactsComponent,
-    ExploreComponent,
-    MyLessonsComponent,
-    CourseDetailsComponent,
-    WatchLessonComponent,
-    VideoPreviewComponent,
-    VideoPlayComponent,
-    CreateCourseComponent,
-    LearnMoreComponent,
-    EditCourseComponent,
-    DialogComponent,
-    TakeQuizComponent,
-    CreateQuizComponent,
-    QuizResultsComponent,
-    MessagesComponent,
-    AdminCoursesComponent,
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    HttpClientModule,
-    FormsModule,
-    MatDialogModule
-  ],
-  exports: [
-    HomeComponent
-  ],
-  providers: [
-    {
-      provide: LessonsService,
-      useClass: LessonsService
-    }
-  ]
+    declarations: [
+        ProfileComponent,
+        HomeComponent,
+        CoursesComponent,
+        OverviewComponent,
+        ProfileDetailsComponent,
+        MissionComponent,
+        NotFoundComponent,
+        ContactsComponent,
+        ExploreComponent,
+        MyLessonsComponent,
+        CourseDetailsComponent,
+        WatchLessonComponent,
+        VideoPreviewComponent,
+        VideoPlayComponent,
+        CreateCourseComponent,
+        LearnMoreComponent,
+        EditCourseComponent,
+        DialogComponent,
+        TakeQuizComponent,
+        CreateQuizComponent,
+        QuizResultsComponent,
+        MessagesComponent,
+        AdminCoursesComponent,
+    ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        HttpClientModule,
+        FormsModule,
+        MatDialogModule
+    ],
+    exports: [
+        HomeComponent
+    ],
+    providers: [
+        {
+            provide: LessonsService,
+            useClass: LessonsService
+        }
+    ]
 })
 export class SharedModule { }

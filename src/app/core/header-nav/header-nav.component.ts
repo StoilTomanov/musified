@@ -11,14 +11,14 @@ import { UserService } from 'src/app/auth/user.service';
 
 export class HeaderNavComponent implements AfterContentChecked, OnInit {
     isLogged: boolean = false;
-    isAdmin!: string;
+    isAdmin: string | undefined;
     username!: string;
     messageData!: any[];
 
     constructor(
         private userService: UserService,
         private storage: AuthHandlerService,
-        private router: Router
+        private router: Router,
     ) { }
 
     logout(): void {

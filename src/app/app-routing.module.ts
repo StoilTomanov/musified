@@ -25,117 +25,117 @@ import { WatchLessonComponent } from './shared/watch-lesson/watch-lesson.compone
 
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    component: HomeComponent
-  },
-  {
-    path: 'learnmore',
-    pathMatch: 'full',
-    component: LearnMoreComponent
-  },
-  {
-    path: 'login',
-    pathMatch: 'full',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    pathMatch: 'full',
-    component: RegisterComponent
-  },
-  {
-    path: 'mission',
-    pathMatch: 'full',
-    component: MissionComponent
-  },
-  {
-    path: 'mylessons',
-    canActivate: [AuthGuard, AdminGuard],
-    pathMatch: 'full',
-    component: MyLessonsComponent
-  },
-  {
-    path: 'watch/:id',
-    canActivate: [AuthGuard, AdminGuard],
-    pathMatch: 'full',
-    component: WatchLessonComponent
-  },
-  {
-    path: 'explore',
-    canActivate: [AdminGuard],
-    pathMatch: 'full',
-    component: ExploreComponent
-  },
-  {
-    path: 'courses',
-    canActivate: [UserGuard],
-    pathMatch: 'full',
-    component: AdminCoursesComponent
-  },
-  {
-    path: 'create',
-    pathMatch: 'full',
-    canActivate: [AuthGuard, UserGuard],
-    component: CreateCourseComponent
-  },
-  {
-    path: 'messages',
-    pathMatch: 'full',
-    canActivate: [AuthGuard, UserGuard],
-    component: MessagesComponent
-  },
-  {
-    path: 'edit/:id',
-    pathMatch: 'full',
-    canActivate: [AuthGuard],
-    component: EditCourseComponent
-  },
-  {
-    path: 'details/:id',
-    pathMatch: 'full',
-    component: CourseDetailsComponent
-  },
-  {
-    path: 'profile',
-    pathMatch: 'full',
-    redirectTo: 'profile/overview'
-  },
-  {
-    path: 'profile',
-    canActivate: [AuthGuard, AdminGuard],
-    canActivateChild: [AuthGuard],
-    component: ProfileComponent,
-    children: [
-      {
-        path: 'overview',
-        component: OverviewComponent
-      },
-      {
+    {
+        path: '',
+        pathMatch: 'full',
+        component: HomeComponent
+    },
+    {
+        path: 'learnmore',
+        pathMatch: 'full',
+        component: LearnMoreComponent
+    },
+    {
+        path: 'login',
+        pathMatch: 'full',
+        component: LoginComponent
+    },
+    {
+        path: 'register',
+        pathMatch: 'full',
+        component: RegisterComponent
+    },
+    {
+        path: 'mission',
+        pathMatch: 'full',
+        component: MissionComponent
+    },
+    {
+        path: 'mylessons',
+        canActivate: [AuthGuard, AdminGuard],
+        pathMatch: 'full',
+        component: MyLessonsComponent
+    },
+    {
+        path: 'watch/:id',
+        canActivate: [AuthGuard, AdminGuard],
+        pathMatch: 'full',
+        component: WatchLessonComponent
+    },
+    {
+        path: 'explore',
+        canActivate: [AdminGuard],
+        pathMatch: 'full',
+        component: ExploreComponent
+    },
+    {
         path: 'courses',
-        component: CoursesComponent
-      },
-      {
-        path: 'profile-details',
-        component: ProfileDetailsComponent
-      },
-    ]
-  },
-  {
-    path: 'contacts',
-    pathMatch: 'full',
-    canActivate: [AdminGuard],
-    component: ContactsComponent
-  },
-  {
-    path: '**',
-    component: NotFoundComponent
-  }
+        canActivate: [UserGuard],
+        pathMatch: 'full',
+        component: AdminCoursesComponent
+    },
+    {
+        path: 'create',
+        pathMatch: 'full',
+        canActivate: [AuthGuard, UserGuard],
+        component: CreateCourseComponent
+    },
+    {
+        path: 'messages',
+        pathMatch: 'full',
+        canActivate: [AuthGuard, UserGuard],
+        component: MessagesComponent
+    },
+    {
+        path: 'edit/:id',
+        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        component: EditCourseComponent
+    },
+    {
+        path: 'details/:id',
+        pathMatch: 'full',
+        component: CourseDetailsComponent
+    },
+    {
+        path: 'profile',
+        pathMatch: 'full',
+        redirectTo: 'profile/overview'
+    },
+    {
+        path: 'profile',
+        canActivate: [AuthGuard, AdminGuard],
+        canActivateChild: [AuthGuard],
+        component: ProfileComponent,
+        children: [
+            {
+                path: 'overview',
+                component: OverviewComponent
+            },
+            {
+                path: 'courses',
+                component: CoursesComponent
+            },
+            {
+                path: 'profile-details',
+                component: ProfileDetailsComponent
+            },
+        ]
+    },
+    {
+        path: 'contacts',
+        pathMatch: 'full',
+        canActivate: [AdminGuard],
+        component: ContactsComponent
+    },
+    {
+        path: '**',
+        component: NotFoundComponent
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -8,102 +8,101 @@ import { MatDialog } from '@angular/material/dialog'
 import { CreateQuizComponent } from '../create-quiz/create-quiz.component';
 
 @Component({
-  selector: 'app-course-details',
-  templateUrl: './course-details.component.html',
-  styleUrls: ['./course-details.component.css']
+    selector: 'app-course-details',
+    templateUrl: './course-details.component.html',
+    styleUrls: ['./course-details.component.css']
 })
 export class CourseDetailsComponent implements OnInit {
-  lessonById: ILesson | undefined;
-  isSubscribed!: boolean;
-  isAdmin: string = sessionStorage['isAdmin'];
+    lessonById: ILesson | undefined;
+    isSubscribed: boolean | undefined;
+    isLogged: boolean | undefined;
 
-  constructor(
-    private lessonService: LessonsService,
-    private userService: UserService,
-    private activatedRouter: ActivatedRoute,
-    private router: Router,
-    private storage: AuthHandlerService,
-    private dialogRef: MatDialog,
-  ) { }
+    isAdmin: string | undefined;
 
-  isLogged!: boolean;
-  ratingYellowStars!: number;
-  ratingDarkStars!: number;
+    ratingYellowStars: number | undefined;
+    ratingDarkStars: number | undefined;
 
-  ngOnInit(): void {
-    const storageStatus = this.storage.getStorage()
-    this.isLogged = storageStatus['userId'];
-    this.lessonById = undefined;
+    constructor(
+        private lessonService: LessonsService,
+        private userService: UserService,
+        private activatedRouter: ActivatedRoute,
+        private router: Router,
+        private storage: AuthHandlerService,
+        private dialogRef: MatDialog,
+    ) { }
 
-    setTimeout(() => {
-      this.lessonService.getLessonById$(this.activatedRouter.snapshot.params['id'])
-        .subscribe(data => {
-          this.lessonById = data;
-          if (this.lessonById.rating.length == 0) {
-            this.ratingYellowStars = Math.round(this.lessonById.ratingScore / 1);
-          } else {
-            this.ratingYellowStars = Math.round(this.lessonById.ratingScore / this.lessonById.rating.length);
-          }
-          this.ratingDarkStars = 5 - this.ratingYellowStars;
-        });
-    }, 100);
+    ngOnInit(): void {
+        const storage = this.storage.getStorage();
+        this.isAdmin = storage['isAdmin'];
+        this.isLogged = storage['userId'];
+        this.lessonById = undefined;
 
-    if (sessionStorage['isAdmin'] == 'false') {
-      this.lessonService.updateViewsScore$(this.activatedRouter.snapshot.params['id'])
-        .subscribe();
+        setTimeout(() => {
+            this.lessonService.getLessonById$(this.activatedRouter.snapshot.params['id'])
+                .subscribe(data => {
+                    this.lessonById = data;
+                    if (this.lessonById.rating.length == 0) {
+                        this.ratingYellowStars = Math.round(this.lessonById.ratingScore / 1);
+                    } else {
+                        this.ratingYellowStars = Math.round(this.lessonById.ratingScore / this.lessonById.rating.length);
+                    }
+                    this.ratingDarkStars = 5 - this.ratingYellowStars;
+                });
+        }, 100);
+
+        if (sessionStorage['isAdmin'] == 'false') {
+            this.lessonService.updateViewsScore$(this.activatedRouter.snapshot.params['id'])
+                .subscribe();
+        }
+
+        this.userService.readUser$()
+            .subscribe(data => {
+                const lessonId: string = this.activatedRouter.snapshot.params['id'];
+                if (data.subscriptions.includes(lessonId)) {
+                    this.isSubscribed = true;
+                }
+            });
+
     }
 
-    this.userService.readUser$()
-      .subscribe(data => {
+    onSubscribe(): void {
         const lessonId: string = this.activatedRouter.snapshot.params['id'];
-        if (data.subscriptions.includes(lessonId)) {
-          this.isSubscribed = true;
-        }
-      });
+        this.userService.updateUser$(`${sessionStorage['userId']}`, lessonId, 'subscribe').subscribe();
+        this.lessonService.subscribeToLesson$(lessonId).subscribe(data => this.lessonById = data);
 
-  }
+        setTimeout(() => {
+            this.router.navigate(['mylessons']);
+        }, 300);
+    }
 
-  onSubscribe(): void {
-    const lessonId: string = this.activatedRouter.snapshot.params['id'];
-    this.userService.updateUser$(`${sessionStorage['userId']}`, lessonId, 'subscribe')
-      .subscribe();
-    this.lessonService.subscribeToLesson$(lessonId)
-      .subscribe(data => this.lessonById = data);
-    setTimeout(() => {
-      this.router.navigate(['mylessons']);
-    }, 300);
-  }
-
-  onBack(): void {
-    this.router.navigate(['explore']);
-  }
+    onBack(): void {
+        this.router.navigate(['explore']);
+    }
 
 
-  onBackToCourses(): void {
-    this.router.navigate(['mylessons']);
-  }
+    onBackToCourses(): void {
+        this.router.navigate(['mylessons']);
+    }
 
-  onReport() {
-    this.router.navigate(['contacts']);
-  }
+    onReport() {
+        this.router.navigate(['contacts']);
+    }
 
-  onEdit(): void {
-    const lessonId = this.activatedRouter.snapshot.params['id'];
-    this.router.navigate(['edit/' + lessonId]);
-  }
+    onEdit(): void {
+        const lessonId = this.activatedRouter.snapshot.params['id'];
+        this.router.navigate(['edit/' + lessonId]);
+    }
 
-  onDelete(): void {
-    const lessonId = this.activatedRouter.snapshot.params['id'];
-    this.lessonService.deleteCourse$(lessonId)
-      .subscribe();
-    this.router.navigate(['explore']);
-  }
+    onDelete(): void {
+        const lessonId = this.activatedRouter.snapshot.params['id'];
+        this.lessonService.deleteCourse$(lessonId).subscribe();
+        this.router.navigate(['explore']);
+    }
 
-  onCreateQuiz(): void {
-    this.dialogRef.open(CreateQuizComponent, {
-      data: { lessonId: this.lessonById?._id }
-    });
-    document.getElementsByTagName('mat-dialog-container')[0].setAttribute('data-url', 'watch');
-  }
-
+    onCreateQuiz(): void {
+        this.dialogRef.open(CreateQuizComponent, {
+            data: { lessonId: this.lessonById?._id }
+        });
+        document.getElementsByTagName('mat-dialog-container')[0].setAttribute('data-url', 'watch');
+    }
 }

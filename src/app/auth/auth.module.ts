@@ -11,26 +11,26 @@ import { AuthInterceptor } from './auth.interceptor';
 
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    RegisterComponent,
-  ],
-  imports: [
-    RouterModule,
-    CommonModule,
-    FormsModule,
-    SharedModule,
-  ],
-  exports: [
-    LoginComponent,
-    RegisterComponent,
-  ],
-  providers:[
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }
-  ]
+    declarations: [
+        LoginComponent,
+        RegisterComponent,
+    ],
+    imports: [
+        RouterModule,
+        CommonModule,
+        FormsModule,
+        SharedModule,
+    ],
+    exports: [
+        LoginComponent,
+        RegisterComponent,
+    ],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true
+        }
+    ]
 })
 export class AuthModule { }

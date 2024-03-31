@@ -12,26 +12,26 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    CoreModule,
-    SharedModule,
-    AuthModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule
-  ],
-  providers: [
-    UserService,
-    {
-      provide: AuthHandlerService,
-      useClass: AuthHandlerService
-    },
-    AuthHandlerService,
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+    ],
+    imports: [
+        BrowserModule,
+        CoreModule,
+        SharedModule,
+        AuthModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule
+    ],
+    providers: [
+        UserService,
+        {
+            provide: AuthHandlerService,
+            useClass: AuthHandlerService
+        },
+        AuthHandlerService,
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,28 +4,32 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/auth/user.service';
 
 @Component({
-  selector: 'app-contacts',
-  templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.css']
+    selector: 'app-contacts',
+    templateUrl: './contacts.component.html',
+    styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit {
-  isAdmin!: string;
-  @ViewChild('messageForm') form!: NgForm;
+    @ViewChild('messageForm') form: NgForm | undefined;
 
-  constructor(
-    private userService: UserService,
-    private router: Router,
-  ) { }
+    isAdmin: string | undefined;
 
-  ngOnInit(): void {
-    this.isAdmin = sessionStorage['isAdmin'];
-  }
+    constructor(
+        private userService: UserService,
+        private router: Router,
+    ) { }
 
-  onMessageSubmit(): void {
-    const messageData = this.form.value;
-    this.userService.createMessageForAdmin$(sessionStorage['userId'], messageData)
-      .subscribe();
-    this.router.navigate(['explore']);
-  }
+    ngOnInit(): void {
+        this.isAdmin = sessionStorage['isAdmin'];
+    }
+
+    onMessageSubmit(): void {
+        if (!this.form) { return; }
+
+        const messageData = this.form.value;
+        const userId = sessionStorage['userId'];
+
+        this.userService.createMessageForAdmin$(userId, messageData).subscribe();
+        this.router.navigate(['explore']);
+    }
 
 }
